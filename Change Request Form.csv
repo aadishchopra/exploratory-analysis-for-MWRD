@@ -1,0 +1,1982 @@
+Priority,Status Indicator,Create Date,Created By,Requestor,Status Notes,Maintenance Date,Time of Maintenance,Description of Maintenance,User Impact (What's Affected?),Responsible IT Area,Impact Category,Purpose / Desired Result,Purpose Group,Point of Contact,Task Summary,Emergency / Time Senstive
+Medium,,10/05/17 1:52 PM,web-form@smartsheet.com,Patrick Sendera,,10/19/17,5AM - 7AM,"Monthly updates on GIS1, GIS2, GISPUB, GISPUBINT, GISDBPRD1, IISMWRD",Listed servers will experience short disruptions between the hours of 5AM and 7AM,GIS,Minor,Patched servers,Preventive,Patrick Sendera,"1) Install updates
+2) Reboot
+3) Verify Apps
+...
+
+BACK OUT PLAN: 
+....",
+High,,10/05/17 11:42 AM,web-form@smartsheet.com,Thomas Muscarello,"Internal communications such as MWRDGC Voicemail, 5-digit dialing and Phone Directory will be available for all users.",10/19/17,430 pm - 3 hours,"Phone service to Kirie Plant will be upgraded from PRI services to SIP service from ATT.  
+New SIP line will be tested. Once confirmed operational all Kirie DID #'s will be ported to new SIP circuit. 
+Service interruption will start @ 4:30 pm Central on 10/19/17",KWRP Plant users will experience intermittent service issues during this period. Inbound and Outbound calling at the designated District facility will be limited during this time.,Network Infrastructure,Major,Upgrade ATT service to Kirie plant from PRI services to SIP services,Enhancement,Thomas Muscarello,"1) Test new circuit connectivity
+2) Test inbound / outbound local & long distance calling with SIP test numbers
+3) Test International calling with SIP test numbers
+4) Test 411 with SIP test numbers
+5) Test 911 with SIP test numbers
+6) Test Toll free with SIP test numbers
+7) if all tests are successfully we will port all DID #'s
+8) Repeat steps 2-6 with multiple DID #'s on new SIP circuit.
+...
+
+BACK OUT PLAN: If any issues are discovered in steps 1-6 we will not port and remain on PRI service.  Cutover will be rescheduled.",
+High,,10/05/17 11:38 AM,web-form@smartsheet.com,Thomas Muscarello,"Internal communications such as MWRDGC Voicemail, 5-digit dialing and Phone Directory will be available for all users.",10/18/17,5:00 pm - 3 hours,Phone service to Main Office Building Complex will be upgraded from PRI services to SIP service from ATT.  New SIP line will be tested. Once confirmed operational all MOB-C DID #'s will be ported to new SIP circuit. Service interruption will start @ 5:00 pm Central on 10/18/17,Main Office Building users will experience intermittent service issues during this period. Inbound and Outbound calling at the designated District facility will be limited during this time.,Network Infrastructure,Major,Transition dial tone from PRI services to SIP services.,Enhancement,Thomas Muscarello,"1) Test new circuit connectivity
+2) Test inbound / outbound local & long distance calling with SIP test numbers
+3) Test International calling with SIP test numbers
+4) Test 411 with SIP test numbers
+5) Test 911 with SIP test numbers
+6) Test Toll free with SIP test numbers
+7) if all tests are successfully we will port all DID #'s
+8) Repeat steps 2-6 with multiple DID #'s on new SIP circuit.
+...
+
+BACK OUT PLAN: If any issues are discovered in steps 1-6 we will not port and remain on PRI service.  Cutover will be rescheduled.
+....",
+Medium,,09/29/17 10:36 AM,web-form@smartsheet.com,John Reichling,,10/11/17,Start time: 5:00 pm  - Duration: 1 hour,"Upgrade XenPrint021, XenPrint041, and XenPrint011 from Windows Server 2008 to Windows Server 2016 one server at a time each week.","XenPrint021 will not be available on 10/11/17 from 5:00 pm until 6:00 pm. The other 2 print serves will not be affected. For the following 2 weeks, replace XenPrint021 with XenPrint041 and XenPrint011 respectively.","Desktop Engineering (Citrix, SCCM)",Minor,Upgrade Windows 2008 print servers to Window 2016.,Enhancement,"Hussein Shamsuddin, Eric Eberhart","1) Shutdown XenPrint021
+2) Rename XenPrint021t.mwrd.local to XenPrint021.mwrd.local and reboot.
+3) Verify XenPrint021 DNS IP resolution is updated to reflect changes.
+4) Test printing functionalities
+5) Mark Old XenPrint021 VM for deletion after 1 week.
+
+BACK OUT PLAN: 
+Shutdown new Xenprint021 and power-up the old XenPrint021 and verify DNS IP address resolution.",
+,Follow-up (See Status Notes),09/27/17 10:53 AM,reichlingj@mwrd.org,John Reichling,,09/28/17,9:00 am - 4:00 pm,Apply 1702 and 1706 updates to SCCM servers,"Increase support for Azure, O365, Windows 10","Desktop Engineering (Citrix, SCCM)",Minor,Stay Current and be on current release as we build Windows 10 standard image,Fix / Patch,John Reichling,"1. Snapshot All SCCM infrastructure
+2. Apply SCCM current branch 1702 media to server, then online patch to 1706 release using remaining hours from Planet Technologies.",
+,,08/15/17 10:58 AM,web-form@smartsheet.com,Kevin Young,,12/16/17,10:00pm - 11:00pm,Monthly SAP Production Server Reboots and Patching,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots and Microsoft security patching,Preventive,Kevin Young,"""Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2
+
+MWRDRDSP - patch and restart",
+,,08/15/17 10:56 AM,web-form@smartsheet.com,Kevin Young,,11/18/17,10:00pm - 11:00pm,Monthly SAP Production Server Reboots and Patching,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots and Microsoft security patching,Preventive,Kevin Young,"""Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2
+
+MWRDRDSP - patch and restart",
+,,08/15/17 10:54 AM,web-form@smartsheet.com,Kevin Young,,10/21/17,10:00pm - 11:00pm,Monthly SAP Production Server Reboots and Patching,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots and Microsoft security patching,Preventive,Kevin Young,"""Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2
+
+MWRDRDSP - patch and restart",
+Low,Completed,09/26/17 9:19 AM,web-form@smartsheet.com,Kevin Young,,09/30/17,10:00 pm,Portal Production removal of index.html as a default page.,The District's website will be unavailable due to the system restart.,ERP / SAP,Significant,To assist in the migration to the new F5 by removing the .index.html page as a default page.,Fix / Patch,Kevin Young,Using the Visual Administrator; go into Server/Services/HTTP Provider/properties. Under InferNames remove index.html and index.htm from the possible selections.,
+,Completed,09/01/17 4:28 PM,web-form@smartsheet.com,LaShun Osborn,,09/29/17,From 5pm on 9/29 -  5pm 10/1,Migrate data for PUBINFOSTORE and MWRDVIDEO servers to NAS appliance.,Data on PUBINFOSTORE and MWRDVIDEO systems will be unavailable.,Multi-Team (Indicate groups in Additional Information),,Migrate cold video archive data off enterprise shared storage to NAS device.,New Implementation,Ervin Cheng,"1) Take final backup of source systems.
+2) Migrate data from source to destination systems.
+3) Replicate between NAS systems.
+4.) Rename/shut down source systems.
+5.) Install NAS devices in final datacenter.
+6.) Perform backup on destination device.
+...
+
+BACK OUT PLAN: 
+
+1.) Online shares on source Windows systems.
+....",
+Medium,Completed,09/25/17 12:15 PM,web-form@smartsheet.com,M&R,,09/25/17,12:00 PM,reboot LIMS production server,LIMS will be unavailable for about 3-4 minutes while restarting,Multi-Team (Indicate groups in Additional Information),Minor,"LIMS background stalled, all attempts to restart were unsucceful",Fix / Patch,Roger Smith,"1) notify users
+2) reboot server
+3) verify LIMS is back up and background is working
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,08/15/17 10:53 AM,web-form@smartsheet.com,Kevin Young,,09/23/17,10:00pm - 11:00pm,Monthly SAP Production Server Reboots and Patching,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots and Microsoft security patching,Preventive,Kevin Young,"""Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2
+
+MWRDRDSP - patch and restart",
+,Completed,09/12/17 9:46 AM,web-form@smartsheet.com,Ethan Warren,Ethan to send out District wide notice about possible intermittent internet access,09/22/17,5:00 pm,Cabling issue needs to be corrected so ASA failover operations can function normally.,Little to no impact with internet access for users through MOB and public access to mwrd.org.,Network Infrastructure,,Return failover capabilities to normal state.,Fix / Patch,Ethan Warren,"1) Move ASA failover connections to correct VLAN on connecting switch.
+2) Test failover for proper functionality.
+3)",
+,Completed,08/25/17 11:49 AM,web-form@smartsheet.com,Kevin Pendergast,,09/22/17,5pm Friday until 8pm Saturday,Data switches and cabinets/racks will be replaced in MOBA 3 floor.,No data network connectivity for MOBA 3rd floor.,Network Infrastructure,,Upgrade older network equipment for enhanced throughput and reliability to administrative data network users.,Enhancement,Kevin Pendergast,"1) Remove old data cabinets and switches from telecom closet.
+2) Install new data rack and switches.
+3) Connect to new fiber, power equipment and verify connectivity.
+4) Patch user connections to new switches.
+5) Verify connectivity.",
+Immediate,Completed,09/21/17 11:05 AM,reichlingj@mwrd.org,John Reichling,"The update to the GPO was applied.  The GPO updated was ""forced"" which appears to not have been a good choice because a few users reported a command window pop up screen that informed them that they should logoff in order to apply the policy correctly.  This resulted in a few additional incidents being reported to the SD. (2) that I know of at the time of writting.",09/21/17,10:25 am,"Update MWRD-Workstations GPO.  The ""Point and Print"" policy needed to be modified from ""Disabled"" to ""enabled"" along with specification to specifically not prompt for elevated security rights when installing/updating a network printer &/or print driver.",ALL mwrd-workstations ( ~1200 ),"Desktop Engineering (Citrix, SCCM)",Major,Prevent users from experiencing failure to print  to network devices.  Thus far 50+ incidents were reported within 2 business days.  By updating the GPO we avoided most of our users from experiencing the printing problem.,Fix / Patch,John Reichling,"Prior to our change 
+
+“Point and Print policy was set to <Disabled>”
+
+After our change 
+“Point and Print policy was set to <Enabled>”
+
+And the security prompts were set to:
+
+“When installing drivers for a new connection: <DO NOT SHOW WARNING OR ELEVATION PROMPT>”
+“When installing drivers for an existing connection: <DO NOT SHOW WARNING OR ELEVATION PROMPT>”",
+Medium,Completed,09/13/17 9:49 AM,web-form@smartsheet.com,Patrick Sendera,,09/21/17,5AM,September Server Patches,All GIS internal and public systems as well as IISMWRD (District phone list) will experience briefs outages,GIS,Minor,Apply Sept patches,Preventive,Patrick Sendera,"1) Apply patches to the following servers:
+GIS01
+GIS02
+GISPUBINT
+GISPUB
+GISDBPRD1
+IISMWRD
+
+2) Reboot
+3) Verify Applications
+...
+
+BACK OUT PLAN: 
+....",
+Immediate,Completed,09/21/17 11:05 AM,reichlingj@mwrd.org,John Reichling,Did not solve the problem,09/20/17,4:30 pm - 5:30 pm,Apply 183 MS patches to XENPRINT011,Network print queues on xenprint011,"Desktop Engineering (Citrix, SCCM)",Minor,to restore ability of users to update print drivers without requiring elevated credentials.  MS patch documentation indicated that print servers based on Windows Server 2008 R2 required a patch released in 2014.,Fix / Patch,John Reichling,Apply MS patches pending installation,
+Immediate,Completed,09/21/17 11:05 AM,reichlingj@mwrd.org,John Reichling,Did not solve the problem,09/20/17,4:30 pm - 5:30 pm,Apply 183 MS patches to XENPRINT021,Network print queues on xenprint021,"Desktop Engineering (Citrix, SCCM)",Minor,to restore ability of users to update print drivers without requiring elevated credentials.  MS patch documentation indicated that print servers based on Windows Server 2008 R2 required a patch released in 2014.,Fix / Patch,John Reichling,Apply MS patches pending installation,
+Immediate,Completed,09/21/17 11:05 AM,reichlingj@mwrd.org,John Reichling,Did not solve the problem,09/20/17,4:30 pm - 5:30 pm,Apply 183 MS patches to XENPRINT041,Network print queues on xenprint041,"Desktop Engineering (Citrix, SCCM)",Minor,to restore ability of users to update print drivers without requiring elevated credentials.  MS patch documentation indicated that print servers based on Windows Server 2008 R2 required a patch released in 2014.,Fix / Patch,John Reichling,Apply MS patches pending installation,
+,Completed,09/05/17 4:19 PM,web-form@smartsheet.com,Roger Smith,,09/18/17,4:00 PM,apply os patches to SV-LSS,Local Sewers application will not be available while the system reboots,Multi-Team (Indicate groups in Additional Information),,OS patches for security,Fix / Patch,Raymond McCague,"1) apply patches
+2) reboot
+3) test application
+...
+
+BACK OUT PLAN: 
+Restore from snapshot",
+,Completed,08/25/17 11:44 AM,web-form@smartsheet.com,Kevin Pendergast,,09/15/17,5pm Friday until 8pm Saturday,Data switches and cabinets/racks will be replaced in MOBA 4&5 floors.,No data network connectivity for MOBA 4&5 floors.,Network Infrastructure,,Upgrade older network equipment for enhanced throughput and reliability to administrative data network users.,Enhancement,Kevin Pendergast,"1) Remove old data cabinets and switches from telecom closet.
+2) Install new data rack and switches.
+3) Connect to new fiber, power equipment and verify connectivity.
+4) Patch user connections to new switches.
+5) Verify connectivity.",
+,Completed,07/21/17 12:31 PM,web-form@smartsheet.com,Ervin Cheng,,09/07/17,8 p.m. to 9 p.m.,monthly OS Patching of all operation servers during working hours and 2 after hours. KCSserver and sv-autocad-ls.,"FAX, SAP Fax, telephone management",Network Operations (Server / SAN),,critical and security patches,Fix / Patch,Ervin Cheng,"1)apply patch 
+2)restart system
+3)confirm patch
+4) test system
+...
+BACK OUT PLAN: 
+....
+1)unapply patch
+2) restart system
+3) test system",
+,Completed,09/05/17 3:11 PM,web-form@smartsheet.com,Patrick Kane,Ray will reboot the the server sv-lss and Patrick Kane will fix the users profile,09/05/17,4:00pm 09/05/2017,"Re-boot the server
+Tomorrow Pat Kane will re-build the profile of  MWRD\JacksonC2",Most users who access the local sewers application will be impacted until the computer re-boots.,Multi-Team (Indicate groups in Additional Information),,The user: MWRD\JacksonC2 is having a problem opening a PDF file. Patrick tried to re-do his profile but it was locked.  The adobe reader is used in the local sewers application,Fix / Patch,Patrick Kane or Raymond McCague,"1) I will re-boot the server
+2) Tomorrow Patrick Kane will fix the users profile
+3)
+...
+
+BACK OUT PLAN: 
+....",TRUE
+,Completed,08/14/17 12:20 PM,web-form@smartsheet.com,Ervin Cheng,,08/31/17,4:30 pm. for no more than 10 minutes,"Changing the nic on the following servers: LF-DOC, MWRDNEPP2, and FTPMWRD.",Law users will not be able to use Legal Files after 4:30pm on 8/17 and the District's FTP site will be unavailable. MWRDNEPP2 will have no impact due to the fact that this server is used for load balancing.,Network Operations (Server / SAN),,VMWare recommends the NIC update,Fix / Patch,Kevin Young,See Ervin Cheng.,TRUE
+,Follow-up (See Status Notes),12/12/16 3:17 PM,web-form@smartsheet.com,Kevin Young,"10/3 - E.C. -Scheduled for Oct5-6 ; Purchased software-load balancer ; March 2017 RP Requested Date Change for Additional Testing  ; Ervin/Tom to purchase external DNS for testing - 6/20/17; ;Purchased mwrdT2.com;testing of https to follow ; Confirmed Test; Ervin to meet with ERP/Dev group
+
+Bob to follow up with Kevin - SAP team to change SAP Neteaver portal defualt landing page from index.html to MWRD home page.",08/31/17,7:00 pm 1 hour,Deployment of software Load balancer (F5),The District's,ERP / SAP,,To move the District's website off of the F5 appliance.,Preventive,Kevin Young,"From	              To	                Port
+mwrdneppz1    alpha/beta	        389
+	               mwrdnepp0	        1433
+	               mwrdnepp1 	3200,3900,445,50013,8100,50100,50113
+	               mwrdeccp0 	3300,3601
+	               mwrdeccp1	        3300
+		
+
+UNC path to //mwrdnepp1/sapmnt",
+,Completed,08/15/17 10:45 AM,web-form@smartsheet.com,Roger Smith,,08/28/17,4:30 - 5:00,apply OS patches to File Maker servers,File Maker will be unavailable,Multi-Team (Indicate groups in Additional Information),,apply OS patches to FS-1 FS-2 FS-3,Fix / Patch,Roger Smith,"1) apply patches
+2) reboot server
+3) verify application is running
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,08/15/17 10:51 AM,web-form@smartsheet.com,Kevin Young,,08/26/17,10:00pm - 11:00pm,Monthly SAP Production Server Reboots and Patching,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots and Microsoft security patching,Preventive,Kevin Young,"""Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2
+
+MWRDRDSP - patch and restart",
+,Completed,08/25/17 11:40 AM,web-form@smartsheet.com,Kevin Pendergast,,08/25/17,5:00pm until 8:00pm Saturday 8/26/2017,Data switches and cabinets/racks will be replaced in MOBA 6&7 floors,No data network connectivity for MOBA 6&7 floors.,Network Infrastructure,,Upgrade older network equipment for enhanced throughput and reliability to administrative data network users.,Enhancement,Kevin Pendergast,"1) Remove old data cabinets and switches from telecom closet.
+2) Install new data rack and switches.
+3) Connect to new fiber, power equipment and verify connectivity.
+4) Patch user connections to new switches.
+5) Verify connectivity.",
+,Completed,07/19/17 3:00 PM,web-form@smartsheet.com,Patrick Sendera,,08/24/17,5-7AM,MS Server  patches August,All GIS applications will experience disruptions during this time,GIS,,MS patches up to date,Fix / Patch,Patrick Sendera,"1) Patch Servers
+2)Reboot
+3) Verify applications
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,06/02/17 9:17 AM,web-form@smartsheet.com,Ethan Warren,RESCHEDULED: No changes to MWRD equipment is needed. Network Team will put on Hold until MS Premier Support -- AUGUST 17th,08/17/17,5:00 pm - 7:00 pm,Test & Turn up of new internet circuit at MOB/MOBA.,"Internet and Email access for MOB employees will be interrupted.  Public access to our main website (mwrd.org), districtjobs.org, SAP Support VPN, gispub.mwrd.org, br.mwrd.org (Blue Ribbon FTP), apps.mwrd.org, and Granicus Encoding Services.",Network Infrastructure,,This will double our internet bandwidth to provide better response to our cloud-hosted services and a better internet browsing experience.,Enhancement,Ethan Warren,"1) Install new circuit - AT&T (Done)
+2) Migrate all current IP information to new circuit (To be completed by AT&T engineer).
+3) Physically move internet connection to new fiber delivery and test services.
+...
+
+BACK OUT PLAN: 
+....
+Reverse steps listed above.",
+,Completed,08/01/17 4:13 PM,web-form@smartsheet.com,Roger Smith,,08/16/17,4:30 PM - 5:00 PM,apply OS patches to FILEHOLDD servers,"Scales, District Data Warehouse, Legal Files  will be unavailable during this time",Multi-Team (Indicate groups in Additional Information),,OS patches,Fix / Patch,Roger Smith,"1) make sure users are off the server
+2) apply patches
+3) re-boot server
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,07/28/17 3:26 PM,web-form@smartsheet.com,Thomas McEnery,Tom will provide list of objects before deleting; E-mail to Support Ops Leads & Kevin Young,08/16/17,"Anytime, non business effecting",Delete inactive / disabled computer objects over 120 days.,N / A,Network Infrastructure,,AD cleanup,Security,Thomas McEnery,"1) 
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,08/08/17 10:31 AM,web-form@smartsheet.com,Kevin Pendergast,,08/11/17,5:00 pm Friday until 8:00 pm Saturday (8/12/17),Data switches and cabinets/racks will be replaced on the MOB 3rd and 5th floors,No data network connectivity for 3rd and 5th floors MOB.,Network Infrastructure,,Upgrade older network equipment for enhanced throughput and reliability to administrative data network users.,New Implementation,Ethan Warren,"1) Pre-configure new switches
+2) Pre-assemble new rack and install new switches.
+3) Remove cable patch panel from existing rack and remove rack.
+4) Set in place newly assembled rack and attach patch panel
+5) Power on new switches and test LAN/WAN connectivity
+...
+
+BACK OUT PLAN: 
+....
+Place existing equipment back into production",
+,Completed,07/21/17 12:07 PM,web-form@smartsheet.com,Ervin Cheng,District Wide Notification Needed,08/11/17,08/04/2017 from 8 p.m. to 12 p.m. 2 hour for the vmware converter and 2 hour for ip change.,Moved F5 from wsw-rvcenter to wsw-vcenter.  Stickney datacenter has fireeye and is needed for F5 security.  IP change and virtual appliance move to new vm host,"all 6 redirects will be taken down. biosolid, chloride, il, rainbarrel, stormwater, and watershed subdomain will be unavailable.",Network Operations (Server / SAN),,"Since the ucs and 3par is moving to another datacenter, we need to move the vm from the 3par and relocate to a vm environment that is in stickney vlans and stickney site.",Security,Ervin Cheng,"1) shutdown F5 appliance
+2) vm converter and move to wsw-vcenter
+3) confirm the move, startup appliance, and update the f5 appliance
+4) change firewall redirect ips 
+5) confirm ip change successfully
+6) test all redirects
+...
+
+BACK OUT PLAN:
+1) shutdown the server and turn on old vm appliance
+2) firewall redirect back to old vm appliance 
+....",
+,Completed,08/01/17 10:30 AM,web-form@smartsheet.com,Kevin Young,Server won't be patched.  Batch jobs will be moved to a different server starting 8/11,08/11/17,1:00 pm,Install Microsoft Security Patches and Restart Precalprd Server.,No user impact if done between the hours of 7:00 am and 7:00 pm. This server runs scheduled interface jobs.,ERP / SAP,,To become up to date with the Microsoft Security patches,Preventive,Kevin Young,Install Microsoft Security Updates and Restart the Precalprd Server.,
+,Completed,07/25/17 4:24 PM,web-form@smartsheet.com,Hussein Shamsuddin,Rolling end date is Sept 1 ; ~100 more as of 8/29,08/10/17,4:00 am,Upgrade PC Symantec 12.x clients to 14.0,None. Silent install. Reboot required but not forced.,"Desktop Engineering (Citrix, SCCM)",,Standardize on Symantec protection,Security,Sam Johnston,"1) Push already tested Symantec package to all workstations except Instrument machines
+2) Schedule the push to start at 4:00 am on 8/10/17
+3) Monitor and report on compliance results daily.
+
+
+BACK OUT PLAN: 
+Client install rollback",
+,Completed,08/01/17 4:05 PM,web-form@smartsheet.com,Roger Smith,,08/09/17,4:30 PM - 5:00 PM,apply OS patches to MMS servers,MMS will be unavailable during this time,Multi-Team (Indicate groups in Additional Information),,OS patches,Fix / Patch,Roger Smith,"1) make sure users are off MMS
+2) apply patches
+3) re-boot server
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,07/17/17 2:46 PM,web-form@smartsheet.com,Roger Smith,RESCHEDULED,08/09/17,4:30 PM - 5:00 PM,OS patching for MMS,MMS will be unavailable,Multi-Team (Indicate groups in Additional Information),,OS patches for security,Fix / Patch,Roger Smith,"1) apply patches
+2) reboot servers
+3) verify MMS is up
+
+
+BACK OUT PLAN:",
+,Completed,08/04/17 8:28 AM,web-form@smartsheet.com,Kevin Young,,08/04/17,8:15 am - 8:25 am,Restart District Portal.,District's website will not be available.,ERP / SAP,,Restart was needed because the user had changed the file name in regards to ServiceDesk  Incident # 5081.,Fix / Patch,Kevin Young,Restart District portal.,TRUE
+,Completed,08/03/17 3:01 PM,web-form@smartsheet.com,Kevin Young,,08/03/17,10:00 pm - 10:15 pm,Restart of District Portal.,The District website will be unavailable during this period.,ERP / SAP,,This restart of the portal is necessary to correct ServiceDesk Issue #5081.,Fix / Patch,Kevin Young,Restart District portal.,TRUE
+,Completed,08/01/17 3:17 PM,web-form@smartsheet.com,Kevin Young,,08/03/17,4:30 pm - 5:00 pm,Install Microsoft Security Patches and Restart Legal Files Server (lf-doc.mwrd.local).,Users will not be able to access Legal File documents during this period,ERP / SAP,,To become up to date with the Microsoft Security patches,Preventive,Kevin Young,Install Microsoft Security Updates and Restart the Legal File Production Server.,
+,Completed,07/26/17 11:36 AM,web-form@smartsheet.com,Roger Smith,,08/02/17,4:30 pm - 5:00 PM,apply OS patches to FILEBOUND server,FILEBOUND will be unavailable,Multi-Team (Indicate groups in Additional Information),,apply OS patches for security,Fix / Patch,Roger Smith,"1) ensure users are off the system
+2) apply patches
+3) reboot
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,07/26/17 11:35 AM,web-form@smartsheet.com,Roger Smith,,08/02/17,4:30 pm - 5:00 PM,apply OS patches to INSTEQUIPMGMTDB,INSTEQUIPMGMTDB will be unavailable,Multi-Team (Indicate groups in Additional Information),,apply OS patches for security,Fix / Patch,Roger Smith,"1) ensure users are off the system
+2) apply patches
+3) reboot
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,07/05/17 11:33 AM,web-form@smartsheet.com,Kevin Young,,07/29/17,10:00pm - 12:00am,Monthly SAP Production Server Reboots,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots,Preventive,Kevin Young,"""Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2
+
+MWRDRDSP - patch and restart",
+,Completed,06/20/17 1:56 PM,web-form@smartsheet.com,Roger Smith,Originally scheduled for 7/15. Rescheduling to 7/22 due to personnel schedules.Rescheduling again to 7/29 due to personnel schedules. 8/1 - PATCHES DONE.  VmWare Nic Needs to be changed Ervin to complete 8/5),07/29/17,2:30 pm,"apply patches to ipacs and LIMS servers: IPACPRDAPP, IPACFINAPP, LIMSPRDAPP, IMPRDAPP, ORADBPRD1A ; Add: VMWare NIC Change","iPacs, LIMS, Police DB, Purcon, TRMS",Multi-Team (Indicate groups in Additional Information),,apply OS patches,Fix / Patch,Roger Smith,"1) apply patches
+2) reboot server
+3) make sure applications are running after the reboot
+
+
+BACK OUT PLAN: 
+restore from snapshot",
+,Completed,07/14/17 3:32 PM,web-form@smartsheet.com,Thomas McEnery,,07/28/17,"anytime, non service disrupting.","Upgrade to Azure AD Connect, MS releases numerous updates to this solution and quickly drops support from versions that are just a few months old.",non service disrupting,Network Operations (Server / SAN),,To catch up to the newest release of AD Connect and enable auto updates going forward.,Enhancement,Thomas McEnery,"1) Uninstall current version
+2) Install newest version
+3) Resync AD to Azure
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,07/12/17 12:26 PM,web-form@smartsheet.com,Marque Shaffer,switch IP:  10.113.3.18   clock ip: 10.113.130.6,07/13/17,11:00 AM  duration 30 minutes,The TimeClock IWD TRLR has failed and will not light up.  The Cisco Switch CWRP_IWDConsTrl does not provide PoE to the clock either; so both devices must be replaced.,Everyone and everything in the IWD construction trailer will be down for about 30 minutes.,Network Infrastructure,,Bring the TimeClock in the CWRP IWD trailer to a working state.,Fix / Patch,Richard Wojkovich,"1) replace the TimeClock with the help of the CWRP trades 
+2) replace the Cisco Switch in the trailer
+3) test to see that they everyone is working
+4) 
+...
+
+BACK OUT PLAN: replace the old switch and timeclock
+....",TRUE
+,Completed,06/27/17 10:43 AM,web-form@smartsheet.com,Ervin Cheng,Verify no conflicts with scheduled MOB/C Internet /web upgrade on 7/13,07/13/17,5 to 9 p.m,"MS Patching for operations servers.  kcsserver.mwrd.local, mfpdmgr2.mwrd.local, sv-passagepoint.mwrd.local, mfpdmgr3.mwrd.local, dbfs.mwrd.local, sv-autocad-ls.mwrd.local, mobwsus.mwrd.local, beta.mwrd.local, eyesite1.mwrd.local, eyesite2.mwrd.local, eyesite3.mwrd.local, wins.mwrd.local, alpha.mwrd.local, telmon.mwrd.local, mwrdcert.mwrd.local wsw-prntmgr.mwrd.local, fs-sandbox2.mwrd.local, usb-keymgr.mwrd.local, delta.mwrd.local, wsw-exch2013.mwrd.local, wsw-exch-cas01.mwrd.local, wsw-exch-mb02.mwrd.local, 
+wsw-exch-mb01.mwrd.local","Fax, printers and copiers, telephone management, lims, readsoft, ipacs database backups, video conferencing, wins, domain controllers, active directory, and on-prem email relays.",Network Operations (Server / SAN),,critical and security patches,Security,Ervin Cheng,"1) apply patch
+2) restart system
+3) confirm patch 
+4) test system
+
+BACK OUT PLAN: 
+1) unapply patch
+2) restart system
+3) test system",
+,Completed,06/20/17 2:07 PM,web-form@smartsheet.com,Roger Smith,RESCHEDULED - 7/12/17 @ 4:30p,07/12/17,3:30 PM,apply OS patches to FileMaker server 3 (FS1),FileMaker server 3 will be unavailable,Multi-Team (Indicate groups in Additional Information),,apply OS patches,Fix / Patch,Roger Smith,"1) apply patches
+2) reboot server
+3) make sure FileMaker is available on server
+...
+
+BACK OUT PLAN: 
+restore from snapshot",
+,Completed,06/27/17 1:53 PM,web-form@smartsheet.com,John Reichling,Please shut it down and schedule it for removal after 90 days of downtime or at an agreeable amount of time you work out with Sean or Rich.,07/11/17,anytime,WSW-PRNTMGR Shutdown and decommission,none,Network Operations (Server / SAN),,This Windows 2003 server has no roles defined,Enhancement,Semaj Wright,"1) Please shut it down 
+2) Removal 
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,06/20/17 2:05 PM,web-form@smartsheet.com,Roger Smith,RESCHEDULED - 7/11/17 @ 4:30p,07/11/17,3:30 PM,apply OS patches to FileMaker server 2 (FS2),FileMaker Server 2 will be unavailable,Multi-Team (Indicate groups in Additional Information),,apply OS patches,Fix / Patch,Roger Smith,"1) apply patches
+2) reboot server
+3) make sure FileMaker is available 
+...
+
+BACK OUT PLAN: 
+restore from snapshot",
+,Completed,07/06/17 10:07 AM,web-form@smartsheet.com,Ethan Warren,these machines are VERY OLD...,07/07/17,11:45 am - 12:15 pm   half and hour,replace the g-bic 1000BaseSX G3/5 on the SWRP_6506-01 after hours and see if that resolves the issue.,"These switches will go down and wireless AP will go down:
+
+SWRP_W302_3560-48_01#sh cdp nei det | incl SWRP|ress:
+Device ID: SWRP-STOREROOM-3502.mwrd.local
+  IP address: 10.240.6.13
+  IPv6 address: FE80::72CA:9BFF:FE99:CB7  (link-local)
+  IP address: 10.240.6.13
+Device ID: SWRP_STOREROOM_2940.mwrd.local
+  IP address: 10.44.3.45
+  IP address: 10.44.3.45
+Device ID: SWRP_Purchasing_2960.mwrd.local
+  IP address: 10.44.3.46
+  IP address: 10.44.3.46
+Device ID: SWRP_6506E-01.mwrd.local  G3/5 only
+  IP address: 10.1.6.11
+  IP address: 10.1.6.11
+Device ID: SWRP_STOREROOM_EASTDOCK_2940.mwrd.local
+  IP address: 10.44.3.47
+  IP address: 10.44.3.47",Network Infrastructure,,reduce the communication errors between the storeroom SWRP_W302_3560-48_01 and the main core switch SWRP_6506E-01,Fix / Patch,Richard Wojkovich,"1) at the 6500 take out the fiber module g3/5
+2) install a replacement fiber module into slot g3/5
+3) watch and make sure everything works
+...
+
+BACK OUT PLAN: 
+....replace the old module and watch everything come back up",TRUE
+,Completed,06/27/17 12:01 PM,web-form@smartsheet.com,Thomas Muscarello,,07/07/17,330 p.m. - 5 hours,"Re-rack of voice equipment @ LASMA.  The voice, data & ups are in separate racks and contained in one small communications closet.  We need to re-rack all equipment into one rack and transfer all equipment to the new UPS.",Facility is closed at 315 and users will not be impacted.,Network Infrastructure,,We will remove all old equipment and confirm existing equipment is powered with the new UPS.,Enhancement,Thomas Muscarello,"1)Shut down voice & data equipment
+2)Re-rack voice equipment in same rack as UPS
+3)Re-run all voice & data power cables to new UPS
+4)Power up all equipment and test voice & data communications
+...
+
+BACK OUT PLAN: 
+no backing out",
+,Completed,06/27/17 11:18 AM,web-form@smartsheet.com,Thomas Muscarello,"We plan to be on site the following day July 7, 2017 to montior for any issues.  If all is good we will complete a re-rack & clean up of all old equipment.",07/06/17,12 p.m. for 30 mins,transition voice communications @ LASMA from the point to point circuit to the new ASE circuit.,Phones will be unavailable for LASMA staff during the switch over.,Network Infrastructure,,This will provide LASMA staff with a reliable voice connection.  We can eliminate a point to point T1 as well.,Enhancement,Thomas Muscarello,"1)Confirm outage window with all LASMA staff.
+2)Transition voice uplinks from dedicated T1 to ASE circuit.
+3)Test communications to SWRP and all facilities.
+4)Monitor communications for next 24 - 48 hours
+...
+
+BACK OUT PLAN: 
+1)move voice uplinks back to dedicated T1 until any issues are resolved with ASE.",
+,Completed,06/22/17 1:15 PM,web-form@smartsheet.com,John Reichling,Modify Step 7 to include small dev test of Auto-Upgrade from 12 to 14,07/06/17,Start time: Thursday 7:00 am; Total Duration including cleanup tasks = 2 days; End time: Friday 2:00 pm,"Symantec Endpoint Protection 12.1.5 In-place Upgrade on server SV-SEPM-PC1 to version 14 and all PC clients (Windows 10, Windows 7, and XP)",Symantec client on User's PC is silently upgraded from 12.1.5 (or 6) to 14.,"Desktop Engineering (Citrix, SCCM)",,Upgrade Symantec Endpoint Protection Management Server in order to push Symantec Antivirus client to Windows 10 devices.,Enhancement,Hussein Shamsuddin,"1) Verify Symantec server health and Symantec client count and reporting summary before upgrade
+2) Back up Symantec local database and prepare all documentation files needed to perform disaster recovery
+3) Verify local admin authentication account and password
+4) Stop the Symantec Endpoint Protection Manager service
+5) Run Symantec Endpoint Protection Manager Setup and finish upgrade
+6) Verify Client Count noted before Upgrade and Existing policies changes
+7) Upgrade the Symantec Endpoint Protection clients with AutoUpgrade
+    7a-- Use Client Deployment Wizard if AutoUpgrade fails
+8) Run License Wizard to ensure Symantec Endpoint Protection licenses are valid
+9) Notify and verify with all Symantec Admin and Report Admins that they are able to login and administer the system.
+
+BACK OUT PLAN: 
+1) Run disaster recovery steps outlined in the disaster recovery document attached in the smartsheet plan and performed in step 2 above",
+,Completed,07/06/17 11:36 AM,web-form@smartsheet.com,R. Beckman,,07/05/17,3:00 PM - 3:30 PM,update the view dbo.v_employee in mwrd_repo. This is to fix incident # 3825.,emails sent from the contract announcements will be correct.,Multi-Team (Indicate groups in Additional Information),,"incident #3825, one buyer is not getting emails from the contracts questions. The view update should return the correct email for this person, and everyone else.",Fix / Patch,Roger Smith,"1) update the query
+2) run script to update permissions
+3) user will test
+
+
+BACK OUT PLAN:",
+,Completed,06/28/17 2:27 PM,web-form@smartsheet.com,Richard Piotrowski,,07/03/17,"10:00a, 30 minutes","A Service Pack, Software Update for ManageEngine ADManager (VM ADMGR) is available.  See below link and email:
+https://www.manageengine.com/products/ad-manager/service-pack.html?6580admprel
+
+I downloaded the update file (6_5_0_SP-7) into the following folder location:
+\\Tomcat\Info_Tech\operations\Infrastructure\ADManager_Plus\Updates
+
+During this software upgrade, ADManager web console will be unavailable.  Please let me know how you would like to schedule/proceed with this software update.",Users of ManageEngine ADManager Software Web Console.  Support Desk and Infrastructure Staff.,Network Operations (Server / SAN),,Maintain latest software updates and features.,Fix / Patch,Patrick Kane,"1) Notify John Reichling of pending outage date/time/duratoin
+2) Stop services on system ADMGR
+3) Perform software patch installation
+4) Verify path installation successful
+5) Restart System
+6) Start Services (automatically).  Verify connectivity/functionality
+...
+
+BACK OUT PLAN: 
+Re-Apply previous service pack update (already downloaded)",
+,Completed,12/03/16 7:29 PM,web-form@smartsheet.com,ervin cheng,,06/30/17,,MS patching for mms  & LIMS,"(Lims, IPACS-don), MMS, dashboard, GIS, and file maker pro application will be restarted during Stickney router upgrade",Network Operations (Server / SAN),,"More secure, bug free environment",Fix / Patch,ervin cheng,"1)  run MS Update
+2)  restart server
+3) Confirm server up and app running
+
+BACK OUT PLAN: 
+
+1) uninstall patch, verify system apps
+2) if failed, use 3par to restore dataset.",
+,Completed,06/26/17 2:30 PM,web-form@smartsheet.com,Roger Smith,,06/29/17,4:30 - 6:30,Update production dashboard packages to work with CData ; ADD: Windows Update and VMWare Nic update,All production dashboards will be down.,Multi-Team (Indicate groups in Additional Information),,update packages to retrieve SAP data,Fix / Patch,Roger Smith,"1) stop services
+2) backup system
+3) run scripts to update packages
+4) start services
+...
+
+BACK OUT PLAN: 
+restore from backup",
+,Completed,06/14/17 10:51 AM,web-form@smartsheet.com,Ethan Warren,RESCHEDULED ; TASK CANCELED,06/28/17,3:45pm for 1 hour,Re-configure 6506-02 and SWRP_A135_3560cg8 to eliminate duplicate mac address errors on Nexus 5000 at SWRP,"SWRP safety training classroom in the basement,  cisco switch  SWRP_A135_3560cg8, TimeClock SWRP A133CORRIDOR BSMT,",Network Infrastructure,,eliminate duplicate mac address errors on Nexus 5000 at SWRP,Fix / Patch,Ethan Warren,"1) telnet into SWRP_1135_3560cg8 and configure g0/9 to trunk no access vlan 44
+2) telnet into SWRP_6506E-02 and configure g1/7 to trunk no access vlan 44
+3)
+...
+
+BACK OUT PLAN: return configuration of both ports to previous condition
+....",
+,Completed,06/21/17 12:39 PM,web-form@smartsheet.com,Patrick Sendera,RESCHEDULED to 7/6/2017,06/27/17,4AM.  Complete by 7AM,Install Windows Updates on production GIS servers and IISMWRD.  Catch up,"All GIS systems will be unavailable, public and internal.  All IISMWRD hosted apps will be unavailable",GIS,,Catch up on Windows patches,Security,Patrick Sendera,"1) Install patches
+2) Reboot
+3) Verify application functionality
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,06/20/17 1:59 PM,web-form@smartsheet.com,Roger Smith,Ray will log Outage for this update noting needed changes to restore the server.  2) Will also log each dB app for each FileMaker Pro server and share with the CAB team.,06/26/17,3:30 PM,apply patches to Filemaker Pro server 1 (FS3),File Maker server 1 will be unavailable,Multi-Team (Indicate groups in Additional Information),,apply os patches,Fix / Patch,Roger Smith,"1) apply patches
+2) reboot server
+3) make sure File Maker is available 
+...
+
+BACK OUT PLAN: restore from snapshot",
+,Completed,06/21/17 10:42 PM,web-form@smartsheet.com,Ethan Warren,,06/22/17,4:00pm lasting 10 minutes.,Move inside firewall connections from 3650 WAN switch to 6506 core switch at Stickney.,None.  Firewalls are configured for failover to keep internet access available.,Network Infrastructure,,Move connections to a 1Gbps switch and finalize internet bandwidth upgrade from 50Mbps to 250Mbps.,Enhancement,Ethan Warren,"1) Install copper gbics in switchports for connectivity in the 6505.
+2) Program switchports for correct VLAN and speed settings.
+3) Move connections from old 3560 switch to 6506 switch.
+...
+
+BACK OUT PLAN: 
+....
+
+1) Move connections back to original location.",
+,Completed,06/12/17 4:28 PM,web-form@smartsheet.com,Adrian Mason,Seans wants to review communication plan for overall LAN project ; RE_SCHEDULED,06/22/17,4:30 pm lasting approximately 1 hour.,Replace MOB first floor LAN switch.,"No PC, printer or time clock connectivity.",Network Infrastructure,,Provide back end throughput up to 10gb.,Enhancement,Ethan Warren,"1) Pre-configure new switch with current configuration from older switch.
+2) Install new switch in rack
+3) Move connections from old switch to new switch and test connectivity
+...
+
+BACK OUT PLAN: 
+....
+Revert back to existing switch if connectivity fails.",
+,Completed,01/30/17 4:14 PM,web-form@smartsheet.com,,system down from 10:00pm - 2:00am,06/17/17,,Monthly SAP Production Server Reboots,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots,Preventive,Kevin Young,"Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2",
+,Completed,05/30/17 11:42 AM,kellys2@mwrd.org,ervin cheng,Date is a place holder,06/17/17,,"MS patching for lims(done), ipacs(done)","(Lims, IPACS-don), MMS, dashboard, GIS, and file maker pro application will be restarted during Stickney router upgrade",Network Operations (Server / SAN),,"More secure, bug free environment",Fix / Patch,ervin cheng,"1)  run MS Update
+2)  restart server
+3) Confirm server up and app running
+
+BACK OUT PLAN: 
+
+1) uninstall patch, verify system apps
+2) if failed, use 3par to restore dataset.",
+,Completed,06/08/17 2:20 PM,web-form@smartsheet.com,Erin Keohane,,06/16/17,11:00 am - 2:00 pm,Upgrade of Legal Files Software. Rescheduled from 6/9/2017.Legal Files Support System not available for software push during the originally scheduled date and time.,Law users that are trying to access the Legal Files software.,ERP / SAP,,Keeping up to date with the latest version of the software.,Enhancement,Sharma Konkapaka,Upgrade the Legal Files Server with the latest software updates.,
+,Completed,06/06/17 10:27 AM,web-form@smartsheet.com,Erin Keohane,CANCELED,06/16/17,11:00 am - 2:00 pm,Upgrade of Legal Files Software,Law users that are trying to access the Legal Files software.,ERP / SAP,,Keeping up to date with the latest version of the software.,Enhancement,Sharma Konkapaka,Upgrade the Legal FIles Server with the latest software update.,
+,Completed,06/06/17 9:54 AM,web-form@smartsheet.com,Ethan Warren,No changes to MWRD equipment is needed,06/15/17,4:00 pm until 6:00 pm,Test and turn up of new internet circuit at Stickney.,"Internet browsing, and Email for plant personnel will be interrupted.  MobileIron, Polycom and Kara Company access will be interrupted.
+LDAP authentication for Workforce, Skillsoft, Rave and Tririga servers will be interrupted.",Network Infrastructure,,To increase out internet bandwidth to provide better response to web based services and a better internet browsing experience.,Enhancement,Ethan Warren,"1) Install new circuit (AT&T) - Complete
+2) Migrate all IP information to new service. (To be completed by AT&T engineer at time of turn up)
+3) Physically move internet connection to new fiber delivery and test.
+...
+
+BACK OUT PLAN: 
+....
+Reverse steps listed above.",
+,Completed,06/02/17 11:15 AM,web-form@smartsheet.com,ervin cheng,,06/12/17,3:30 p.m around 10 mins,Decommissioning of MOBWSUS,update services will be point to sccm instead of mobwsus,Network Operations (Server / SAN),,decommission of an old dl380 g5 server and reclaim vm licenses,Enhancement,ervin cheng,"1) shutdown mobwsus
+2) shutdown host
+...
+
+BACK OUT PLAN: 
+1) restart mobwsus
+2) restart host",
+,Completed,06/02/17 11:08 AM,web-form@smartsheet.com,ervin cheng,,06/08/17,6/8/2017 at 5:00 p.m for 1 hour,Increase storage on mob-vcenter host.  Create new disk array on host 10.18.100.60. Will required shutdown of host.,"The servers that is in mob-vcenter have to be shutdown as well as the host.  The servers are beta, mob-vcenter, SCCM01, SCCMDB, and sv-DHCPmob. Domain Controller, update server, and DHCP services will be unavailable.",Network Operations (Server / SAN),,Increase datastore and hard drive space for future growth.,Enhancement,ervin cheng,"1) shutdown all servers
+2) Put in maintenance mode
+3) shutdown host
+4) create raid 5 on host
+5) restart host
+6) rescan host and create new datastore
+7) test new datastore
+
+BACK OUT PLAN: 
+1) delete new raid
+2) start host and start vm
+3) test all vm and make sure all services are working",
+,Completed,05/15/17 3:30 PM,web-form@smartsheet.com,Kevin Young,,06/02/17,"Bring SAP PRD down close of business on June 2, 2017 - June 4, 2017.",Applying SAP System hotpacks.,SAP PRD will be unavailable while applying the hotpack updates.,ERP / SAP,,Bring all SAP modules up to date with the current release levels.,Enhancement,Kevin Young,"1. Take a copy of SAP PRD prior to hotpack installation
+2. Apply all hotpacks
+3. Perform post hotpack processing
+4. Have user testing on June 4, 2017 to validate the system
+5. Open the system for general use for June 5, 2017.",
+,Completed,05/22/17 4:34 PM,web-form@smartsheet.com,LaShun Osborn,,05/30/17,"Start time: 6pm, duration: 1 hour.",Decommission old DHCP servers (TLS01/MOB_BLMGR).,No expected impact. DHCP has been migrated to new DHCP environment.,Network Operations (Server / SAN),,Remove old entries in AD for DHCP servers as cleanup.,Security,Ervin Cheng,"1) Verify no remaining DHCP leases exist on old DHCP servers.
+2) Deauthorize old DHCP server in Active Directory.
+3) Verify old DHCP server removed from AD.
+4) Shut down old DHCP server.
+5) Repeat steps 1-4 for other old DHCP server.
+...
+
+BACK OUT PLAN: 
+1) Power on old DHCP server.
+2) Authorize DHCP server.",
+,Completed,05/17/17 10:26 AM,web-form@smartsheet.com,JR - John Reichling,,05/25/17,4:15 pm,The Wsus GPO associated with MWRD-Workstations will be replaced with the new SCCM01 Wsus GPO policy which has been tested using ITD computers.,"Once implemented, client computers will install the SCCM client and silently install several packages including ( Local Admin account changes and Samanage Client)",Network Operations (Server / SAN),,"Rollout SCCM, Samanage Client, and Local Administrative Account(s) / Passwords",New Implementation,Tom McEnery,"1) Remove /unlink existing MOBWSUS server GPO policy 
+2) Add / Link SCCM01 server GPO policy
+3)
+...
+
+BACK OUT PLAN: 
+.... Reverse action(s) if necessary",
+,Completed,03/31/17 4:29 PM,web-form@smartsheet.com,John Reichling,SCCM -  Disable administrator ; create new admin & new password (90-day cycle),05/25/17,4:15 pm,VBS Script  to update the disable Local admin password on all machines in the MWRD-Workstations OU and create a new Admin user BOB,"Local Domain Workstations in the MWRD-Workstations OU, TBD if this is to apply to the Default Domain OU....(NOT Recommended)",Network Operations (Server / SAN),,Consolidate the 2 - 3 local admin passwords into a single one that is changed on a regular schedule.,Security,Hussein,"1)TBD
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,01/30/17 3:09 PM,web-form@smartsheet.com,Kevin Young,system down from 10:00pm - 2:00am,05/20/17,,Monthly SAP Production Server Reboots,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots,Preventive,Kevin Young,"Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2",
+,Completed,05/23/17 9:18 AM,web-form@smartsheet.com,ervin cheng,,05/18/17,7 to 10 p.m.,MS Patching for all file servers,All file servers was patched with new microsoft updates,Network Operations (Server / SAN),,security and critical updates were apply to all file servers,Security,ervin cheng,"1. logon to file servers
+2. click on the update patches
+3. monitor and confirm all patches are installed
+...
+
+BACK OUT PLAN: 
+1. restored failed file server
+2. confirm and verify file server is operational",
+,Completed,05/15/17 3:01 PM,web-form@smartsheet.com,Ervin Cheng,,05/18/17,"start time 7 p.m., duration 10 mins",Change NIC type from E1000e to VMNET 3.0 for the server webapps,"districtjobs.org Contract Application, CSO, web applications",Network Operations (Server / SAN),,VMware network improvement and functionality,Fix / Patch,Ervin Cheng,"1) Shutdown server
+2) delete NICs, Recreate NICs with the new configuration and in type VMnet 3.0.
+3) Test network
+...
+
+BACK OUT PLAN: 
+1) delete new nic and recreate nic using old configuration.",
+,Completed,05/12/17 5:51 PM,web-form@smartsheet.com,LaShun Osborn,NetOps/Network Infrastructure,05/18/17,"Start time: 3:45pm, duration: 1.5 hours",Enable DHCP scopes for plant locations on the new DHCP server environment.,No expected downtime. Clients & wireless access points at plant locations will be migrated to the new DHCP environment.,Multi-Team (Indicate groups in Additional Information),,Migrating remaining DHCP scopes to new DHCP environment.,New Implementation,Ervin Cheng,"1) Update IP helper addresses on plant routers (Network Infrastructure.)
+2) Add scope exclusions to old DHCP servers.
+3) Export lease info from old Stickney DHCP server via PowerShell
+4) Import lease info into new DHCP server via PowerShell
+5) Activate scopes on new DHCP servers.
+...
+
+BACK OUT PLAN:
+1.) Add scope exclusions on new DHCP servers.
+2.) Remove scope exclusions on old DHCP servers
+3.) Update IP helper addresses on affected routers (Network Infrastructure).....",
+,Completed,05/16/17 2:58 PM,web-form@smartsheet.com,Ronald Thompson,Application Development,05/16/17,11:45am,Apply latest patch to iPACS production system.,The iPACS production system is impacted; users from M&R and Finance reside at the MOB downtown office and also at the,Multi-Team (Indicate groups in Additional Information),,Latest changes to iPACS production website will be put into place.,Fix / Patch,Ronald Thompson,"1)  Schedule time for patch application process
+2) Apply patch to iPACS production system
+3) Verify that system is available
+4) Send email to user notifying that system is available
+...
+
+BACK OUT PLAN: 
+1) Any issues will be referred to enfoTech",
+,Completed,05/05/17 4:37 PM,web-form@smartsheet.com,LaShun Osborn,NetOps/Network Infrastructure,05/12/17,4:35pm (1 hour),Enable DHCP scopes for MOBA subnets (floors 1-7) on the new DHCP servers.,No expected downtime. Clients located in MOBA and downtown wireless access points will be migrated to the new DHCP server environment.,Multi-Team (Indicate groups in Additional Information),,Migrate remaining downtown DHCP clients to new DHCP environment.,New Implementation,Ervin Cheng,"1) Update IP helper addresses on affected downtown routers (Network Infrastructure.)
+2) Add scope exclusions to old DHCP servers
+3) Activate scopes on new DHCP servers.
+...
+
+BACK OUT PLAN: 
+1.) Add scope exclusions on new DHCP servers.
+2.) Remove scope exclusions on old DHCP servers
+3.) Update IP helper addresses on affected routers (Network Infrastructure).....",
+,Completed,05/09/17 1:54 PM,web-form@smartsheet.com,,Application Development,05/08/17,12:00-12:05,Deploy patch version 20170503 to LIMS production system.,"The iPACS production system was impacted. Users (M&R departement) are located in the plants (Stickney, Calumet, Egan) and downtown offices.",Multi-Team (Indicate groups in Additional Information),,Fix issue with bankruptcies in iPACS production database,Fix / Patch,Ronald Thompson,"1) Send email to notify and get clearance from supervisors to execute patch deployment
+2) Run SQL scripts on iPACS production database
+3) Notify applicable managers that scripts have been run and process has been completed.
+
+
+BACK OUT PLAN: 
+1. Any issues will be referred to enfoTech.",
+,Completed,04/14/17 4:32 PM,web-form@smartsheet.com,M&R Department,Application Development Unit - LIMS/IPACS Team,05/03/17,11:30a-1:30p (down),"15-RFP-24 - LIMS, Task #1:  Integrate two instruments, a phenol scalar segmented flow analyzer instrument and a gas chromatograph instrument, into LIMS Production environment using Integration Manager.","LIMS Production System, label printers, and instrumentation.",Multi-Team (Indicate groups in Additional Information),,The phenol scalar segmented flow analyzer and gas chromatograph instruments will interface with the SampleManager LIMS Production System.,New Implementation,Roger Smith / Chentile Jackson,"1) Notify Stickney, Calumet, and Egan Lab Managers
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,04/14/17 4:53 PM,web-form@smartsheet.com,M&R Department,Application Development - LIMS/IPACS Team,05/03/17,11:30a-1:30p (down),"15-RFP-24 - LIMS Task #3:  Modify District Report Writer so that it displays the less than symbol, ""<"", for components that are below the reporting limit.  Import the District Report Writer modifications to LIMS Production System.",Login to LIMS Production System,Multi-Team (Indicate groups in Additional Information),,"The District Report Writer (CBOD Report) the Lb/Day column for Calumet, O'Brien, and Stickney plants should have '< value' displayed instead of <<0.",Fix / Patch,Roger Smith / Chentile Jackson,"1) 
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,04/14/17 4:38 PM,web-form@smartsheet.com,M&R Department,Application Development - LIMS/IPACS Team,05/03/17,11:30a-1:30p (down),15-RFP-24 - LIMS Task #2:  Add CAS number field to tables referencing Organics compounds.  Interface this change with the IPACS System.,"LIMS Production System, label printers, and instruments.
+IPACS Production System",Multi-Team (Indicate groups in Additional Information),,The interface between SampleManager LIMS and IPACS will match results by CAS number.,Enhancement,Roger Smith / Chentile Jackson,"1) 
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,04/27/17 8:27 AM,web-form@smartsheet.com,LaShun Osborn,,04/30/17,10am (1 hour).,Enable DHCP scope for 10.12.xx.xx subnet (4th floor MOB) on the new DHCP servers.,No expected downtime.,Network Operations (Server / SAN),,DHCP leases for the 10.12.xx.xx subnet (4th floor MOB) will be issued by the new DHCP servers for testing.,New Implementation,Ervin Cheng,"1) Connect to old DHCP server (MOB_BLMGR). 
+2) Select 10.12.0.0 scope. Deactivate scope.
+3) Repeat steps 1-2 on the other old DHCP server (TLS01)
+4) Connect to new MOB DHCP server (sv-dhcpmob).
+5) Activate10.12.0.0 scope on new server.
+6) Ensure scope change is replicated to WSW DHCP server (sv-dhcpwsw)
+
+
+...
+
+BACK OUT PLAN: 
+1) Deactivate 10.12.xx.xx scope on new DHCP servers.
+2) Activate 10.12.xx.xx scope on original DHCP servers.
+....",
+,Completed,04/27/17 8:04 AM,web-form@smartsheet.com,LaShun Osborn,,04/28/17,5:00pm (30 minutes),Adding IP helper addresses for new DHCP servers on the 10.12.xx.xx subnet (MOB 4th floor.),No expected impact. No additional changes being made to DHCP servers or existing IP helper address entries.,Network Infrastructure,,Allow for routing to new DHCP servers for subnet 10.12.xx.xx for testing.,New Implementation,Ethan Warren,"1) Connect to router(s).
+2) Run Cisco command to add the (2) additional IP helper addresses.
+
+...
+
+BACK OUT PLAN: 
+1.) Remove newly added IP helper address entries.
+....",
+,Completed,04/14/17 8:15 PM,web-form@smartsheet.com,Ethan Warren,Updated to include New Ironport VM now in production,04/28/17,7:00pm - 8:00pm,FireEye and Ironport security patches.,None,Network Infrastructure,,Upgrade FireEye appliances to latest security/OS patch level.,Fix / Patch,Ethan Warren,"1) Download new OS code
+2) Install new code
+3)
+...
+
+BACK OUT PLAN: 
+....
+If failure, appliance is configured to fail-open to allow normal traffic flow.",
+,Completed,01/30/17 3:08 PM,web-form@smartsheet.com,Kevin Young,"system down from 10:00pm - 2:00am. 
+Bob to Confirm",04/22/17,,Monthly SAP Production Server Reboots,"SAP, PBF and the District Website will be unavailable during this rebooting exercise",ERP / SAP,,Compliance with recommended Windows Server reboots,Preventive,Kevin Young,"Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2",
+,Completed,04/21/17 10:57 AM,web-form@smartsheet.com,Ronald Thompson,Bob to Confirm,04/20/17,12noon - 12:30pm,"Modified code for Lachat instrument download program will be moved to the LIMS production system. A new database table, LACH_CONFIG will also be created in the LIMS production database.","This change does not have a system-wide effect and does not require the system to be taken offline. Only the users of the Lachat instrument download program are affected. These users reside in the ALD laboratories at the Stickney, Calumet and Egan plants.",Multi-Team (Indicate groups in Additional Information),,The changes to the Lachat instrument download program will increase the efficiency of ALD laboratory operations by greatly reducing the time it takes to make changes to Lachat export instrument template configuration.,Enhancement,Ronald Thompson,"1) Back-up existing code used for Lachat instrument download
+2) Move modified Lachat instrument download code to production system
+3) Create LACH_CONFIG table in LIMS production database
+4) Copy LACH_CONFIG table data from development to production database
+...
+
+BACK OUT PLAN: 
+1) Move backup of Lachat instrument download code to production system",
+,Completed,04/14/17 12:47 PM,web-form@smartsheet.com,Ethan Warren,,04/20/17,4:30pm - 7:00pm,Replace DMZ switches located at SWRP.,"Interruption to Citrix, Polycom Video Conferencing, MobileIron, Email and internet browsing at for all plant locations.",Network Infrastructure,,Replace aging Cisco switches.,New Implementation,Ethan Warren,"1) Replicate programming from current switches to the new switches.
+2) Move up-links from existing switches to new switches.  Ensure DMZ network visibility.
+3) Move existing server/appliance connections to new switches and test accessibility.
+...
+
+BACK OUT PLAN: 
+....
+1) If switch up-links do not produce connectivity, revert back to original switch connections.
+2) If server/appliances are not accessible, revert back to original switch connections.",
+,Completed,04/11/17 8:50 AM,web-form@smartsheet.com,Richard Piotrowski,Ervin to Confirm or Reschedule ; TM to revisit,04/20/17,3:30pm,Update acct used for AD Sync,None,Network Operations (Server / SAN),,"Best practice, account currently in use not is not a service account",Security,Tom McEnery,"1) Update rights on service account
+2) Replace current account with service account 
+3) Test
+...
+
+BACK OUT PLAN: 
+1) replace with old account",
+,Completed,04/11/17 8:45 AM,web-form@smartsheet.com,Richard Piotrowski,"Tom McEnery will document changes.
+RP to confirm (In testing)",04/20/17,4:30pm,Azure SSO /Update GPO to allow for pass-thru authentication for Office 2013,None,Network Operations (Server / SAN),,User will no longer be require to save the outlook client password,Enhancement,Tom McEnery,"1) document GPO change
+2) test GPO on IT group
+3) rollout
+...
+
+BACK OUT PLAN: 
+reset GPO",
+,Completed,04/14/17 4:59 PM,web-form@smartsheet.com,M&R Department,Application Development - LIMS/IPACS Team,04/14/17,,15-RFP-24 - LIMS Task #6:  Configure background job to generate Grab samples daily in LIMS Production System.,This modification is already in LIMS Production System.,Multi-Team (Indicate groups in Additional Information),,"Grab samples logged in using the ""Login Schedule"" in LIMS Production System for all plants will create the appropriate grab samples without generating error messages",Fix / Patch,Roger Smith / Chentile Jackson,"1) 
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,03/20/17 4:19 PM,web-form@smartsheet.com,Reichling,,04/14/17,<Check with Tom McEnery>,Modification of existing GPO to removal current WSUS server and replace it with the new WSUS service on the SCCM infrastructure.,Computers will receive the updated GPO and the Windows Update settings will be modified to retrieve updates from the new WSUS service implemented with the SCCM project.,Network Operations (Server / SAN),,Only desktops will be retrieving windows updates from the SCCM managed WSUS server.,New Implementation,Tom McEnery,"1) 
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",TRUE
+,Completed,03/27/17 2:55 PM,web-form@smartsheet.com,ervin cheng,,04/13/17,Thursday 4/13/2017 at 7 p.m. duration about 6 to 7 hours,3PAR service processor and OS upgrade from 3.2.1(MU3) to 3.2.2 (MU4),"All SAP servers, application servers, GIS servers, File Maker Servers, IPACs & LIMs, SAP ERP servers, ReadSoft, Database servers, Dashboard, Legal servers, and mwrd site.",Network Operations (Server / SAN),,"HPE 3PAR OS 3.2.2 MU4 provides support for drive firmware updates, new drives, resolve multiple issues, and new functionalities.",Enhancement,ervin cheng,"1 -Start of OS upgrade 
+2 -SP Update with latest code (non-intrusive) 
+3 -Pre-Upgrade Checks (non-intrusive) (non-intrusive) 
+4 -Installation of Pre-req Patches 
+5 -Running pre-req Scripts 
+6 -Controller Node Upgrade (reboot) performed one at a time with host vali dation X (Node reboot time: P7000/8000 = 10 mins, P10000/20000 = 20 min) N - No. of Nodes, Z (5min default pause between nodes reboot. Max pause= 30min). 
+Customer to validate host access and approve node reboots 
+7 -Installation of Post Upgrade Patches 
+8 -Running Post Upgrade scripts 
+9 -Drive Cage firmware upgrade 
+10 -Health Check and other post checks 
+11 -Physical drives firmware upgrade (background task) 
+12 -Final Host Verification by Customer 
+13 -End of OS Upgrade 
+
+BACK OUT PLAN: 
+1 -Rollback when all nodes are NOT upgraded (one or more nodes pending for upgrade OR upgrade is not finalized/committed ) 
+2 -Rollback when all nodes are upgraded ( Upgrade is finalized/committed)",
+,Completed,04/11/17 8:41 AM,web-form@smartsheet.com,Rich Piotrowski,Server are replace by Azure AD,04/13/17,4:00 pm,Decommission ADFS server Infrastructure in Azure.,None,Network Operations (Server / SAN),,Allow for new Azure servers,New Implementation,Tom McEnery,"1) Shut down 2 Proxy Servers
+2) Test login from OWA
+3) Shut down ADFS servers
+4) Test login from OWA
+
+BACK OUT PLAN: 
+Restart servers and test",
+,Completed,04/05/17 2:52 PM,web-form@smartsheet.com,LaShun Osborn,,04/13/17,"Time: 5pm, Duration: 1 hour.","In preparation for the DHCP upgrade, configure scopes on current SWRP DHCP server (TLS01) to allow DHCP server to update host (A) records in DNS for all DHCP scopes configured on the TLS01 server.
+
+Also, DHCP scope options will be configured on the SWRP DHCP server to allow PXE boot for defined DHCP scopes for the SCCM project.",No predicted system downtime.,Network Operations (Server / SAN),,Deploy functionality of DHCP server updating DNS for DHCP clients. Allow PXE boot functionality for SCCM project.,Security,Rich Piotrowski,"1) Log into DHCP server.
+2) Bring up DHCP console.
+3.) For each DHCP scope, go to Properties, under 'DNS' select option to 'Always dynamically update DNS and PTR records.'
+4.) For each DHCP scope, go to Scope, & configure the following DHCP options:
+a. 066 Boot Server Host name
+b. 067 Bootfile Name.
+
+...
+
+BACK OUT PLAN:
+Set DHCP scopes to 'Dynamically update DNS A and PTR records only if requested by the DHCP clients.
+Remove defined DHCP scope options 066 & 067.",
+,Completed,03/30/17 9:14 AM,web-form@smartsheet.com,Semaj Wright,,04/13/17,anytime,Decommission of MFPDMGR.mwrd.local [10.33.102.66],No user's are impacted. New replacement server is in production [MFPDMGR3].  All Canon MFDs have been added to new server. Each device's Scan to email/file has been tested. New server has been stable for 30 days with no issues.,Network Operations (Server / SAN),,Decommission of old server which is no longer needed.,Enhancement,Semaj Wright,"1) Shutdown server
+2) See Infrastructure section
+3)
+...
+
+BACK OUT PLAN: 
+....If any issues occur there is a secondary VM server MFDMGR2 that can be used as backup ShareScan server.",
+,Completed,03/27/17 2:51 PM,web-form@smartsheet.com,ervin cheng,Need replacement of 3PAR drive to pass Health Check ; new drive must match current firmware or all drives must be upgradeded to current firmware,04/12/17,Thursday 4/12/2017 at 2 p.m. duration about 6 to 7 hours,3PAR service processor and OS upgrade from 3.2.1(MU3) to 3.2.2 (MU4),"OAKBROOK 3Par will be upgraded. All Citrix, File Servers, Print Servers, Video Conferencing,  Telephone servers, and district jobs.  This upgrade is non-intrusive and non-disruptive according to HP technician that will be working remotely.",Network Operations (Server / SAN),,"HPE 3PAR OS 3.2.2 MU4 provides support for drive firmware updates, new drives, resolve multiple issues, and new functionalities.",Enhancement,ervin cheng,"1 -Start of OS upgrade 
+2 -SP Update with latest code (non-intrusive) 
+3 -Pre-Upgrade Checks (non-intrusive) (non-intrusive) 
+4 -Installation of Pre-req Patches 
+5 -Running pre-req Scripts 
+6 -Controller Node Upgrade (reboot) performed one at a time with host vali dation X (Node reboot time: P7000/8000 = 10 mins, P10000/20000 = 20 min) N - No. of Nodes, Z (5min default pause between nodes reboot. Max pause= 30min). 
+Customer to validate host access and approve node reboots 
+7 -Installation of Post Upgrade Patches 
+8 -Running Post Upgrade scripts 
+9 -Drive Cage firmware upgrade 
+10 -Health Check and other post checks 
+11 -Physical drives firmware upgrade (background task) 
+12 -Final Host Verification by Customer 
+13 -End of OS Upgrade 
+
+BACK OUT PLAN: 
+1 -Rollback when all nodes are NOT upgraded (one or more nodes pending for upgrade OR upgrade is not finalized/committed ) 
+2 -Rollback when all nodes are upgraded ( Upgrade is finalized/committed)",
+,Completed,04/05/17 2:45 PM,web-form@smartsheet.com,LaShun Osborn,,04/06/17,"Time: 5pm, duration: 1 hour.","In preparation for the DHCP upgrade, configure scopes on current MOB DHCP server (MOB_BLMGR) to allow DHCP server to update host (A) records in DNS for all DHCP scopes configured on the MOB_BLMGR server.
+
+Also, DHCP scope options will be configured on the MOB DHCP server to allow PXE boot for defined DHCP scopes for the SCCM project.",No predicted system downtime.,Network Operations (Server / SAN),,Deploy functionality of DHCP server updating DNS for DHCP clients. Allow PXE boot functionality for SCCM project.,Security,Rich Piotrowski,"1) Log into DHCP server.
+2) Bring up DHCP console.
+3.) For each DHCP scope, go to Properties, under 'DNS' select option to 'Always dynamically update DNS and PTR records.'
+4.) For each DHCP scope, go to Scope, & configure the following DHCP options:
+     a. 066 Boot Server Host name
+     b. 067 Bootfile Name.
+
+...
+
+BACK OUT PLAN:
+Set DHCP scopes to 'Dynamically update DNS A and PTR records only if requested by the DHCP clients.",
+,Completed,04/04/17 9:57 AM,web-form@smartsheet.com,Thomas McEnery,Working with MS FTC to accomplish the tasks involved,04/04/17,"After CoB, 4:30 to 6:30pm","Removing our ADFS services from the O365 / Azure configuration, Authentication will occur in AADP after changes are made.","Email Authentication may be effected during the cutover, MS stated outage should be no more than 20 - 30 min.",Multi-Team (Indicate groups in Additional Information),,"To upgrade our authentication methods to take advantage of our new EMS lisc and enabling SSO, Intune, etc.",Enhancement,Thomas McEnery,"1) Run the script to remove the ADFS server from the Auth path
+2) Force a full replication of the AD to AADP
+3) Test to make sure clients can still authenticate
+4) Contact Control Room to see if they can still access OL
+...
+
+BACK OUT PLAN: Roll back changes
+....",TRUE
+,Completed,01/30/17 3:06 PM,web-form@smartsheet.com,Kevin Young,system down from 10:00pm - 2:00am,03/28/17,,Monthly SAP Production Server Reboots,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,"Purpose / Desired Result	Compliance with recommended Windows Server reboots",Preventive,Kevin Young,"Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2",
+,Completed,03/21/17 4:21 PM,web-form@smartsheet.com,Ethan Warren,,03/24/17,6:00 pm - 10:00 pm,Upgrade to MOB core switch from 6500 platform to 6800 platform,"The main website/portal (mwrd.org), gispub.mwrd.org, districtjobs.org, ftp.mwrd.org, forms.mwrd.org, and guest WiFi connectivity.  General network access (login) and Internet browsing will also be interrupted at the MOB Complex.",Network Infrastructure,,"Replacing aged dual chassis format with higher bandwidth, single format chassis.",New Implementation,Ethan Warren,"1) Remove WAN connection from 6500 chassis onto the new 6800 chassis. Verify WAN communications from 6800 chassis.
+
+2) Remove existing fiber LAN connections from patch panel and connect new pre-connected fiber to corresponding ports on patch panel.
+
+3) Verify connectivity and communications for each LAN segment.
+...
+
+BACK OUT PLAN: Move all connections back to originating 6500 and workgroup switches.
+....",
+,Completed,03/13/17 9:49 AM,web-form@smartsheet.com,Thomas McEnery,"This will be performed by T.McEnery and K.Young, the process should take no longer than a minute or 2 for each Dept group moved. It was tested again last week and went smoothly.",03/23/17,"Will be performed during the workday to assure no outage, remediate any issues immediately","Work with Kevin Young to move the rest of the Dept SecGrps to the new OU structure as part of the AD cleanup. The remaining groups will be migrated and remediated and they are;
+
+Engineering Users
+R&D Users
+Purchasing Users
+Gen_Admin Users
+Treasury
+Law
+M&O Users","Migrating the Dept SecGrp may result in a momentary loss of access to the Home Tab on the SAP portal. We have already tested this twice and it takes around 5 min for the change to become user facing, however the remediation is performed in under 2 min and doesn't get a change to be noticed.",Multi-Team (Indicate groups in Additional Information),,This is part of the AD cleanup / reorganization project.,Enhancement,Thomas McEnery,"1) Migrate SecGrp to new OU
+2) Refresh SAP pointer to the associated SecGrp
+3) Test to see if access is lost / restored
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,03/21/17 12:19 PM,web-form@smartsheet.com,ervin cheng,,03/21/17,3 p.m. to 5 p.m. around 2 hour,Move F5 appliance from 4th floor to 1st floor MOB,"All Portal MWRD traffic will be affected if system is not move according to plan. If planned is executed without any complication, then no one will be affected.",Network Operations (Server / SAN),,MOB 4th floor decommission. The F5 is utilizing 4 Racks that must be decommission.,Preventive,ervin cheng,"1.	Make sure config is the same and saved in local drive at 3 p.m.
+2.	Shutdown passive F5 appliance.
+3.	Make sure no connection has drop and website is still up.
+4.	Unmount F5 appliance and unplug all connections.
+5.	Move to 1st floor telephone room
+6.	Mount F5 appliance and plug all connections back.
+7.	Make sure heartbeat is up. Email everyone part 1 is done.
+8.	At 4:30. Make the passive node the active node.
+9.	Make sure no connection has drop and website is still up.
+10.	Unmount F5 appliance and unplug all connections.
+11.	Move to 1st floor telephone room
+12.	Mount F5 appliance and plug all connections back.
+13.	Make sure heartbeat is up. Email everyone that the F5 appliance is moved.
+
+BACK OUT PLAN: 
+put back the F5 where it originally was and plug back all connections in it's original location",
+,Completed,03/07/17 4:27 PM,web-form@smartsheet.com,Thomas McEnery,,03/21/17,"During the Day, duration should be less than 30 - 60 min",Enable Azure SSO for SAManage before the debut / pilot of the application,System is not in production yet,Multi-Team (Indicate groups in Additional Information),,To Enable SSO for the new service desk app SAManage,Enhancement,Thomas McEnery,"1) https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-samanage-tutorial
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",TRUE
+,Completed,02/17/17 3:08 PM,web-form@smartsheet.com,Thomas McEnery,https://docs.microsoft.com/en-us/azure/active-directory/active-directory-federation-sha256-guidance,03/20/17,"Anytime, modifying the token length is a drop down that will take <1 min to change.  8:00p.m.",Upgrade our O365 AFDS token signing algorithm to SHA-256.,"Per MS, ""After you have set the signature algorithm with one of the two processes below, AD FS signs the tokens for Office 365 relying party trust with SHA256. You don't need to make any extra configuration changes, and this change has no impact on your ability to access Office 365 or other Azure AD applications.""",Network Operations (Server / SAN),,"Per MS, ""You are receiving this message because our reporting indicates your organization may be using the less secure SHA-1 token signing algorithm. By utilizing the SHA-256 algorithm, your organization will be able to take advantage of a more secure Azure AD authentication.""",Enhancement,Thomas McEnery,"1) Log into Primary ADFS server and open ADFS management console
+2) Expand to Relying Party Trusts, MS O365 ID Platform, Properties
+3) Advanced Tab, change algorithm
+...
+
+BACK OUT PLAN: Roll back, changes.
+....",
+,Completed,03/10/17 11:25 AM,web-form@smartsheet.com,LaShun Osborn,,03/16/17,"Time: 4pm, duration: 30 minutes.","In preparation for the DHCP upgrade, configure scopes on current DHCP servers (TLS01 and MOB_BLMGR) to allow DHCP servers to update host (A) records in DNS for all DHCP scopes.",No predicted system downtime.,Network Operations (Server / SAN),,Deploy functionality of DHCP servers updating DNS for DHCP clients.,Security,Ervin Cheng,"1) Log into DHCP server.
+2) Bring up DHCP console.
+3.) For each DHCP scope, go to Properties, under 'DNS' select option to 'Always dynamically update DNS and PTR records.'
+4.) Repeat steps 1-3 on the second DHCP server.
+
+...
+
+BACK OUT PLAN:
+Set  DHCP scopes to 'Dynamically update DNS A and PTR records only if requested by the DHCP clients.",
+,Completed,02/28/17 10:56 AM,web-form@smartsheet.com,Thomas Muscarello,,03/10/17,5:00 p.m.,"Replacing work group switch located in the main telephone room on the 1st floor of the MOB building from a 3560 to a 2960x.  Network up links connecting to the Board Room switch, Board Room Video Switch & Waterways switch will be reconfigured as well.","The following users will be impacted; Board room, Board room video equipment, Public Affairs, MOB Police Desk, Waterways (business network only).  Police and Waterways will be the only areas staffed at the time.  We will coordinate with both locations before and after maintenance.  The process control network will not be impacted during this maintenance window.",Network Infrastructure,,The new switch will provide additional port capacity and allow for a temporary reconfiguration of up link connections to water ways & board rooms.  The uplink reconfiguration will reduce the home run connections back the to 6500 and assist with the 6800 implementation.,New Implementation,Thomas Muscarello,"1) Notify Police & Waters and confirm maintenance window start time. 
+2) Move all copper connections from old 3560 to new 2960x.
+3) Confirm police are operational. 
+4) Move waterways fiber from 6500 to new 2960x
+5) Confirm water ways is operational.
+6) Move board room fiber (x2) from 6500 to 2960x
+7) Confirm board room is operational.
+...
+
+BACK OUT PLAN: 
+
+Move all connections back to original up link locations.
+....",
+,Completed,03/03/17 3:42 PM,web-form@smartsheet.com,LaShun Osborn,,03/09/17,"Time: 4pm, duration: 30 minutes.","In preparation for DHCP upgrade, in line with best practice, set each DHCP server (TLS01 and MOB_BLMGR) to use a domain service account (MWRD\DNSUpdate) to update DNS records for clients using DHCP. Set the option on the 10.12.xx.xx scopes (4th floor MOB) to allow DHCP servers to update host (A) records .",DNS updates for DHCP clients on 4th floor MOB (10.12.150.xx and 10.12.200.xx scopes.),Network Operations (Server / SAN),,Align current DHCP configuration with recommended/best practice. Test functionality of DHCP updating DNS on subset of DHCP clients (4th floor MOB)with minimal impact.,Security,Ervin Cheng,"1) Log into DHCP server.
+2) Bring up DHCP console.
+3) At the IPv4 level Properties, under 'Advanced', select Credentials and enter the username/password for service account. 
+4.) At the 10.12.xx.xx scope level Properties, under 'DNS' select option to 'Always dynamically update DNS and PTR records.'
+5.) Repeat steps 1-4 on the second DHCP server.
+
+...
+
+BACK OUT PLAN: 
+1.) Set 10.12.xx.xx scope to 'Dynamically update DNS A and PTR records only if requested by the DHCP clients.
+2.) Remove service account credentials. DHCP will revert to using $DHCPSERVERNAME, which it currently uses. ....",
+,Completed,02/14/17 11:49 AM,web-form@smartsheet.com,Thomas McEnery,"This will be performed by T.McEnery and K.Young, the process should take no longer than a minute or 2 for each Dept group moved. It was tested a few months ago and went smoothly.",03/09/17,Can be performed at any time and only takes a minute to implement. 8:30p.m.,Migrating the Department AD groups that control access to the Employee portal,Users may experience a short loss of access to their Portal Tabs.,Multi-Team (Indicate groups in Additional Information),,This is part of the AD cleanup project of consolidating SecGrps into a new AD structure.,Enhancement,Thomas McEnery / Kevin Young,"1) Move the AD Dept Security group from the default OU to the new OU
+2) SAP reassigns the Dept Security grp their previous rights
+3)
+...
+
+BACK OUT PLAN: If there are any issues with the migration the groups can be moved back to their original OU.
+....",
+,Completed,02/28/17 10:48 AM,web-form@smartsheet.com,Ram Vaitla,,03/03/17,2:00pm & will be up on/before 4:00pm (2 hours),"The District's Network FAX Server will be shutdown on Friday, March 3, 2017 between 2:00pm and 4:00pm to migrate the Server from 4th floor to 1st floor at MOB.",MWRD Network fax services receive and send will be unavailable; The Quote Requests from SAP will hold the queue and will be released after 4:00pm.,Network Infrastructure,,Migrate all equipment from 4th floor computer room and decommission Computer room at MOB.,Preventive,Ram Vaitla @ 312-751-4444,"1) Stop fax services and send_fax job in SAP_PRD system
+2) Uninstall the Kofax Server and Communication (Line) Server from the 4th floor computer room.
+3) Install the Kofax Server and Communication (Line) Server in 1st floor at MOB.
+4) Start the Kofax Windows Server and fax services and validate the send/receive fax queue.
+5) Release send_fax queue of the SAP_PRD system and validate the fax transmissions.
+6) Notify Purchasing Users to check the status of RFQs and send few faxes to validate.
+...
+
+BACK OUT PLAN: 
+Move the Kofax server and Communication (Line) Server from 1st floor to 4th floor and reconnect all necessary cables.
+Start the Windows Server, fax services, SAP send_FAX queue and validate the fax transmissions.
+
+....",
+,Completed,02/14/17 1:10 PM,web-form@smartsheet.com,Ram Vaitla,Notification sent to KOFAX_Users group on 2/28/17,03/03/17,2:00pm & will be up on/before 4:00pm (2 hours),"The District's Network FAX Server will be shutdown on Friday, Feb 17, 2017 between 2:00pm and 4:00pm to migrate the Server from 4th floor to 1st floor at MOB.",MWRD Network fax services receive and send will be unavailable; The Quote Requests from SAP will hold the queue and will be released after 4:00pm.,Network Infrastructure,,Migrate all equipment from 4th floor computer room and decommission Computer room at MOB.,Preventive,Ram Vaitla @ 312-751-4444,"1) Stop fax services and send_fax job in SAP_PRD system
+2)  Uninstall the Kofax Server and Communication (Line) Server from the 4th floor computer room.
+3) Install the Kofax Server and Communication (Line) Server in 1st floor at MOB.
+4) Start the Kofax Windows Server and fax services and validate the send/receive fax queue.
+5) Release send_fax queue of the SAP_PRD system and validate the fax transmissions.
+6) Notify Purchasing Users to check the status of RFQs and send few faxes to validate.
+...
+
+BACK OUT PLAN: 
+Move the Kofax server and Communication (Line) Server from 1st floor to 4th floor and reconnect all necessary cables.
+Start the Windows Server, fax services, SAP send_FAX queue and validate the fax transmissions.
+....",
+,Completed,03/01/17 2:44 PM,web-form@smartsheet.com,Robert Beckman,,03/01/17,5 p.m to 5:30 p.m.,"Move physical eccdsmp, readsoft invoicing, server.  from MOB 4th floor computer room to 2nd floor telephone room.",readsoft invoicing server. Accounts Payable Section will be affected. Users have been notify of the outage,Network Operations (Server / SAN),,4th floor decommission need this server to be relocated so they computer room can be cleaned out.,Preventive,Ervin Cheng,"1) shutdown eccdmsp
+2) remove all cable and network connections. carry across street to annex building
+3) attach all cables, network connections, and rack mount to server.
+4) Power on server and test all connections and application
+
+BACK OUT PLAN: 
+1) shutdown eccdmsp
+2) remove all cable and network connections. carry across street to MOB building
+3) attach all cables, network connections, and rack mount to server.
+4) Power up server and test application",
+,Completed,01/30/17 3:04 PM,web-form@smartsheet.com,Kevin Young,"system down from 10:00pm - 2:00am.
+
+Rescheduled to 2/27. Expired password, could not login.",02/27/17,,Monthly SAP Production Server Reboots,"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Compliance with recommended Windows Server reboots,Preventive,Kevin Young,"Server shutdown order
+a.	MWRDECCP0
+b.	MWRDECCP1
+c.	MWRDNBWP0
+d.	MWRDNDIP1
+e.	MWRDBOBP1
+f.	MWRDPBFP1
+g.	MWRDCEPP1
+h.	MWRDPRDDB
+Server restart order
+i.	MWRDPRDDB
+j.	MWRDECCP0
+k.	MWRDECCP1
+l.	MWRDNBWP0
+m.	MWRDNDIP1
+n.	MWRDBOBP1
+o.	MWRDPBFP1
+p.	MWRDCEPP1
+Server shutdown order
+q.	MWRDNEPP1
+r.	MWRDNEPP2
+s.	MWRDNEPP0
+Server restart order
+t.	MWRDNEPP0
+u.	MWRDNEPP1
+v.	MWRDNEPP2",
+,Completed,02/24/17 3:19 PM,web-form@smartsheet.com,RObert Beckman,,02/24/17,5:00pm - duration < 1min interruption,Apply updated ssl cert for www.mwrd.org to the F5 applicance.,"HTTPS traffic to district website, www.mwrd.org, will begin using new ssl cert.",Web / Portal Team,,Provide secure HTTPS communication to the website,Security,Robert Beckman,"1) renew GoDaddy SSL cert 
+2) load cert into F5 standby server
+3) make standby server active
+4) load cert into second F5 server
+5) make second F5 server the active node
+...
+
+BACK OUT PLAN: 
+    Not applicable. Must apply new ssl cert before 2/25/2017.",
+,Completed,02/14/17 3:05 PM,web-form@smartsheet.com,Ethan Warren,,02/23/17,4:30 pm.  Duration approximately 30 minutes,Reboot of MOB firewall.,Access to the internet and email through MOB will be down.  Websites will not be accessible to the public.,Network Infrastructure,,To clear out any stale routes or cached information which may cause undesirable traffic flows.,Preventive,Ethan Warren,"1) Backup firewall configuration.
+2) Disconnect failover links to prevent standby firewall becoming active.
+3) Reboot each firewall independently to ensure clearing of cached information.
+...
+
+BACK OUT PLAN: 
+....
+1) Independent booting will allow one firewall to remain running in the event the other does not restart and will become the active firewall until replacement for the defective firewall can be acquired and installed.",
+,Completed,02/14/17 11:04 AM,web-form@smartsheet.com,Roger Smith,,02/23/17,3:00 PM - 6:00 PM,Move IPACS database to new server,IPACS will be unavailable at this time,Multi-Team (Indicate groups in Additional Information),,"move iPacs off of container DB setup, onto new server. This is for licencsing purposes.",Preventive,Roger Smith,"1) shut down ipacs DB
+2) copy DB to new server
+3) change web.config files to point to new location
+4) open new DB
+5) test application
+BACK OUT PLAN: 
+turn off new DB, change web.config files, open old DB",
+,Completed,02/21/17 11:41 AM,kellys2@mwrd.org,Bob Beckman / Kevin Young / Thom. Mc.,,02/22/17,8:00p.m.,Add/generate new CERT for www.mwrd.org,,,,,,,,
+,Completed,02/16/17 7:31 AM,web-form@smartsheet.com,Semaj Wright,,02/21/17,5:00pm,Troubleshoot and apply patches which require a reboot of server.,ShareScan scanning feature on all Canon MFD,Multi-Team (Indicate groups in Additional Information),,Resolve slow response when scanning,Fix / Patch,Semaj Wright,"1) Reboot server
+2) Apply application patch 
+3) Reboot server
+...
+
+BACK OUT PLAN: 
+.... Uninstall patch
+     Reboot server",
+,Completed,01/30/17 4:12 PM,web-form@smartsheet.com,Kevin Young,system down from 10:00pm - 2:00am,02/11/17,,Monthly SAP Production Server Reboots (~15 Servers),"SAP, PBF and the District Website will be unavailable during this rebooting exercise.",ERP / SAP,,Rebooting catch-up to remain compliant with recommended Windows Server reboots.,Preventive,Kevin Young,"Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2",
+,Completed,02/06/17 4:12 PM,web-form@smartsheet.com,Roger Smith,Snapshot will be 3:00p.m.  MOVED TO Thurs 2/23,02/09/17,,Move Oracle databases from IPACS12c to ORADBPRD1A,"LIMS and iPacs will be down for about 2-3 hours, starting at 3:00 PM",Network Operations (Server / SAN),,Move the databases off of the container databases and on to a conventional DB setup. This is for licensing purposes.,Preventive,Roger Smith,"1) snapshot server ORADBPRD1A
+2) Shut down DB's on IPACS12C
+3) Move LIMS and IPACS DB's to ORADBPRD1A
+4) Configure APP servers to poin to new Databases
+5) Bring up databases on server ORADBPRD1A
+6) restart services on APP servers
+7) test connections
+8) allow users to log in
+
+BACK OUT PLAN: 
+- Shut down DB's on ORADBPRD1A
+- Start DB's on IPACS12C
+- Point APP servers to IPACS12C",
+,Completed,01/31/17 2:03 PM,web-form@smartsheet.com,Raymond McCague,Snapshot will be 3:00p.m.,02/08/17,,A snapshot needs to created of the server VMPERFDB. An update to the CDATA has to be applied to the server to fix a bug in the software.  CDATA helps get data from SAP for the Dashboard.,The Dashboard will be down. The url is: http://vmperfap/Dashboard/portalHome.jsp,,,The snapshot will provide a backup on the slim chance that applying CDATA update causes a problem,Fix / Patch,Raymond McCague,"1) The default instance database on the Server:VMPERFDB will be shutdown.
+2) The server:VMPERFB will be shutdown.
+3) A snapshot of the server will be created.
+4) The server will be started.  The database will automatically be started.
+5) The CDATA update will be applied.
+...
+
+BACK OUT PLAN: 
+1) The default instance database on the Server:VMPERFDB will be shutdown on the server. 
+2) The server: VMPERFDB will be shutdown.
+3) The snapshot created will be used in place of the current VM.
+4) The server will be started.  The database will automatically be started.",
+,Completed,02/02/17 5:22 PM,web-form@smartsheet.com,Robert Beckman,,02/03/17,,Restart of SAP system to accommodate new audit file format that will allow for UNIX server audit file to be read along with the current Windows audit files. This will be done after 10 pm. This was originally scheduled for 02/02/2017 but the backup of a file folder to supply the necessary storage space has not completed.,SAP will be unavailable from 10 - 10:30,ERP / SAP,,This will allow for UNIX server audit file to be read along with the current Windows audit files.,Enhancement,Kevin Young,Change the system parameter FN_AUDIT in MWRDECCP1 to read P#++++++++.AUD,TRUE
+,Completed,01/31/17 5:02 PM,web-form@smartsheet.com,Robert Beckman,,02/02/17,,Restart of SAP system to accommodate new audit file format that will allow for UNIX server audit file to be read along with the current Windows audit files. This will be done after 10 pm.,SAP will be unavailable from 10 - 10:15,ERP / SAP,,This will allow for UNIX server audit file to be read along with the current Windows audit files.,Enhancement,Kevin Young,Change the system parameter FN_AUDIT in MWRDECCP1 to read P#++++++++.AUD,TRUE
+,Completed,01/30/17 4:03 PM,web-form@smartsheet.com,Kevin Pendergast,4:30p.m.,02/02/17,,All WIFI will be down for reboot of controller and AP's.,All WIFI users,Network Infrastructure,,New Code Update and new Guest WIFI router,,Kevin Pendergast,"1) 
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,01/23/17 1:55 PM,web-form@smartsheet.com,Ethan Warren,3:30p (SWRP) ; 4:30p (MOB/C),02/02/17,,Update the OS on FireEye appliances at MOB and Stickney,None.,Network Infrastructure,,Update the OS to the latest code and security patches.,Fix / Patch,Ethan Warren,"1) Download new OS from FireEye
+2) Install new OS version
+3) Reboot to apply OS and patches
+...
+
+BACK OUT PLAN: In the event of a failure, the appliances will go into a ""fail open"" state allowing traffic to pass through until a replacement can be obtained.
+....",
+,Completed,02/01/17 5:25 PM,web-form@smartsheet.com,Mike Burke,,02/01/17,,copy updated DLL to IPACPRDAPP: SummaryDataService.Core.dll,IPACS,Multi-Team (Indicate groups in Additional Information),,This is a correction to a calculation for mg/day,Fix / Patch,Roger Smith,"1) back up file SummaryDataService.Core.dll
+2) copy new file
+3) restart ipacs application pool
+...
+
+BACK OUT PLAN: 
+restore old file, restart ipacs application pool",
+,Completed,02/01/17 11:58 AM,web-form@smartsheet.com,Mike Burke,,02/01/17,,Change the iPACS web config value (used in the report cache) in PRODUCTION iPACS web app server,iPacs will temporarily be down,Multi-Team (Indicate groups in Additional Information),,prevent crystal reports from crashing,Fix / Patch,Roger Smith,"1.)    Stop iPACS web app application pool
+2.)    Open the iPACS web config file
+3.)    Locate the key=”ReportLimit”
+4.)    Change the value from “-1” to “25”
+5.)    Save the updated config file
+6.)    Re-start the iPACS application pool
+
+BACK OUT PLAN: Change ""ReportLimit"" back to original setting
+....",
+,Completed,01/24/17 8:50 AM,web-form@smartsheet.com,Roger Smith,Only the log server ; non user impacting,01/27/17,,increase CPU on server DBFS,,Multi-Team (Indicate groups in Additional Information),,"CPU has been hitting at or close to 100%, this impacts performance. Increase CPU to increase performance.",Preventive,Roger Smith,"1) shut down server
+2) increase CPU
+3) restart server
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,01/31/17 10:31 AM,web-form@smartsheet.com,M&R,,01/26/17,,turned off the “Cache” feature defined on the iPACS web config in your Prod Server,ipacs production,Multi-Team (Indicate groups in Additional Information),,"We found that turning-off the “Cache” feature for the report template defined on iPACS web config, fixed the issue where the report parameter page hangs (after a report is loaded and/or another report is loading).",Fix / Patch,Enfotech,"1) turn off cache feature in web config 
+2) reboot server
+3)
+...
+
+BACK OUT PLAN: turn on cach feature, re-boot server
+....",
+,Completed,01/20/17 2:17 PM,web-form@smartsheet.com,Robert Beckman,,01/20/17,,Reboot of apps.mwrd.org and districtjobs.org on 1/20/2017 @ 10:00 pm,District Jobs,ERP / SAP,,To Resolve intermittent connection loss issue.,Fix / Patch,Kevin Young,Reboot apps.mwrd.org and districtjobs.org,TRUE
+,Completed,01/13/17 11:21 AM,web-form@smartsheet.com,Mark Lopatka,,01/19/17,,Move USB-KEYMGR physical server from MOB 4th floor computer room to MOBA 2nd floor computer room. will take approximately 1 to 2 hours after 4:30 pm,"Pipeflow with VJ Patel, Powertools with Mathew Kattappurath and Joe Collins, RISA with VJ Patel, Structure Point with VJ Patel, MathCAD with VJ Patel. Mostly it's engineering.",Network Operations (Server / SAN),,Decommissioned of the MOB 4th floor computer room.,Fix / Patch,Ervin Cheng,"1) created full backup of server
+2) shutdown server
+3) disconnect all physical connections
+4) move across the street and mount server and connections to new location
+5) test all services and application with help from sys admins
+
+BACK OUT PLAN: 
+
+1) move back the server to original location and reconnect all connections
+2) test all services and application with help from sys admins",
+,Completed,11/08/16 8:53 AM,web-form@smartsheet.com,Ervin Cheng,Communication out to District by Monday January 5,01/14/17,,Stickney Switch replacement 2p-6p,"3par, UCS, DDO, Replication, All Application, SAP, and Operations servers.",Network Operations (Server / SAN),,Remove Old 4/24 SAN Switch with new refurbish SAN Switch 8/32,Fix / Patch,ervin cheng,"1) Move one fabric at a time to minimize the impact
+2) Finish one switch, then do the other switch
+3) Test if everything is move successfully and packets are flowing in all ports
+...
+
+BACK OUT PLAN: 
+Move back the fabrics and make sure all ports are flowing again",
+,Completed,01/10/17 11:39 AM,web-form@smartsheet.com,Kevin Young,,01/10/17,,"Load SAP Year End Updates SAP_HR & EA_HR support levels A6, A7 and A8.",,ERP / SAP,,Year end updates to SAP for last minute tax changes.,Fix / Patch,Kevin Young,Load the three support level updates for SAP HR,TRUE
+,Completed,01/05/17 6:59 PM,web-form@smartsheet.com,M&O,Application Development Unit (LIMS and IPACS Team),01/05/17,,"1. Deploy new iPACS release (20161202) to iPACS Production System (IPACPRDAPP)
+2. Deploy SummaryDataService.Core.dll to IPACS Production System (IPACPRDAPP)",IPACS Production System,Multi-Team (Indicate groups in Additional Information),,"Address the following reported IPACS Production System issues:
+1. Make Crystal Reports Downloadable/Uploadable from iPACS (Issue ID #25)
+2. Waste Hauler Discharge Type Dropdown (Issue ID #24)
+3. REF_YEAR_CYCLE Table (Issue ID #5)
+4. Production Rate Units (Issue ID #3)
+5. SMR vs. District Sampling Error for 27657 3A June 2016 (Issue ID #15)
+6. Missing unit issue on the monthly average calculation",Fix / Patch,Chentile Jackson/Roger Smith,"1) Stop IPACS Application Pool
+2) Make a backup of the live IPACS.Website 
+3) Copy latest IPACS Website Application files from EnfoTech FTP site, ftp://ftp.enfotech.com to IPACPRDAPP.
+4) Copy the new IPACS Website Application files to the IPACS.Website folder
+5) Run DB Scripts
+6) Run Configuration Upload Tool
+7) Restart IPACS Application Tool
+8) Test that everything is working in the iPACS Production System.
+...
+
+BACK OUT PLAN: 
+1.  Restore IPACS.Website from backup.
+....",
+,Completed,01/05/17 1:50 PM,web-form@smartsheet.com,Ronald Thompson,Application Development Team,01/05/17,,Move code changes for S_CORR calculation and add SEED_BOTTLE field to BATCH_HEADER table.,The LIMS production system will be impacted.,Multi-Team (Indicate groups in Additional Information),,Laboratory users will be able to use the seeded bottle when processing BOD samples.,Enhancement,Ronald Thompson,"1) Send email notifying lab managers of time of planned change and that users should log out of the system by 2pm.
+2) Move S_CORR calculation  to production system.
+3) Add SEED_BOTTLE field to BATCH_HEADER table.
+4) Verify that changes outlined above are working in production system.
+5) Notify users that system is ready for use.
+...
+
+BACK OUT PLAN: 
+1) Copy back and compile backup copy of original S_CORR code.
+2) Remove SEED_BOTTLE field from batch header table",
+,Completed,01/05/17 4:02 PM,web-form@smartsheet.com,M&O,Application Development Unit (LIMS and IPACS Team),01/03/17,,Deploy new iPACS release (20161202) to iPACS Production System (IPACPRDAPP),IPACS Production System,Multi-Team (Indicate groups in Additional Information),,"Address the following reported IPACS System issues:
+Make Crystal Reports Downloadable/Uploadable from iPACS (Issue ID #25)
+Waste Hauler Discharge Type Dropdown (Issue ID #24)
+REF_YEAR_CYCLE Table (Issue ID #5)
+Production Rate Units (Issue ID #3)
+SMR vs. District Sampling Error for 27657 3A June 2016 (Issue ID #15)",Fix / Patch,Chentile Jackson,"1) Stop IPACS Application Pool
+2) Make a backup of the live IPACS.Website
+3) Copy latest IPACS Website Application files from EnfoTech FTP site ftp://ftp.enfotech.com to IPACPRDAPP
+4.) Copy the IPACS Website Application files to the live IPACS.Website folder
+5.) Run DB Scripts
+6.) Run Configuration Upload Tool
+7.) Restart IPACS Application Pool
+8.) Test that everything is working in the iPACS Production System
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,10/20/16 9:32 AM,web-form@smartsheet.com,Kevin Young,,12/27/16,,Disaster Recovery System Reboots with Patching,No user impact. Our Disaster Recovery system will be down during the reboots,ERP / SAP,,Preventive Maintenance. Microsoft best practice is to reboot Windows Servers monthly,Preventive,Kevin Young,"Shutdown Order
+a. MWRDECCDR0
+b. MWRDECCDR1
+c. MWRDECCDR2
+d. MWRDNBWDR1
+e. MWRDBOBDR1
+f. MWRDCEPDR1
+g. MWRDPBFDR1
+h. MWRDNDIDR1
+i. MWRDNEPDR0
+j. MWRDNEPDR1
+k. MWRDNEPDR2
+l. MWRDDRDB
+Restart Order
+m. MWRDDRDB
+n. MWRDECCDR0
+o. MWRDECCDR1
+p. MWRDECCDR2
+q. MWRDNBWDR1
+r. MWRDBOBDR1
+s. MWRDCEPDR1
+t. MWRDPBFDR1
+u. MWRDNDIDR1
+v. MWRDNEPDR0
+w. MWRDNEPDR1
+x. MWRDNEPDR2",
+,Completed,12/22/16 10:12 AM,web-form@smartsheet.com,Erin Johnson,,12/21/16,,Upgrade the Legal Files software for Law Department from Legal Files Web 9.2 Build 5 to Web 9.2 Build 18. This upgrade was performed by Sharma using the attached documentation.,The system will be unavailable for 20 minutes.,ERP / SAP,,Legal File compliance,Preventive,Kevin Young,Sharma performed the upgrade following the attached Legal Files documentation.,
+,Completed,12/06/16 10:56 AM,web-form@smartsheet.com,Patrick sendera,Revisit targeted groups for GIS notifications,12/21/16,,ArcGIS SDE database upgrade from 10.3.1 to 10.4.1,All GIS applications and service will experience interruption of up to 1 hour from 4:30 to 5:30 PM,GIS,,To bring the entire GIS server software stack up to version 10.4.1 and complete the 10.4.1 upgrade completely by the end of 2016,Enhancement,Patrick sendera,"1) Back up SQL databases
+2)Shutdown GIS services
+3)Run upgrade tool
+4) Restart GIS services
+5) Verify applications and services
+...
+
+BACK OUT PLAN: 
+.... Restore databases",
+,Completed,12/16/16 3:26 PM,web-form@smartsheet.com,Roger Smith,cleared with Donna Coolidge and Diane Moe,12/19/16,,Move committed tables to production,"LIMS will be down for about 15 minutes, starting 3:30",Multi-Team (Indicate groups in Additional Information),,"Merge historic database into production, reducing the number of databases, and giving the users all their data in one place",Enhancement,Roger Smith,"1) create table space for committed tables, copy data into database (users do not have to be off the system for this)
+2) shutdown LIMS, update structure.txt (10 minutes?)
+3) re-start LIMS
+4) users verify data
+
+
+BACK OUT PLAN: 
+shutdown LIMS, run prior version of Structure, re-start LIMS",
+,Completed,10/20/16 9:27 AM,web-form@smartsheet.com,Kevin Young,,12/17/16,,Server Reboots starting at 10pm for Security Patches,"SAP, PBF, and the District Website will all be impacted during the rebooting schedule.",ERP / SAP,,Preventive Maintenance. Microsoft best practice is to reboot Windows Servers monthly.,Preventive,Kevin Young,"Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2",
+,Completed,10/03/16 4:08 PM,web-form@smartsheet.com,Richard Wojkovich,*Make note of LIMS DBFS connection (Dependency RESOLVED AS OF 12/3/16),12/17/16,,Replace 3750 Switch at Stickney Water Reclamation Plant with new ASR router,Administrative data and voice network will be down during replacement window (Sat 2:00 pm - 6:00 pm).,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"Task Summary:
+1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch.
+3) Make necessary changes to existing local switch to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch to router and test connectivity.
+...
+BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch with original configuration and ensure connectivity to WAN is restored.
+…",
+,Completed,12/06/16 9:51 AM,web-form@smartsheet.com,Kevin Young,,12/16/16,,SAP Hotpack Updates beginning at COB 12/16/2016,SAP and ESS will be unavailable for the weekend of December 16th,ERP / SAP,,Compliance,Preventive,Kevin Young,1. Load all SAP hotpack updates into PRD,
+,Completed,11/29/16 9:46 AM,web-form@smartsheet.com,Ervin Cheng,Will be doing this at 10 a.m. to 11 a.m. should only take 30 minutes.,12/03/16,,KCServer ie. kofax needs to have commcell moved to F64FE.  This is the version 10 commcell that will still be active and backing systems.,KCServer ie. kofax is our fax server that purchasing and other departments use to send and receive fax.,Network Operations (Server / SAN),,Continue of backing up the server to provide a DRS plan and also speedy recovery.,Preventive,Ervin Cheng,"1) un-install old commvault agent
+2) install new commvault agent which will point to new commcell.
+3) reboot.
+BACK OUT PLAN: 
+1) uninstall new commvault agent
+2) reinstall old commvault agent",TRUE
+,Completed,11/29/16 9:55 AM,web-form@smartsheet.com,ervin cheng,Work will be done during MOB router upgrade,12/02/16,,ms patching of DMZ servers.,"webapps, devapps, gispub, ftpmwrd, mwrdnepqz1, mwrdneppz1, mwrdveeam will need to have ms patch installed and updated. Not monitored in wsus.  Will work on during MOB outage. All web applications, ie. district jobs, mwrd portal, gis will be affected.",Network Operations (Server / SAN),,More stable and reliable systems. Prevention of vulnerabilities and patch holes in OS level.,Fix / Patch,ervin cheng,"1) ms patching
+2) restart
+3) more patching if necessary
+BACK OUT PLAN: 
+1) veeam bk and restored",
+,Completed,11/01/16 1:39 PM,web-form@smartsheet.com,Kevin Young,"SAP ECC - system corruption immediately upon apply patches. Decision made to restore snapshot taken immediately before work began. Besides restoring the ECC database, accidentally restored BW, PBF portal, CE Portal, BOBJ, and DID databases. Instead of restoring a single database, the entire database server was restored. At this time, it does not appear any data was lost from the other databases due to the network outage at MOB immediately after taking the snapshot. The hotpack updates will be rescheduled for 12/16-18.",12/02/16,,Annual SAP (HR & Payroll only) Hotpack Updates beginning at COB 12/2/2016 - 12/4/16,SAP and ESS will be unavailable for the weekend of December 2nd,ERP / SAP,,Compliance,Preventive,Kevin Young,1. Load all SAP hotpack updates into PRD,
+,Completed,10/03/16 3:50 PM,web-form@smartsheet.com,Richard Wojkovich,,12/02/16,,Replace 3750 WAN switch at MOB with ASR router,Administrative data and voice network will be down during replacement window (4:30 pm - 7:00 pm). Including Internet and email.,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch.
+3) Make necessary changes to existing local switch to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch to router and test connectivity.
+...
+BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch with original configuration and ensure connectivity to WAN is restored.
+
+....",
+,Completed,11/30/16 1:09 PM,web-form@smartsheet.com,Roger Smith,Work to start at 3:30 as this is between shifts for the lab. Already cleared with D. Coolidge.,12/01/16,,"Shutdown LIMS/IPACS database, move the control file, restart DB",LIMS/IPACS will be down for about 10 minutes,Multi-Team (Indicate groups in Additional Information),,Moving the control file will decrease the chance of an unexpected DB shutdown when we have network issues ; No Dependency on future File Server Maintenance,Preventive,Roger Smith,"1) shutdown DB
+2) move control file
+3) start DB
+
+
+BACK OUT PLAN: 
+move control file back to original location, re-start DB",
+,Completed,11/18/16 9:45 AM,web-form@smartsheet.com,Roger Smith,Wed Nov 30 ; This hosts a Oracle DB reference/tnsname entry that references ED Dashboard,11/30/16,,VaxPRD DB to be moved from Unix to Windows server,PurCon system will be down,Multi-Team (Indicate groups in Additional Information),,We are moving all databases off of unix to windows so we can shut down the unix servers,Preventive,Roger Smith,"1) shut down DB
+2) export DB
+3) import DB to new server
+4) open DB, test application
+
+BACK OUT PLAN: fall back to old server
+....",
+,Completed,11/18/16 9:49 AM,web-form@smartsheet.com,Roger Smith,Completed,11/28/16,,move BPT DB to new server,BPT will be down,Multi-Team (Indicate groups in Additional Information),,move DB off of unix so we can shut down the unix server,Preventive,Roger Smith,"1) shut down DB
+2) export DB
+3) import to new server
+4) open DB, test application
+
+BACK OUT PLAN: fall back to old server
+....",
+,Completed,11/18/16 9:23 AM,web-form@smartsheet.com,Roger Smith,Completed,11/28/16,,move TRMS DB from Unix to new windows server (oracle->oracle),TRMS system will be down,Multi-Team (Indicate groups in Additional Information),,"Move TRMS off of Unix, so we can decommision the unix server",Preventive,Roger Smith,"1) shut down TRMS
+2) export DB
+3) import to new location
+4) open DB, test application
+
+BACK OUT PLAN: open DB on old server
+....",
+,Completed,10/20/16 9:30 AM,web-form@smartsheet.com,Kevin Young,Production hasn't been done ; Postponing,11/28/16,,Disaster Recovery System Reboots with Patching,No user impact. Our Disaster Recovery system will be down during the reboots,ERP / SAP,,Preventive Maintenance. Microsoft best practice is to reboot Windows Servers monthly,Preventive,Kevin Young,"Shutdown Order
+a. MWRDECCDR0
+b. MWRDECCDR1
+c. MWRDECCDR2
+d. MWRDNBWDR1
+e. MWRDBOBDR1
+f. MWRDCEPDR1
+g. MWRDPBFDR1
+h. MWRDNDIDR1
+i. MWRDNEPDR0
+j. MWRDNEPDR1
+k. MWRDNEPDR2
+l. MWRDDRDB
+Restart Order
+m. MWRDDRDB
+n. MWRDECCDR0
+o. MWRDECCDR1
+p. MWRDECCDR2
+q. MWRDNBWDR1
+r. MWRDBOBDR1
+s. MWRDCEPDR1
+t. MWRDPBFDR1
+u. MWRDNDIDR1
+v. MWRDNEPDR0
+w. MWRDNEPDR1
+x. MWRDNEPDR2",
+,Completed,11/22/16 9:23 AM,web-form@smartsheet.com,ervin cheng,,11/25/16,,Move beta and mob_blmgr using vm converter from mob datacenter 4th floor mob to annex 2nd floor telephone room.,"All systems shouldn't be affected, only server that have static entries can't authenticate to beta.  DHCP will be down for about 2 hour and shouldn't affect any users if they already login in the morning and their lease isn't up for renew.",Network Operations (Server / SAN),,decommission mob 4th floor computer room and move systems to a more stable environment,Preventive,ervin cheng,"1) shutdown server
+2) use vm comverter to move vm to another vm host
+3) startup new vm host.
+...
+
+BACK OUT PLAN: 
+1) delete vm converter server
+2) bring back old vm by turning it back on
+3) verify all services and system operations",
+,Completed,11/01/16 11:52 AM,web-form@smartsheet.com,Patrick sendera,See below for task summary,11/25/16,,ArcGIS Server software upgrade to version 10.4.1,All GIS applications and services will be unavailable during this period.  This includes all public and enterprise GIS.  Maintenance/upgrade to begin at 6AM.  All systems should be on-line and fully functional by 12PM,GIS,,Upgrade to version 10.4.1,Enhancement,Patrick sendera,"1) See attached for task summary/plan
+2)
+3)
+...
+
+BACK OUT PLAN: 
+Restore snapshots",
+,Completed,10/06/16 10:30 AM,web-form@smartsheet.com,Ethan Warren,Pushed to 11/25/16 ; 4:30pm.,11/25/16,,Move current user connections from MOB 3750 switch to MOB2_access switch to facilitate connectivity for the devices once the 3750 is replaced with new ASR router.,MOB/A building engineer may experience minor connection interruption on cables are moved between switches.,Network Infrastructure,,Prepare MOB 3750 switch for replacement.,New Implementation,Ethan Warren,"1) Configure access switch with proper VLANs to accept new connections
+2) Move connections from 3750 to configured ports on access switch
+3) Test connectivity
+...
+
+BACK OUT PLAN: Move connections back onto the 3750 switch
+....",
+,Completed,11/22/16 4:02 PM,web-form@smartsheet.com,"M&R (Burke, Goldrich)",requested by M&R to move this to prd as soon as possible; Finance is on board with the change and the timing of the reboot,11/23/16,,"copy updated DLL file to production, reboot server","IPACS will be down for about 15 minutes, starting at noon",Multi-Team (Indicate groups in Additional Information),,This will address missing units on monthly violations report,Fix / Patch,Roger Smith,"1) turn off IIS (remove users from application)
+2) backup DLL file
+2) copy new DLL (summaryDataService.core.dll)
+3) reboot
+
+BACK OUT PLAN: restore old DLL
+....",
+,Completed,11/18/16 9:11 AM,web-form@smartsheet.com,Roger Smith,,11/21/16,,move Police DB to new server,police DB will be down,Multi-Team (Indicate groups in Additional Information),,Police DB will be on new server,Preventive,Roger Smith,"1) shut down DB
+2) export DB
+3) import DB to new server
+4) rename server
+5) open DB, verify application still connects and works
+
+BACK OUT PLAN: open DB on old server
+....",
+,Completed,10/18/16 2:57 PM,web-form@smartsheet.com,Kevin Young,,11/19/16,,Server Reboots starting at 10pm for Security Patches,"SAP, PBF, and the District Website will all be impacted during the rebooting schedule.",ERP / SAP,,Preventive Maintenance. Microsoft best practice is to reboot Windows Servers monthly.,Preventive,Kevin Young,"Server shutdown order
+a. MWRDECCP0
+b. MWRDECCP1
+c. MWRDNBWP0
+d. MWRDNDIP1
+e. MWRDBOBP1
+f. MWRDPBFP1
+g. MWRDCEPP1
+h. MWRDPRDDB
+Server restart order
+i. MWRDPRDDB
+j. MWRDECCP0
+k. MWRDECCP1
+l. MWRDNBWP0
+m. MWRDNDIP1
+n. MWRDBOBP1
+o. MWRDPBFP1
+p. MWRDCEPP1
+Server shutdown order
+q. MWRDNEPP1
+r. MWRDNEPP2
+s. MWRDNEPP0
+Server restart order
+t. MWRDNEPP0
+u. MWRDNEPP1
+v. MWRDNEPP2",
+,Completed,10/03/16 4:13 PM,web-form@smartsheet.com,Richard Wojkovich,Saturday,11/19/16,,Replace 3750 WAN switch at ZAYO/ Latisys,Administrative data and voice network will be down during replacement window 2:00 pm - 6:00 pm).,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch.
+3) Make necessary changes to existing local switch to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch to router and test connectivity.
+...
+BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch with original configuration and ensure connectivity to WAN is restored.
+…",
+,Completed,11/08/16 9:02 AM,web-form@smartsheet.com,ervin cheng,,11/18/16,,Microsoft OS Patching to provide a more reliable and secured file shared service,"WILDCAT,  RAPTOR,  FALCON,  TOMCAT,  EGN-DFS, Printing services and network copiers may also experience intermittent connectivity disruptions. This is for catch-up maintenance work.",Network Operations (Server / SAN),,ensure system is up-to-date on windows system patches and security vulnerabilities are eliminated.,Fix / Patch,ervin cheng,"1) install windows updates
+2) reboot
+3) apply addidtional patches, if needed
+...
+
+BACK OUT PLAN: 
+recover from san snapshot",
+,Completed,11/07/16 4:32 PM,web-form@smartsheet.com,LaShun Osborn,,11/18/16,,SUMMATION server: Reboot to apply Windows Updates after hours (4:45pm.) Approval per listed admin contact provided in Supporting Documentation.,Summation (Law) access.,Network Operations (Server / SAN),,Ensure system is up-to-date on Windows system patches.,Fix / Patch,Ervin Cheng,"1) Install Windows Updates.
+2) Reboot
+3) Apply additional patches, if necessary.
+...
+
+BACK OUT PLAN:
+Recover system from SAN snapshot
+....",
+,Completed,11/08/16 9:02 AM,web-form@smartsheet.com,ervin cheng,,11/17/16,,Microsoft OS Patching to provide a more reliable and secured file shared service,"COBRA,   BLACKBIRD,  EAGLE,  HAWK, MUSTANG this servers will be patched with new OS patches and will be rebooted. This is for catch-up maintenance work.",Network Operations (Server / SAN),,ensure system is up-to-date on windows system patches and security vulnerabilities are eliminated.,Fix / Patch,ervin cheng,"1) install windows updates
+2) reboot
+3) apply addidtional patches, if needed
+...
+
+BACK OUT PLAN: 
+recover from san snapshot",
+,Completed,11/15/16 10:46 AM,web-form@smartsheet.com,Jackie Torres - Finance Dept,,11/16/16,,"Workforce Empcenter SaaS upgrade from v9.6.1.13 to v16.2.0.1.
+This entry is for reference only. The project and all communications are managed by the Finance Dept.",,Multi-Team (Indicate groups in Additional Information),,Workforce Empcenter SaaS upgrade from v9.6.1.13 to v16.2.0.1.,Fix / Patch,Joel Sia / Andy Dziadkowiec,"Please note the following for 11/16/2016 only:
+•	EmpCenter will NOT be available from 7:00 am – 5:00 pm.
+
+•	All employees must clock in and out using a Wall-mounted clock as the Mobile and Web clocks will not be available.
+
+•	Your supervisor or timekeeper will enter a Clock Override on 11/17/16 if you were unable to clock in and out at a Wall-mounted clock during the upgrade.
+
+An updated Time and Attendance User Manual can be found on the server at:
+Falcon – Personnel – Public Access – Time and Attendance Manuals",
+,Completed,11/07/16 3:23 PM,web-form@smartsheet.com,LaShun Osborn,,11/16/16,,IRIS2003 - Reboot to apply Windows Updates to system on 11/16 after hours (4:45pm). Admin approval included in additional info.,"IRIS2003, real estate mgmt. database.",Network Operations (Server / SAN),,Ensure system is up-to-date on Windows system patches.,Fix / Patch,Ervin Cheng,"1) Install Windows Updates.
+2) Reboot
+3) Apply additional patches, if necessary.
+...
+
+BACK OUT PLAN:
+Recover system from SAN snapshot
+....",
+,Completed,11/15/16 9:16 AM,web-form@smartsheet.com,Kevin Young,,11/15/16,,Webdispatcher Testing from 8 pm - 8:30 pm,The District's website will be unavailable,ERP / SAP,,To get the district's website off of F5,Security,Kevin Young,"1. Remove District's website from F5
+2. Make necessary DNS changes
+3. Test outside internet traffic",TRUE
+,Completed,11/07/16 8:18 AM,web-form@smartsheet.com,Kevin Young,,11/11/16,,Readsoft Production Go-Live,Users will be unavailable to access Readsoft during this period,ERP / SAP,,Upgrade to latest Readsoft version,Enhancement,Kevin Young,"Transport Readsoft transports into Production.
+Migrate Readsoft Production Data to SQLServer",
+,Completed,11/04/16 1:53 PM,web-form@smartsheet.com,LaShun Osborn,,11/09/16,,Reboot to apply Windows Update to SQL01TA server @12pm. Approval per listed admin contact provided in Supporting Documentation. Dev system.,Developers using system for SQL testing.,Network Operations (Server / SAN),,Ensure system is up-to-date on Windows system patches.,Fix / Patch,Ervin Cheng,"1) Install Windows Updates.
+2) Reboot
+3) Apply additional patches, if necessary.
+...
+
+BACK OUT PLAN:
+Recover system from SAN snapshot
+....",
+,Completed,11/04/16 1:50 PM,web-form@smartsheet.com,LaShun Osborn,,11/09/16,,Reboot to apply Windows Update to SQLEXT01A server @12pm. Approval per listed admin contact provided in Supporting Documentation. Dev system.,"Per admin, server not currently in use, test/dev system.",Network Operations (Server / SAN),,Ensure system is up-to-date on Windows system patches.,Fix / Patch,Ervin Cheng,"1) Install Windows Updates.
+2) Reboot
+3) Apply additional patches, if necessary.
+...
+
+BACK OUT PLAN:
+Recover system from SAN snapshot
+....",
+,Completed,11/01/16 2:47 PM,web-form@smartsheet.com,Kevin Young,,11/02/16,,Webdispatcher Testing at 8:00 pm,District Portal and ESS will be unavailable.,ERP / SAP,,Testing software that will potentially allow for the removal of F5,New Implementation,Kevin Young,"1. Change the NAT on the firewall from F5 to the new Webdispatcher for outside testing.
+2. Record the results of outside testing
+3. After testing change the NAT back to F5",TRUE
+,Completed,11/01/16 9:37 AM,web-form@smartsheet.com,LaShun Osborn,,11/01/16,,Reboot to apply Windows Update to SIGMDB server @10am. Approval per HR contact provided in Supporting Documentation.,SIGMADB (HR).,Network Operations (Server / SAN),,Ensure system is up-to-date on Windows system patches.,Fix / Patch,Ervin Cheng,"1) Install Windows Updates.
+2) Reboot
+3) Apply additional patches, if necessary.
+...
+
+BACK OUT PLAN: 
+Recover system from SAN snapshot
+....",
+,Completed,10/25/16 2:26 PM,web-form@smartsheet.com,Roger Smith,,10/31/16,,Install Oracle EM Express,"Police DB, gate system",Multi-Team (Indicate groups in Additional Information),,install Oracle EM Express,Fix / Patch,Roger Smith,"1) shutdown DB at 5:00 PM
+2) snapshot system 
+3) install EM Express
+4) bring Oracle up
+5) test Oracle and applications
+
+BACK OUT PLAN: revert back to snapshot
+....",
+,Completed,10/20/16 9:23 AM,web-form@smartsheet.com,Kevin Young,,10/29/16,,Disaster Recovery System Reboots with Patching,No user impact. Our Disaster Recovery system will be down during the reboots,ERP / SAP,,Preventive Maintenance. Microsoft best practice is to reboot Windows Servers monthly,Preventive,Kevin Young,"Shutdown Order
+a.	MWRDECCDR0
+b.	MWRDECCDR1
+c.	MWRDECCDR2
+d.	MWRDNBWDR1
+e.	MWRDBOBDR1
+f.	MWRDCEPDR1
+g.	MWRDPBFDR1
+h.	MWRDNDIDR1
+i.	MWRDNEPDR0
+j.	MWRDNEPDR1
+k.	MWRDNEPDR2
+l.	MWRDDRDB
+Restart Order
+m.	MWRDDRDB
+n.	MWRDECCDR0
+o.	MWRDECCDR1
+p.	MWRDECCDR2
+q.	MWRDNBWDR1
+r.	MWRDBOBDR1
+s.	MWRDCEPDR1
+t.	MWRDPBFDR1
+u.	MWRDNDIDR1
+v.	MWRDNEPDR0
+w.	MWRDNEPDR1
+x.	MWRDNEPDR2",
+,Completed,10/03/16 4:04 PM,web-form@smartsheet.com,Richard Wojkovich,,10/27/16,,Replace 3750 WAN switch at Calumet Water Reclamation Plant with new ISR router,Administrative data and voice network will be down during replacement window (3:30 pm - 7:00 pm).,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch.
+3) Make necessary changes to existing local switch to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch to router and test connectivity.
+...
+BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch with original configuration and ensure connectivity to WAN is restored.",
+,Completed,10/18/16 12:49 PM,web-form@smartsheet.com,Thomas Muscarello,,10/22/16,,The network section will re-route fiber from old equipment racks to a new dedicated cabling rack.  Going fwd all cabling run to the 2nd floor telephone room will be terminated in a dedicated rack prior to interfacing with equipment.  Cabling will adhere to structured wiring standards and procedures.,"Internet and WAN will be down during this period. As a result, the following systems will be impacted; MWRDGC Voicemail, Phone Directory, 5 digit dialing, Computer Network, Citrix, 	Internet, Network Storage, File Servers (All), Portal, MMS, IPACS, LIMS, GIS, Jobs, Email, SAP, PBF.",Network Infrastructure,,The purpose is to organize all cabling (copper & fiber) into a centralized rack and also free up additional space for new core networking equipment (6800).,Enhancement,Thomas Muscarello,"1) Prep new racks for install. Label and prep all fiber & copper cabling to be moved.
+2)disconnect and reroute cabling to new rack
+3)test communication to confirm everything is operational 
+...
+
+BACK OUT PLAN: 
+....re-rack cable distribution equipment in old rack.",TRUE
+,Completed,10/13/16 4:45 PM,web-form@smartsheet.com,Kevin Young,,10/22/16,,Server Reboots starting at 10pm for Security Patches,"SAP, PBF, and the District Website will all be impacted during the rebooting schedule.",ERP / SAP,,Preventive Maintenance. Microsoft best practice is to reboot Windows Servers monthly.,Preventive,Kevin Young,"Server shutdown order
+a.       MWRDECCP0
+b.      MWRDECCP1
+c.       MWRDNBWP0
+d.      MWRDNDIP1
+e.      MWRDBOBP1
+f.        MWRDPBFP1
+g.       MWRDCEPP1
+h.      MWRDPRDDB
+Server restart order
+i.         MWRDPRDDB
+j.        MWRDECCP0
+k.       MWRDECCP1
+l.         MWRDNBWP0
+m.    MWRDNDIP1
+n.      MWRDBOBP1
+o.      MWRDPBFP1
+p.      MWRDCEPP1
+Server shutdown order
+q.      MWRDNEPP1
+r.        MWRDNEPP2
+s.       MWRDNEPP0
+Server restart order
+t.        MWRDNEPP0
+u.      MWRDNEPP1
+v.       MWRDNEPP2",
+,Completed,10/07/16 8:44 AM,web-form@smartsheet.com,Police Department,,10/17/16,,Phase 1 roll out of Police Patrol Stops to production,None,GIS,,Roll out to production,New Implementation,Patrick Sendera,"1) Pint application at new database location for production
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,10/14/16 10:57 AM,web-form@smartsheet.com,Thomas McEnery,Can you set limits by user? (e.g. Exec  Team only),10/14/16,,"Increase Email message limit to 55 mb, it is currently at 35mb","No impact, backend O365 adjustment",Network Infrastructure,,"Users will have the ability to send larger message attachments, due to possible message bloat during transport the 55mb is to allow 50 mb attachments.",Enhancement,Thomas McEnery,"1) Log into O365 tennant
+2) Run the command to increase message size for all users
+3) Verify the change ran successfully by spot checking a few users
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,09/30/16 2:43 PM,web-form@smartsheet.com,Richard Wojkovich,,10/13/16,,Replace 3750 WAN switch at Egan with new ISR router,Administrative data and voice network will be down during maintenance window (3:30 pm - 7:00 pm).,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch(s).
+3) Make necessary changes to existing local switch(s) to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch(s) to new router and test connectivity (voice & data).
+...
+BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch(s) with original configuration and ensure connectivity to WAN is restored.",
+,Completed,09/29/16 2:49 PM,web-form@smartsheet.com,Kevin Young,,10/08/16,,Monthly Server Reboots starting at 7pm.,"SAP, PBF, and the District Website will all be impacted during the rebooting schedule.",ERP / SAP,,Preventive Maintenance. Microsoft best practice is to reboot Windows Servers monthly.,Preventive,Kevin Young,"Server reboot order
+a.	MWRDPRDDB
+b.	MWRDECCP0
+c.	MWRDECCP1
+d.	MWRDNBWP0
+e.	MWRDNDIP1
+f.	MWRDBOBP1
+g.	MWRDPBFP1
+h.	MWRDCEPP1
+i.	MWRDNEPP0
+j.	MWRDNEPP1
+k.	MWRDNEPP2",TRUE
+,Completed,09/28/16 11:26 AM,web-form@smartsheet.com,Patrick Sendera,after 4:30p.m.,10/05/16,,Migration of Police DB from Oracle on Unix to Oracle on Windows,Police ORS and Gate Entry Programs will be unavailable,Multi-Team (Indicate groups in Additional Information),,Migration of database from unsupported hardware to supported hardware,Preventive,Patrick Sendera,"1) Disable application access to database
+2) export police data from Unix database
+3)Import police data to Windows Oracle database
+4) Point application to new database
+5) Verify application functionality
+
+BACK OUT PLAN: 
+Re-point application to old database and reschedule",
+,Completed,10/04/16 11:00 AM,web-form@smartsheet.com,ervin cheng,12:30p,10/04/16,,increase CPU for mwrddevdb server currently it is set at 8. will increase to 16.,Only sap users and kevin young will verify everyone is off system before the system is shutdown.,Network Operations (Server / SAN),,the current cpu is not enough for the system to do other task.  all resources are constraint by the lack of CPU. Will free up more resources and can work more efficiently.,Enhancement,ervin cheng,"1) increase 8 to 16 cpu
+2)
+3)
+...
+
+BACK OUT PLAN: 
+....",
+,Completed,09/15/16 11:10 AM,web-form@smartsheet.com,Patrick Sendera,,10/04/16,,Switch over from old GISPUB server to new GISPUB server,All external GIS systems may experience at most few minutes of downtime,GIS,,upgrade of GISPUB to Windows 2012 server and virtualized will be complete,Preventive,Patrick Sendera,"1) Ethan will switch routing of GISPUB.mwrd.org to new server
+2) Verify that all applications are working as expected
+3)
+...
+
+BACK OUT PLAN: 
+Switch routing of GISPUB.mwrd.org back to old server
+....",
+,Completed,09/20/16 10:27 AM,web-form@smartsheet.com,Richard Wojkovich,,09/29/16,,Replace 3750 WAN switch at O'Brien Plant,Administrative data and voice network will be down during replacement window (3:30 pm - 7:00 pm).,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch.
+3) Make necessary changes to existing local switch to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch to router and test connectivity.
+...
+BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch with original configuration and ensure connectivity to WAN is restored.
+…",
+,Completed,09/19/16 12:25 PM,web-form@smartsheet.com,Ethan Warren,,09/29/16,,FireEye OS upgrade/patch,None,Network Infrastructure,,Upgrade FireEye operating system to latest release.,Security,Ethan Warren,"1) Download latest OS
+2) Install OS
+3) Re-Boot to apply
+...
+
+BACK OUT PLAN: Appliance fails open if any problems occur.
+....",
+,Completed,09/20/16 12:17 PM,web-form@smartsheet.com,Kevin Young,,09/27/16,,"Change F5 redirects for 5 external websites to web server redirects.  Have 5 redirects on web server ready.  Change 1 redirect on f5 and test with ssl enable and certificate applied. If successful, will change the other 4.","All external and internal user who goes to rain barrel, ii, cso, wmo, and watershed will see web site not found",Network Operations (Server / SAN),,F5 will be decom and end of life on oct 31 2016.  Need to move all redirects out of the appliance and shut it down.,Preventive,Ervin Cheng,"1) test on one redirect change dns entry to point to new ip
+2) change netted rule to point to new ip
+3) test outside and internal to see if it works.
+4) if everything looks good, proceed with the other 4 redirects.
+5) test all redirects
+
+BACK OUT PLAN: 
+1) revert the ip changes back to original 
+2) test the original redirects.",
+,Completed,09/15/16 11:37 AM,web-form@smartsheet.com,Richard Wojkovich,,09/22/16,,Replace 3750 WAN switch at Kirie Water Reclamation Plant,Administrative data and voice network will be down during replacement window (3:30 pm - 7:00 pm).,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch.
+3) Make necessary changes to existing local switch to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch to router and test connectivity.
+...
+
+BACK OUT PLAN: BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch with original configuration and ensure connectivity to WAN is restored.
+....",
+,Completed,09/15/16 10:59 AM,web-form@smartsheet.com,McEnery,,09/22/16,,Upgrade our current O365 sync tool since it's being discontinued and to gain enhancements with the upgraded tool.,User replication to O365 will not function during this time. Any new user accts will have to wait until the upgrade is completed to replicate to O365. MS instructs that the whole upgrade should take roughly 30 min.,Network Operations (Server / SAN),,"Upgrade Dirsync to AD Connect, this will give us a shorter replication cycle (30 min vs 180min), password reset / writeback from O365 OWA to OnPrem AD.",Enhancement,McEnery,"1) Uninstall current sync tool - DirSync
+2) Install new sync tool - AD Connect
+3) Force new sync and adjust settings as needed
+...
+
+BACK OUT PLAN: reinstall old DirSync tool if necessary.
+....",
+,Completed,08/30/16 9:29 AM,web-form@smartsheet.com,Kevin Young,,09/22/16,,"Migration of PBF beginning at close of business on September 22, 2016",PBF and Non-Core Business Application Users,ERP / SAP,,Migration to virtual servers and SQLServer database.,Enhancement,Kevin Young,"1. Shutdown BIP
+2. SAP export of the BIP data
+3. Copy of the data dump to new Virtual DB and Application servers
+4. Install of Application server and DB Instance build from the data dump
+5. Reconnect BOBJ/PBF Portal/CE Portal to point to new Virtual BIP
+6. All Virtual PEP/BOBJ/PBF/CE Portals are connected to each other
+
+
+Back Out Plan:
+1. If export is not successful, the current Physical BIP is just brought up
+2. If export is successful no connections are made to the new Virtual Portals so   
+    nothing to put back
+3. If after successfully standing up Virtual BIP and making all connections to the 
+    Virtual BOBJ/PBF/CE/PEP Portals, if during testing it is decided that we fall 
+    back to old BIP
+    Then the federation, single sign-on, and connections are reverted to the old 
+    environment in PEP Portal",
+,Completed,09/13/16 9:20 AM,web-form@smartsheet.com,Richard Wojkovich,,09/15/16,,Replace 3750 WAN switch at Hanover Park,Administrative data and voice network will be down during replacement window (3:30 pm - 7:00 pm).,Network Infrastructure,,Enhance WAN throughput by replacing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install new pre-configured router.
+2) Backup configuration of existing router and local switch.
+3) Make necessary changes to existing local switch to enable connectivity to new router.
+4) Move wired connection from existing WAN switch to new router and test connectivity to ASE network.
+5) Connect local switch to router and test connectivity.
+...
+
+BACK OUT PLAN: Return WAN connection to old 3750 switch, reprogram local switch with original configuration and ensure connectivity to WAN is restored.
+....",
+,Completed,08/31/16 1:48 PM,web-form@smartsheet.com,Kevin Young,,09/10/16,,Disaster Recovery System Testing,No SAP and ESS access,ERP / SAP,,Ability to bring up disaster recovery system,Preventive,Kevin Young,"1) Bring down SAP ECC system
+2) Apply archive logs to DRS
+3) Bring up SAP ECC in DRS Environment
+...
+
+BACK OUT PLAN: 
+.... Bring Production SAP ECC back online.",TRUE
+,Completed,08/17/16 11:45 AM,web-form@smartsheet.com,Kevin Young,,09/10/16,,Disaster Recovery Testing,SAP and ESS,ERP / SAP,,Testing Disaster Recovery System for SAP ECC system.,Preventive,Kevin Young,,
+,Completed,08/31/16 2:52 PM,web-form@smartsheet.com,Kevin Young,,09/09/16,,PBF Migration Dry Run,PBF Unavailable from 9/9/2016 @ 10 pm through 9/11/2016,ERP / SAP,,To test if improvements made solve slow exporting issue,Fix / Patch,Kevin Young,"1. Shutdown BIP
+2. SAP export of the BIP data
+3. Copy of the data dump to new Virtual DB and Application servers
+4. Record times
+5. Bring original BIP back online.
+
+BACK OUT PLAN: 
+1. If export is not successful, the current Physical BIP is just brought up",TRUE
+,Completed,09/01/16 11:42 AM,web-form@smartsheet.com,Richard Wojkovich,,09/08/16,,Replace Cisco 3750 WAN switch at Racine Pumping Station.,Administrative data and voice network will down during this replacement window (3pm - 7pm).,Network Infrastructure,,Beginning phase to upgrade WAN throughput by removing antiquated equipment.,Enhancement,Ethan Warren,"1) Rack/Install pre-configured router.
+2) Endure backup of existing router and local switch.
+3) Make necessary changes to local switch to connect to new router.
+4) Move WAN connection from existing router to new router and ensure connectivity to ASE network.
+5) Connect local switch to new router and test connectivity to router and WAN.
+...
+
+BACK OUT PLAN: Return WAN connection to old router, reprogram local switch with previous configuration and ensure connectivity to WAN
+....",
+,Completed,08/24/16 11:12 AM,web-form@smartsheet.com,Patrick Sendera,Upgrade process is very quick process and has been done several times before without issue. ; After 4:30p.m. UPDATE 92/2 - Pat S updated to Wed due to weather,09/07/16,,Upgrade SDE schemas on GIS databases,All GIS systems internal and public will experience downtime.  CSO system will be unavailable during this period so the plan will be dependent on the weather forecast.,GIS,,Upgrade SDE 10 version 10.3.1 from 10.2.2 to align with application software.  This also prepares us for 10.4.1 upgrade by end of year,Enhancement,Patrick Sendera,"1) Backup databases
+2) Shutdown all GIS services and lock database connections
+3)Run SDE upgrade tool
+4)Restart SDE services.
+5) Test GIS applications
+...
+
+BACK OUT PLAN: 
+Restore databases from backup
+....",
+,Completed,08/17/16 11:44 AM,web-form@smartsheet.com,Kevin Young,,08/28/16,,Planned system reboot.,"SAP, PBF, District Website",ERP / SAP,,Scheduled system reboot @ 2am,Preventive,Kevin Young,,
+,Completed,07/11/16 12:31 PM,web-form@smartsheet.com,Kevin Young,8/26 @ Noon ; Dependency - SSL cert,08/26/16,,"Migration of BW, PBF Portal, CE Portal and BOBJ and NWDI",PBF users,ERP / SAP,,Completion of the hardware and database migration project to SQLServer database and Windows Virtual Servers.,Enhancement,Kevin Young,,
+,Completed,08/25/16 4:10 PM,web-form@smartsheet.com,Kevin Young,,08/25/16,,Shutdown of PRDBOB for data export for PBF Migration Project at 10:00 pm,PBF Users,ERP / SAP,,Preparing Virtual PRDBOB for PBF Migration,New Implementation,Kevin Young,"1) Reboot the server
+2) Restart the application
+3) Export data
+...
+
+BACK OUT PLAN: 
+....",TRUE
+,Completed,08/24/16 4:57 PM,web-form@smartsheet.com,M&R,,08/25/16,,move deployment to production,iPacs,,,"Fix unplanned outages of iPacs system, these outages cause us to reboot. The unplanned outages are a big loss of productive time to M&R and Finance",Fix / Patch,Roger Smith,"1) shut down system
+2) backup server
+3) apply scripts to database
+4) move deployment to App server
+5) open system to users
+
+BACK OUT PLAN: 
+If backout is required, we will restore the server from the snapshot taken immediately before the work began",
+,Completed,08/25/16 3:58 PM,web-form@smartsheet.com,Ervin Cheng,,08/24/16,,Memory upgrade to all esxi host on both UCS systems,All Systems will have to be migrated off their respective host during the memory upgrade. It will be migrated back once the upgrade to the memory is finish.,Network Operations (Server / SAN),,All host on both UCS systems will have enough memory to support future resource needs.,Enhancement,Ervin Cheng,"1) vmotion all non-production servers during working hours.
+2) vmotion all production during 7:30 to 8:15 a.m.
+3) put host in maintenance mode, then power down host.
+4) put more memory into host.
+5) power up host and verify all memory is accounted for.
+6) vmotion back non-production server anytime
+7) vmotion all production during 7:30 to 8:15 a.m.
+8) verify all system is functioning and performing correctly.
+9) during the entire process, the server shouldn't be down and should be seamless to users.
+...
+
+BACK OUT PLAN: 
+....
+remove memory if is bad and retry another day after receiving new memory.",
+,Completed,08/25/16 10:13 AM,web-form@smartsheet.com,Ethan Warren,Replacement chassis to be ordered through Cisco Smartnet.,08/24/16,,Attempt to replace defective board in CWRP_Mezz_4507 switch.  Found the chassis back plane has bad slot.  Replacement chassis to be ordered.,Multiple users in trades area could not connect to administrative network.,Network Infrastructure,,Restore connectivity for impacted users.,Fix / Patch,Ethan Warren,"1) Configured spare supervisor board and 48 port blade to replace possible defective boards.
+
+2) Upon arrival spare blade did not work in slot 4 where original blade was installed. Removed replacement blade from slot 4 and installed replacement board to slot 6 and system came up.
+
+3) Did not replace supervisor board.
+...
+
+BACK OUT PLAN: 
+....",TRUE
+,Completed,08/23/16 1:25 PM,web-form@smartsheet.com,Kevin Young,,08/23/16,,Restart of SAP Service because of account change from SAPSERVICEPRD to SAPServicePRD.,SAP users,ERP / SAP,,SAP's suggested course of action to resolve SQLServer and Active Directory disconnect.,Fix / Patch,Kevin Young,"1.       Stop SAP on Central Instance(MWRDECCP0) and App server(MWRDECCP1)
+2.       Stop SAP services on Central Instance(MWRDECCP0) and App server(MWRDECCP1)
+3.       Login as MWRD\SAPServicePRD and set environment variables same as prdadm on Central Instance(MWRDECCP0) and App server(MWRDECCP1
+4.       Add the modified user MWRD\SAPServicePRD to SQL login users on MWRDPRDDB
+5.       Change SAP Services on Central Instance(MWRDECCP0) and App server(MWRDECCP1) to user MWRD\SAPServicePRD
+6.       Start Services
+7.       Start SAP
+8.       Ensure Transport directory/DATAXFER/ESS access
+
+BACK OUT PLAN: 
+Changed the AD account back to all upper case and putting the services back to using prdadm",TRUE
+,Completed,08/18/16 2:12 PM,web-form@smartsheet.com,Kevin Young,,08/18/16,,The database and application servers were restarted.,SAP will be down for approximately15 minutes starting at 8pm,ERP / SAP,,Addressing the intermittent connection failures between Active Directory and SQLServer,Fix / Patch,Kevin Young,,TRUE
+,Completed,07/21/16 2:42 PM,web-form@smartsheet.com,ervin cheng,Dependency is moving off GIS pub to use server as a backup target ; Bob will get update from Josh on new move date (ETA ~ Oct),08/18/16,,Update smart array p440ar controller firmware.  The firmware installed is 2.52. The new version is 4.02.,"All DMZ server will be affected.  All DMZ server will need to be shutoff.  All external apps, ftp, forms, districtjobs, gis, CAWAS, will be unavailable.",Network Operations (Server / SAN),,"There was a battery 1 failure on the host notice and hp required us to update our firmware for them to send us the parts to replace it. Once the update is completed, the diagnostic will be more accurate on the cause of the battery 1 status.",Fix / Patch,ervin cheng,,
+,Completed,08/16/16 4:23 PM,web-form@smartsheet.com,Ethan Warren,,08/17/16,,Need to remove secondary IP helper address from VLAN configuration on MOB 6500 switch.,None,Network Infrastructure,,Help to remove duplicate nodes with multiple IP addresses from DNS,Preventive,Ethan Warren,,
+,Completed,08/16/16 4:16 PM,web-form@smartsheet.com,Ethan Warren,,08/16/16,,Need to remove secondary IP helper address from VLAN configuration on MOB 6500 switch.,None,Network Infrastructure,,Help to remove duplicate nodes with multiple IP addresses from DNS,Preventive,Ethan Warren,,
+,Completed,07/27/16 10:38 AM,web-form@smartsheet.com,Patrick sendera,Rich can provide strategic details to minimize user interruption ; NEEDS TO BE RE-SCHEDULED 7 COORDINATED WITH PAT S.,08/12/16,,DNS change for GISPRDAPP to access GIS1 directly rather than routed through F5,GIS Production Services - Internal,GIS,,Remove dependency on F5 since GIS production systems have been reduced to 1 node because of virtualation,Preventive,Patrick sendera,,
+,Completed,08/10/16 11:08 AM,web-form@smartsheet.com,Ethan Warren,Should be completed by end AUGUST,08/11/16,,Need to remove secondary IP helper address from VLAN configuration on MOB 6500 switch.,None,Network Infrastructure,,Help to remove duplicate nodes with multiple IP addresses from DNS,Preventive,Ethan Warren,,
+,Completed,07/11/16 1:41 PM,web-form@smartsheet.com,LaShun Osborn,Ervin will coordinate with Marcel,08/06/16,,Failover of MWRDVIDEO file server from Stickney to Oakbrook datacenter.,"Disruption of access to Sewer video data, Board Meeting/podcast video data.",Network Operations (Server / SAN),,Relocation of MWRDVIDEO server to another datacenter to better balance file server/app server distribution of resources.,Enhancement,Ervin Cheng,,
+,Completed,07/11/16 12:26 PM,web-form@smartsheet.com,Kevin Young,,08/06/16,,The District Portal will be migrated to a Virtual Server along with a migrated database.,The District Website will be unavailable,ERP / SAP,,To move into a virtualized environment with a SQLServer database.,Enhancement,Kevin Young,,
+,Completed,07/18/16 10:14 AM,web-form@smartsheet.com,Patrick sendera,,08/04/16,,Cut over to new IISMWRD server.  Old server will be renamed and new server will be named IISMWRD.  Downtime should be very minimal.  If cutover goes as planned it should be less than 15 minutes.,"Police ORS, PURCON, Contract Announcement Administration application, GASB34.",GIS,,Retire current IISMWRD 2003 server and implement current applications on virtual 2012 server.,Security,Patrick sendera,,
+,Completed,07/11/16 1:29 PM,web-form@smartsheet.com,LaShun Osborn,,07/30/16,,Failover of PUBINFOSTORE file server from Stickney to Oakbrook datacenter.,Disruption of access to GA-Public Affairs data.,Network Operations (Server / SAN),,Relocation of PUBINFOSTORE file server to another datacenter to better balance file server/app server distribution of resources.,Enhancement,Ervin Cheng,,
+,Completed,07/11/16 1:23 PM,web-form@smartsheet.com,LaShun Osborn,,07/28/16,,Failover of Blackbird file server from Stickney to Oakbrook datacenter.,"Disruption of access to Eng_Construction data, IRIS backup,  M&O data, Procurement data, Finance lockbox data, and SAP_DOC data.",Network Operations (Server / SAN),,Relocation of Blackbird file server to another datacenter to better balance file server/app server distribution of resources.,Enhancement,Ervin Cheng,,
+,Completed,07/07/16 3:56 PM,web-form@smartsheet.com,ervin cheng,,07/23/16,,fileholdd migration to wsw-rvcenter. ervin will migrate the server and make sure the system is as before. will test the system by login into legalfiles to make sure db is able to connect. we are moving the server form a old bl460c G5 server hardware to the new UCS system  The bl460c g5 server have a smart array cache that failed often.,"fileholdd is a database that contains legal files database, ED's analysis database and construct wear database. we want to do this when no one is using all this systems. the effected area will be law and ed.",Network Operations (Server / SAN),,"better hardware, supported hardware and software. have backup, replication, HA and DRS. Remove old blade gear and decom datacenter.",Preventive,ervin cheng,,
+,Completed,06/16/16 12:33 PM,web-form@smartsheet.com,Kevin Young,Website will be down from 1am until 6 am,07/23/16,,Enterprise Portal will be down,District's website,ERP / SAP,,Migration to Virtualized Windows server environment,New Implementation,Kevin Young,,
+,Completed,07/13/16 9:21 AM,web-form@smartsheet.com,Ethan Warren,,07/21/16,,"Apply OS updates for security appliances, Ironport and FireEye.","No other systems or applications will be affected.
+
+In the event updates fail, exposure to internet vulnerabilities and unlimited access to websites could occur.",Security,,Patch for vulnerabilities and fixes for operational issues.,Fix / Patch,Ethan Warren,,
+,Completed,07/20/16 11:22 AM,web-form@smartsheet.com,Kevin Young,,07/20/16,,The District's website will need to be restarted. This is needed to possibly resolve a caching issue that could be hindering the 4B process.,The District's website will be unavailable for 20-30 minutes.,ERP / SAP,,Resolve the 4B issue.,Fix / Patch,Kevin Young,,TRUE
+,Completed,06/16/16 12:30 PM,web-form@smartsheet.com,Kevin Young,The system will be down from noon on July15th - July 18th with the exception of power users on July 17th,07/15/16,,"SAP Production will be shutdown at 12 pm on July 15, 2016","SAP, ESS",ERP / SAP,,Go-live process for migration project.,New Implementation,Kevin Young,,
+,Completed,06/16/16 12:27 PM,web-form@smartsheet.com,Kevin Young,PBF will be shutdown COB July 14 and available on July 18,07/14/16,,BIP system shutdown,PBF,ERP / SAP,,Go-live process for Migration project,New Implementation,Kevin Young,,
+,Completed,07/06/16 2:31 PM,web-form@smartsheet.com,Kevin Young,,07/06/16,,Restart of CEPRDPortal due to slow response and possible garbage collection.,PBF,ERP / SAP,,Speed up response time,Fix / Patch,Kevin Young,,
+,Completed,07/06/16 2:29 PM,web-form@smartsheet.com,Kevin Young,,07/05/16,,Restart of CEPRDPortal due to slow response and possible garbage collection.,PBF and a slower Website response,ERP / SAP,,Speed up response time.,Fix / Patch,Kevin Young,,
+,Completed,06/16/16 12:20 PM,web-form@smartsheet.com,Kevin Young,District website will be unavailable from 1 am until 6 am,07/03/16,,Enterprise Portal shutdown for test exports for migration project.,District website,ERP / SAP,,To get a baseline of activities on Production servers,New Implementation,Kevin Young,,
+,Completed,06/16/16 12:18 PM,web-form@smartsheet.com,Kevin Young,BIP will be unavailable from 6 am until 12 am,07/02/16,,BIP system shutdown for test exports for migration project.,PBF,ERP / SAP,,To get a baseline of activities on Production servers.,New Implementation,Kevin Young,,
+,Completed,06/16/16 12:14 PM,web-form@smartsheet.com,Kevin Young,SAP will be unavailable from 6 am until 12 am,07/02/16,,SAP Production system shutdown for test exports for migration project.,SAP and ESS,ERP / SAP,,To get a baseline of activities on Production servers.,New Implementation,Kevin Young,,TRUE
+,Completed,06/17/16 11:53 AM,web-form@smartsheet.com,Kendall / McEnery,https://technet.microsoft.com/en-us/library/cc755994(v=ws.10).aspx#w2k3tr_repto_how_qvtw,07/01/16,,Lower Site Link replication time from 180 minutes to 15 minutes,Active Directory,Network Infrastructure,,To speed up replication between on sight and Azure for possible future deployment of servers in Azure,Enhancement,Kendall / McEnery,,
+,Completed,06/14/16 2:51 PM,web-form@smartsheet.com,Sean Kelly,I want to get this done ASAP,06/30/16,,Upgrade ALL Servers,Happy Users,Network Infrastructure,,A Raise,New Implementation,John Sudduth,,TRUE
+,Completed,06/16/16 3:14 PM,web-form@smartsheet.com,,This is to be performed from 4:30-7:30,06/29/16,,Upgrade apps.mwrd.org to Windows Server 2012,"Applications hosted on apps.mwrd.org (CSO Viewer Applications, Contract Announcement Application, FOIA System, Vendor Search Application, District Job Website, Tour Request Form, MWRD Plant Data  - Monthly Plant Data, RSS Feeds on Website)",GIS,,Improved reliability and performance to applications hosted on apps.mwrd.org,Fix / Patch,Pat Sendera/Scott Ecklund,,
+,Completed,06/27/16 12:21 PM,web-form@smartsheet.com,LaShun Osborn,,06/27/16,,Server Re-boot of VMPERFAP,"The dashboard will be affected. The server will be re-booted at 4:30  by the Network Operations group.   The departments: Engineering, HR, M&O and Procurement will not be able to access the dashboard",Network Operations (Server / SAN),,"Message from LaShun follows:
+Good morning,
+
+The File System backup of the server VMPERFAP is currently in a pending state. It appears the CommVault services may not be running. I tried logging into the server via RDP as well as the vSphere client (both installed and web.) I am unable to get any response from the console (no login window when I try to send a Ctrl + Alt + Del.) Patrick also had the same results when trying to connect to the virtual machine. The server is responding to ping requests.
+
+Would it be possible to set up a time today to reboot this VM? Please advise.
+
+Thanks,
+LaShun",Fix / Patch,"LaShun Osborn, Patrick Kane and Raymond McCague",,TRUE
+,Completed,06/23/16 2:15 PM,web-form@smartsheet.com,Chris Kendall,,06/24/16,,"Remove and refresh DNS records for fileservers Cobra,Eagle,Falcon,Hawk,Raptor, & Tomcat.",There should be no affect to any users or systems.,Network Operations (Server / SAN),,To verify critical systems are properly updating their DNS records prior to enabling DNS scavenging.,Preventive,Chris Kendall,,
+,Completed,06/20/16 10:15 AM,web-form@smartsheet.com,Ervin Cheng,Stickney WRP I.T. Alternate Site Contact:  John Cernick,06/21/16,,"Virtual System Filebound will need to be taken offline and migrated to the new hardware system platform located in the Stickney Computer Room. 
+This conversion/migration process can take anywhere from 1 to 10 hours to complete per system; depending on system size and configuration.  ITD prefers to perform the migration process during the business day to ensure proper operation post-migration, and to allow for any collaboration between Engineering and I.T. to answer questions.
+In the event that the conversion and migration process fails, the original system will be powered back on made available for use.
+User contact to test system functionality post-migration;  Mark Rzepecki: 84041","Stickney WRP Engineering Group; Mark Rzepecki, Dan Bergstrom, Jeff Wang.  System also integrates with MMS system, and is used in conjunction with system FileBound.  Therefore, both systems will be migrated simultaneously to minimize service impact; post migration.",Network Operations (Server / SAN),,"Migration of virtual system to new system infrastructure platform; providing  additional resources and increased performance for a more productive end-user experience. In addition, production data and system (datastore) repository will be replicated to remote site (Zayo, Oak Brook, IL) for protection and recovery.",Enhancement,"Patrick Kane x15832, Ervin Cheng x17908",,
+,Completed,06/20/16 10:12 AM,web-form@smartsheet.com,Ervin Cheng,Alternate Stickney I.T. Site Contact:  John Cernick,06/21/16,,"Virtual System instequipmgmtdb will need to be taken offline and migrated to the new hardware system platform located in the Stickney Computer Room. 
+
+This conversion/migration process can take anywhere from 1 to 10 hours to complete per system; depending on system size and configuration.  ITD prefers to perform the migration process during the business day to ensure proper operation post-migration, and to allow for any collaboration between Engineering and I.T. to answer questions.
+
+In the event that the conversion and migration process fails, the original system will be powered back on made available for use.
+
+User contact to test system functionality post-migration;  Mark Rzepecki: 84041","Stickney WRP Engineering Group; Mark Rzepecki, Dan Bergstrom, Jeff Wang.  System also integrates with MMS system, and is used in conjunction with system FileBound.  Therefore, both systems will be migrated simultaneously to minimize service impact; post migration.",Network Operations (Server / SAN),,"Migration of virtual system to new system infrastructure platform; providing  additional resources and increased performance for a more productive end-user experience. In addition, production data and system (datastore) repository will be replicated to remote site (Zayo, Oak Brook, IL) for protection and recovery.",Enhancement,Patrick Kane x15832 or Ervin Cheng x17908,,
+,Completed,06/15/16 12:28 PM,web-form@smartsheet.com,ervin cheng,,06/18/16,,summation migration to wsw-rvcenter. Ervin Cheng will do the migration and make sure the system is as before. Will test the system by login into summation to make sure db is able to connect. We are moving the server from a free version of VMware to a full license of VMware and from a dl380 G5 to the UCS system,summation is a database that contains summation database. We want to do this when no one is using all this systems. The affected area will be law. Law users are being notify and also erin Johnson email me that no one will be working this Saturday.,Network Operations (Server / SAN),,"Better hardware, supported hardware & software. Have backup, replication, HA, and DRS. Remove old dl380 G5s and decom of datacenter.",Preventive,ervin cheng,,
+,Completed,06/15/16 12:23 PM,web-form@smartsheet.com,Ervin Cheng,Migration Failed  - re-scheduled for 7/23/16 ; Completed 7/23,06/18/16,,fileholdd migration to wsw-rvcenter. Ervin Cheng will do the migration and make sure the system is as before. Will test the system by login into legalfiles to make sure db is able to connect. We are moving the server from a free version of VMware to a full license of VMware and from a dl380 G5 to the UCS system,"fileholdd is a database that contains legal files database, ED's analysis database and construct wear database.  We want to do this when no one is using all this systems. The affected area will be law, and ed.",Network Operations (Server / SAN),,"Better hardware, supported hardware & software. Have backup, replication, HA, and DRS. Remove old dl380 G5s and decom of datacenter.",Preventive,Ervin Cheng,,
+,Completed,06/15/16 12:15 PM,web-form@smartsheet.com,roger smith,,06/18/16,,"limsprdapp migration to wsw-rvcenter.  Ervin Cheng will do the migration and make sure the system is as before, Roger Smith will apply the software license. We are moving the server from a free version of VMware to a full license of VMware and from a dl380 G5 to the UCS system.","limsprd application will be unavailable, Users will be notify. Users do not use system after 3 p.m. on Saturdays. The Labs will not be able to put in lab results.",Multi-Team (Indicate groups in Additional Information),,"Better hardware, supported hardware & software. Have backup, replication, HA, and DRS.  Remove old dl380 G5s and decom of datacenter.",Preventive,ervin cheng,,

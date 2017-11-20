@@ -1,0 +1,605 @@
+Create Date,Created by,Priority,Status Indicator,Point of Contact,Outage Start Date,Outage End Date,Status Notes,Time and Duration of Outage,Description of Outage,Resolution Steps,User Impact,IT Area,Impact Category,Root Cause,Additional Information
+10/03/17 11:06 AM,siaj@mwrd.org,High,Follow-up,Joel Sia,10/02/17,10/03/17,,"10/2/2017 8:45 AM, ongoing.","Automatic interpretation and transfer to Verify, automatic transfer to Readsoft Process Director not working.",none yet.,Delay in processing;  I'm currently manually pushing items through Readsoft Interpreter,ERP / SAP,Major,"unsure, will create a new outage report when resolved.","Incident #7517 , kofax ticket 24023925"
+10/03/17 10:47 AM,siaj@mwrd.org,High,Follow-up,Joel Sia,09/28/17,09/28/17,10/3 - Joel to update with information on which servers/computers were affected and which ones had to be rebooted.  Bob/Rich to verify invoice workflow design.  Data point - How many invoices on avg are scanned daily?,"8:45 to 5 PM.
+First reported by phone at 11:00 AM that day.","End users called when none of their newly scanned invoices were getting into SAP. Windows logs show this error:
+
+Faulting application name: eiitrp.exe, version: 5.8.16168.110, time stamp: 0x5762601c
+Faulting module name: MSVCR120.dll, version: 12.0.21005.1, time stamp: 0x524f7ce6
+Exception code: 0xc0000409
+Fault offset: 0x000a7666
+Faulting process id: 0x8544
+Faulting application start time: 0x01d33889d465efdb
+Faulting application path: E:\Program Files (x86)\ReadSoft\INVOICES\Bin\eiitrp.exe
+Faulting module path: C:\Windows\SYSTEM32\MSVCR120.dll
+Report Id: 12edd495-a47d-11e7-80d4-005056843318
+Faulting package full name: 
+Faulting package-relative application ID:
+
+This error would repeat every time the transfer app would run. 
+
+Determined a large document in image import might have initially caused the problem; this DLL might have been removed or altered in memory to prevent further damage and was not able to be re-intialized in this session of windows.",Restarted windows 2012. I had to wait till all users had logged off system as this server shares resources for the web part of Readsoft (Webcycle) which was not malfunctioning.,No invoice could be verified ( with Readsoft Verfiy) and moved into SAP after scanning into Readsoft Scanner or ImageImport,ERP / SAP,Major,There was a large pdf document with several hundred pages of detail put into image import folder (used for scanning .pdf invoices). The software was determining if any part of that document was invoice detail which it was not. User eventually printed and scanned the 1st page of the document which was the required invoice.,"kofax ticket 24023142, screenshots of time of day failure, Incident #7513"
+10/03/17 9:32 AM,kevin.young@mwrd.org,Medium,Reviewed,Kevin Young,09/30/17,10/02/17,,"Saturday, Sept. 30, 10:50 pm - Monday, October 2 11:23 am","After removing index.html and index.htm from the 2 portal servers; MWRDNEPP1 and MWRDNEPP2, the District's website to the outside was up and down depending on which server the user was connected to.","Initially disabled MWRDNEPP2 from F5 to see if that would correct the issue since internally there was no problem and MWRDNEPP1 is used exclusively for internal traffic. After removing MWRDNEPP2, the problem went away.",The District's website to the outside was unavailable sporadically depending on the server that you got connected to.,ERP / SAP,Significant,"After analyzing MWRDNEPP2, there was never a default page defined in the Visual Administrator, so the District's homepage was defined as a default page on MWRDNEPP2 and MWRDNEP2 was enabled in F5 and everything is working as it should.",
+10/02/17 10:46 AM,mccaguer@mwrd.org,High,Reviewed,Raymond McCague,10/02/17,10/02/17,,Between 8:48am and 9:52am.  64 minutes.,Between 8:48am and 9:52am users could not use the Local Sewers application. (LSS),It resolved on its own.,Between 8:48am and 9:52am users could not  use the Local Sewers application.,Multi-Team (Indicate groups in Additional Information),Major,The network connectivity was down between cluster2 and sv-lss.,Looked at by the Database group.
+09/29/17 4:03 PM,warrene@mwrd.org,Low,Reviewed,Ethan Warren,09/29/17,09/29/17,,10:15 am until 11:00 am (45 minutes),"During the AT&T DDoS readiness test, public access to mwrd.org was blocked during mitigation of the simulated attack. Network team was told by the mitigation team the blocking of access to the IP address had been cleared, which was not true.",The AT&T DDoS mitigation team cleared the block and public service was restored.,No internal users were impacted.,Network Infrastructure,Significant,"Mitigation filters were not removed as stated.
+
+Spinning up a VM server running IIS for testing should eliminate future outages.",
+09/19/17 3:26 PM,wrights1@mwrd.org,High,Follow-up,Semaj Wright & John Reichling,09/18/17,09/19/17,John R to continue investigating root cause,First noticed at 7:09pm,End-users on PCs are getting prompted to install drivers and admin credentials for printers that they previously installed.,"Still working on a resolution
+Samanage Problem number #14
+https://servicedesk.mwrd.org/problems/428195-printing-prompt-to-install-drivers","Printing on Windows PCs, All locations",Multi-Team (Indicate groups in Additional Information),Significant,,
+09/14/17 10:25 AM,shamsuddinh@mwrd.org,Low,Follow-up,Sam Johnston,09/14/17,09/14/17,Follow up after root issue with OWA is resolved.,1:04 am -- 7:15 am when the server was rebooted,One server in the Farm couldn't reestablish users connection from the previous day.,"Connection to the server through an RDP was not possible. Connection to the VMware environment and shutting down the VM was possible. The server was rebooted, cleaned up, tested, and rejoined the Citrix farm by 7:15 am",Only the users who didn't log their session from the previous day were affected. The Service Desk records referenced by Mark Lopatka indicated the number of users is 4.,"Desktop Engineering (Citrix, SCCM)",Minor,Too many connections from Microsoft Outlook to the Microsoft Exchange server were reported as being lost and restored. These messages continued to repeat themselves from 6:53 pm until 12:33 am the next day for different user sessions until the server froze.  Recommendation is for the Users to logout their session before leaving for the day.,
+09/05/17 11:16 AM,kellys2@mwrd.org,,Reviewed,Bob Beckman,09/01/17,09/05/17,IREIS  OUTAGE HOLD,From 9:37a on 9/1/17 until 8:00am on 9/5/17,"Law Dept's Real Estate application, IRIES, was issuing an error message on some of the functionality.","SV-IREIS was rebooted Friday afternoon on 9/1. IRIS2003 was rebooted at 8:00am on Tuesday 9/5. User stated IREIS would not be needed until Tuesday, 9/5.",Law Dept RealEstate section unable to use the application,GIS,,Unknown. This system will be decommissioned when Tririga goes live.,
+09/05/17 10:00 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,08/30/17,08/30/17,Sean will follow-up with HASMA area Power contact: Dave Kova,Approximately 9:45 am until 3:20 pm,"Email from Tom Rainey...
+
+""Ethan, when the power went out I spoke to one of the contractor’s (Intren, Inc.) workers who were working on the power line and he said that this was a planned outage.  He said the MWRD was notified – however I did not receive any notification, so I’m not sure who was informed.""",Contractor restored power.,No administrative data network for the HASMA location.,Network Infrastructure,,Planned power outage for the HASMA facilities.  I.T. was not notified of the outage.,
+08/29/17 11:12 AM,kellys2@mwrd.org,,Follow-up,Richard Piotrowski,08/25/17,08/25/17,RAVE OUTAGE-  TimeFrame:  ; Kevin Mica to follow-up with RAVE about notifications to MWRD- Ticket opened waiting on response ; Opened ticket on 9/12/17,Unknown,Website unavailable fro login,Rave Hosting Maintenance,Users unable to update information,All MWRD employees,,Scheduled Maintenance,Contacting Rave to understand how these outages are sent to users
+08/23/17 2:17 PM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/22/17,08/22/17,,8:45 am - 9: 38 am,Legal Files application not accessible,Deleted old log files and increased disk space.,Law users could not access Legal Files software,ERP / SAP,,The server ran out of disk space,See incident #5717 in Samanage
+08/22/17 10:30 AM,beckmanr@mwrd.org,,Reviewed,Robert Beckman,08/21/17,08/21/17,Add to list of web services to monitor application/page testing - Network and SolarWinds web monitoring project,From 2:59am on 7/21/2017 until 9:15am on 7/21/2017,IT notified of user receiving an error message when trying to log into Readsoft website at approx. 8:30am on 8/21.,Restarted the Apache Tomcat webservice on MWRDRDSP at approx 9:10am,Users unable to approve invoices in Readsoft,ERP / SAP,,Event logs showed a .net error occurred at 2:59am,
+08/29/17 11:12 AM,kellys2@mwrd.org,,Follow-up,Richard Piotrowski,08/19/17,08/19/17,Internet Outage at MOB including Websites.NEXT STEP: Schedule outage and open call with Fireeye for troubleshooting ; Ethan W. ; DATE: 9/22/17 after 5:00pm,Intermittent over a 1 hour period,"FireEye would not link at 1 gig to Firewall, found during cable cleanup and fail-over",Tested each connection and path until a working one was found.,Websites & Internet unavailable,Websites & Internet at MOB,,Investigating,
+08/18/17 9:47 AM,thompsonr@mwrd.org,,Reviewed,Ronald Thompson,08/18/17,08/18/17,Network Ops will revisit Benchmark alerts from Solarwinds for all application/services,7:49am-8:45am,"Users were working in the LIMS production system and many were kicked out of the system, with an SystemOutOfMemoryException being thrown. We were unable to RDP into LIMSPRDAPP application server. Referred to Ervin Cheng on San Server team for assistance.","1. Application server was rebooted
+2. Physical memory on server was increased from 8gb to 16gb.",LIMS Production System,Multi-Team (Indicate groups in Additional Information),,"Virtual memory on server (located on C: where OS resides) was set to automatic and all space was used. There were two big data spikes that occurred here:
+
+1. At 8:12am, a 3MB data transfer from LIMSPRDAPP to SAI-PC took place.
+2. System was halted at 8:30am.
+3. At 8:33am, a 1.2MB data transfer from LIMSPRDAPP to SAI-PC took place.
+
+In order to prevent this problem from occurring in the future, the physical memory on the server was increased and we will be moving the configuration and location of the page file. We will need to perform a scheduled shutdown  in order to perform this task.",Application Development / San Server Group
+08/16/17 8:32 AM,piotrowskir@mwrd.org,,Reviewed,Richard,08/11/17,08/11/17,,8 am to noon,Switch failure at SWRP resulting in Pegasus (Access Control system) going offline for downtown swipe access,Replaced 3560 Cisco switch at SWRP and add it to Solarwinds. also added Pegasus to Solarwinds.,Workstations downtown at the security desks could not provide key card verification,Network Infrastructure,,11+ old Cisco switch,
+08/08/17 3:35 PM,piotrowskir@mwrd.org,,Reviewed,Richard Piotrowski,08/08/17,08/09/17,CANCELED,6 am 8/8 to 3 pm 8/8,"Power Shutdown at SWRP, following building without power SWRP_CentralHeat,SWRP_EDgstr,SWRP_POSTDGST,SWRP_RndHse,SWRP_WPS and SWP_Pump",Power restored,"Phones, Computer and Timeclocks out",Network Infrastructure,,Planned outage by M&O,One week notice provided to IT
+08/08/17 1:53 PM,smithr1@mwrd.org,,Reviewed,Roger Smith,08/08/17,08/08/17,,12:30 PM - 12:32 PM,Re-boot of IPACPRDAPP,,iPacs was unavailable,Multi-Team (Indicate groups in Additional Information),,"Crystal reports was running slow, needed to re-boot the server.",
+08/07/17 12:14 PM,smithr1@mwrd.org,,Reviewed,Roger Smith,08/05/17,08/06/17,,from 8/5/17 at 4:30pm  until 8/6/17 at 8:15 AM,"Sample Manager was down, users in the lab could not log in.","After investigating, we determined that the Thermo License service was down. After starting the service and re-reading the license file, users were able to log in.",users could not log into LIMS,Multi-Team (Indicate groups in Additional Information),,"After the nic card update, the license service did not start automatically. After any reboot, we need to check this service.",
+08/03/17 4:00 PM,shamsuddinh@mwrd.org,,Reviewed,Abdur Rahman,07/31/17,07/31/17,Will discuss in Service Ops team 8/8,11:15 am -- 12:41 pm,XenPrint021 could not authenticate user's access to print queues resulting in a failed print job.,Rebooted XenPrint021.,Users print jobs did not print to XenPrint021. The Help Desk redirected these Users to XenPrint011 and XenPrint041.,"Desktop Engineering (Citrix, SCCM)",,Unknown since no configuration changes occurred on this server. Decided to reduce the scheduled reboot from monthly to bi-weekly.,
+07/19/17 8:59 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,07/17/17,07/19/17,Will fold into  larger project for alternative network access (Verizon ?).  Kevin P will provide ticket # ZA157937,Marathon T1 went out. Users affected from 7am 7/17 until this morning at 7/19 8:03am,T1 line down. Bad cable,"Opened ticket with AT&T and worked with LASMA employees for access to the marathon site (Trailer, Scales site) AT&T ticket #ZA157937",All systems down at Marathon,Network Infrastructure,,Install new cabling,
+07/18/17 9:37 AM,shamsuddinh@mwrd.org,,Reviewed,Eric Eberhart,07/17/17,07/17/17,More info - Verify no changes on XenPrint011;Desktop Engineering,7/17/17 1:16:29 pm until 7/17/17 3:11:9 pm,XenPrint011 server could not resolve the Domain Controller IP address to authenticate printer jobs.,Rebooting the server resolved the DNS resolutions and users were able to print again.,Users print jobs will not print to XenPrint011 but they were able to print on the other print servers. The Help Desk redirected these Users to XenPrint021 and XenPrint041,"Desktop Engineering (Citrix, SCCM)",,This server XenPrint011 is scheduled for NIC driver change from E1000 to VMXNet3 next Thursday. The other print servers NIC drivers as well as XenApp servers were changed recently. Desktop Engineering team will continue to monitor this server until all changes are finalized to determine whether these drivers changes are having any impact on communications between VM servers.,
+07/11/17 10:35 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,07/10/17,07/10/17,,Approximately 6:00 am for 15 minutes.,Partial power outage at Calumet Plant.,Unknown,"Netwok, WiFi, and Internet access was un available for affected areas",Network Infrastructure,,Unknown.  Tried contacting Troy Andrews for further details.  No response at this time.,
+07/06/17 5:30 PM,beckmanr@mwrd.org,,Follow-up,Roger Smith,07/05/17,07/06/17,Rich is building list of web sites/key functions of certain websites in SolarWinds.  Rich will test DPL app as first test (Follow-up 8/31) ; Update on 9/5 DPL tested and running every 5 minutes.  Rich P and Bob B will test DPL failover to test notifications on next Database (IISMWRD) Patching ; 10/3 - RICH P Will verify recent notifications from IIS.mwrd.org,Outage duration: approx 15hrs  (from 7/5 @4:30pm - 7/6@4:00am and again from 7/6@7:00am -9:55am),The District phone list was unavailable. An error message would display when querying any information. This error was discovered by IT staff when they were testing OS patches that were applied to the IISMWRD server at 4:00am on 7/6.,Needed to grant database select permissions on dbo.V_Employee to phone_list_app_role,District phone list,Multi-Team (Indicate groups in Additional Information),,"The dbo.V_Employee view was updated on 7/5 to resolve service desk ticket#3825 (incorrect employee email address geeting pulled into the Contract Announcement Q&A emails).
+
+The script used to update the view was not the most recent script. It was missing one line which granted select permission to the phone_list_app_role. When the view was updated, the phone_list_app_role permission was deleted.",MWRD GIS team discovered the issue and the Database team resolved the issue
+07/06/17 10:42 AM,smithr1@mwrd.org,,Reviewed,Roger Smith,06/29/17,06/30/17,Bob will verify QA and Prod environments for future QA / Production testing.  7/18 -Bob verified SQL server BI needed to updated - was out of sync with Prod ; FIXED,6-29 4:30 PM until 6-30 4:30 PM,"Jobs failed to run after NIC update and OS patches. Production dashboard was temporarily pointed to the QA database, which has current data. After the jobs ran, production dashboards were redirected back to the production database.",We installed an upgrade to the BI module of visual studios. Jobs were able to run after the upgrade.,"production dashboards were completely unavailable from 4:30 PM - 8:30 PM 6-29. After 8:30 PM 6-29, until 4:30 PM, users had current data via the QA database. After 4:30, we switched over to the prod DB.",Multi-Team (Indicate groups in Additional Information),,A conflict between the version of BI and one of the security patches.,
+07/17/17 4:12 PM,warrene@mwrd.org,,Reviewed,Kevin Pendergast,06/28/17,06/28/17,Network Team will update procedures to verify switch errors before replacement,3:30 pm until 4:00 pm,2960 switch showing PoE issues affecting time clock power.  Per Cisco Tech-support Switch was replaced.  Found out afterwards the time clock had a bad PoE module.,Time clock was replaced on 7/12/17.,Employees could not clock in or out.,Network Infrastructure,,Bad PoE module in time clock.,
+06/27/17 1:27 PM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,06/28/17,06/28/17,Kevin P/Rich will update to indicate original issue of bad CLOCK issue,30 minutes from 3:30pm to 4:00pm,"Cisco 2960 switch at Egan is having POE problems, thus affecting the time clock.",replaced cisco switch,time clock not working,Network Infrastructure,,defective switch,
+06/27/17 12:46 PM,smithr1@mwrd.org,,Reviewed,Roger Smith,06/26/17,06/27/17,Ray Mc. to list all Apps on each filemaker pro Server + list of all users who've accessed the apps within last 6 months,starting at 7:30 PM 6/26/2017 ending at 1:30 AM 6/27/2017. Approximately 6 hours.,File Maker Pro server 3 (FS-3) was down.,"1.       Rebooted the server
+2.       Disabled the firewall
+3.       Stopped the Bonjour service
+4.       Stopped the FileMaker Server service
+5.       Started the Bonjour service
+6.       Started the FileMaker Server service
+7.       Tested it and it worked
+8.       Restarted the firewall
+9.       Tested it again it still worked",File Maker Databases on this server were not available to users at this time.,Multi-Team (Indicate groups in Additional Information),,"The firewall was preventing users from seeing the databases on FS-3. If you remote into the server, you could see and open any of the databases. We will apply patches to 2 other File Maker servers. After we reboot these servers, follow the resolution steps listed above.",
+06/21/17 8:45 AM,piotrowskir@mwrd.org,,Reviewed,Richard Piotrowski,06/17/17,06/17/17,,11:30 am to 1:00 pm,Air conditioning MOBA 2nd Telecommunication room was online and IT was alerted to high temperature in the room by automated alarms.,contacted building Engineer for MOBA,no user impact,Network Operations (Server / SAN),,Testing of Fire system. IT was not notified of the test.,Information provided by Mike Roundtree
+06/13/17 10:37 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,06/13/17,06/13/17,,Approximately 1:00 am until 3:00 am,ASE service interruption at Oakbrook Terrace (Latisys).,Unknown.  RCA requested from AT&T.,Network access for SAN and File Servers was unavailable.,Network Infrastructure,,Unknown.  RCA requested from AT&T.,
+05/18/17 9:45 AM,senderap@mwrd.org,,Follow-up,Patrick Sendera,05/18/17,05/18/17,"Rich/Ervin will investigate running a report on all VM Nic types ; identify default nic ahead of time; Goal:Change NIC type from E1000e to VMNET 3.0 for the server webapps (6/20/17);Update: All Citrix servers need default nic changed ; Ervin to work with Hussein ; Ervin/Hussein will coordinate change during next Security Update (due: July 28th, 2017); August 2017:  Ervin will run monthly reports first Tues of each month",According to logs server went unresponsive at 3:27am.  At 7:30am Patrick Kane informed GIS team of server outage.  A quick investigation and server was reset and back up by 8am,Server went unresponsive at 3:27am.  Reason unknown,Reset of virtual machine guest GISPUB.mwrd.org,All public GIS applications and services were unavailable at this time,GIS,,No apparent application failures.  Server team investigating.,
+05/17/17 3:20 PM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,05/17/17,05/17/17,SEAN->NWRP Contacts ; 6/20/17,11:03am - 11:06am,Power rebooted at Hanover Park,Power back online,All systems down,Network Infrastructure,,Power maintenance,
+05/17/17 3:19 PM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,05/17/17,05/17/17,SEAN->NWRP Contacts ; 6/20/18,8:13 am - 9:46am,Trades performing a UPS swap (Hanover),Power back up,All systems down,Network Infrastructure,,Mainetnance,
+05/10/17 10:15 AM,abdur.rahman@mwrd.org,,Reviewed,Abdur Rahman,05/08/17,05/08/17,Followup: How did we learn of this issue?  Did we get an alert? ; Citrix team will document manual-failover steps; 6/19/17) Monitoring with multiple system to gather additional information for possible troubleshooting if failure occurs again.(switches were replaced.,reported at 11:30am - fixed by 11:45am,NetScaler1 was not accepting outside connections. Made NS2 primary and users were able to connect.,Worked with Roter at Stickney the next day.  Tried few troubleshooting steps including swapping cable ports on the DMZ switch and later by rebooting NS1 and NS2.  This fixed the issue and the unresponsive interface came back up and users were able to connect OK.,Remote Users not able to conenct for few minutes.,"Desktop Engineering (Citrix, SCCM)",,constant monitoring of switch and reboot of NS devices,NetOps to provide update by 5/17 to Desktop Support on analysis (done)
+05/16/17 3:26 PM,robertsl@mwrd.org,,Reviewed,LaShun Osborn,05/07/17,05/12/17,,Outage occurred: 5/7/2017 @1:15am. System back online 5/12/2017 @ 12pm.,"High storage consumption in MOB-VCENTER VMware environment. This caused the system MOB_IRONPORT_VM to go into a paused state. System was moved to standalone ESXi host (MOBVMHOST1) to free storage in MOB-VCENTER environment.
+Additional storage needed to be provisioned on MOBVMHOST1, so existing virtual machine on system (MOBWSUS) was backed up prior to adding storage. Additional storage provisioned, MOBVMHOST1 rebuilt. MOB_IRONPORT_VM system re-deployed to rebuilt host.","5/8/2017
+1.) Physical Ironport device placed into production for network filtering.
+2.) Shut down MOB_IRONPORT_VM.
+3.) Performed backup of system MOB_IRONPORT_VM (took several hours.)
+4.) Deleted MOB_IRONPORT_VM from MOB-VCENTER.
+
+5/9/2017
+5.) Shut down MOBWSUS (took several hours due to pending updates.)
+
+5/10/2017
+6.) Backed up MOBWSUS (took several hours.)
+7.) Added storage to MOBVMHOST1 & rebuilt ESXi system.
+
+5/11/2017
+8.) Deployed MOBWSUS to ESXi host.
+
+5/12/2017
+9.) Deployed MOB_IRONPORT_VM to ESXi host.",Network filtering disabled until physical Ironport device placed into production on 5/8/2017 at approx. 10am.,Multi-Team (Indicate groups in Additional Information),,"vCenter storage datastore ran out of space. Moved large virtual machine to different environment, freeing up space.",Network Infrastructure & NetOps
+05/16/17 2:51 PM,robertsl@mwrd.org,,Reviewed,LaShun Osborn,05/07/17,05/08/17,,Outage occurred 5/7/2017 @1am (SolarWinds). Systems brought back online 5/8/2017 @ 4:30pm.,High storage consumption in MOB-VCENTER VMware environment. This caused the systems SCCM01 & SCCMDB to go into a paused state.,"1.) Created a backup of MOB_IRONPORT_VM from MOB-VCENTER environment. Took several hours to complete.
+2.) Once backup completed & verified, deleted MOB_IRONPORT_VM from MOB-VCENTER environment. Freed up approx. 340GB space.
+3.) Powered on SCCM01 & SCCMDB systems.",Systems SCCM01 & SCCMDB were not available for use/deployments.,Multi-Team (Indicate groups in Additional Information),,"vCenter storage datastore ran out of space. Moved large virtual machine to different environment, freeing up space.",Desktop Engineering & NetOps
+05/03/17 1:54 PM,wojkovichr@mwrd.org,,Reviewed,RICHARD WOJKOVICH,05/03/17,05/03/17,,from 09:16:18 till 09:23:22 -- about 7 minutes and 4 seconds,duplicate Vlan104 IP address (10.12.1.1) was inadvertently copied to edge switch MOB4E_Rotor_2960# Vlan104 while trying to get TimelClock DHCP to work on vlan 104 to work.,offending duplicate IP address was removed from edge switch. Network returned to normal immediately,persons on MOB4 were unable to connect to network for a few minutes.,Network Infrastructure,,Inadvertently copying IP addresses from  the Core Switch to the edge switch is a bad idea... any duplicate IP addresses are a very BAD idea.  be EXTREMELY CAREFUL when working with LIVE equipment.,"It appears that the Cisco 2960 switch cannot be accessed using SSH on Vlan1 when there is another switch downline from it on Vlan1 as well.  But, it can be accessed from the downline switch with SSH!!  it also turns out that the TimeClock has an internal cable that must be connected for DHCP to work."
+05/02/17 4:04 PM,robertsl@mwrd.org,,Reviewed,LaShun Osborn,05/01/17,05/01/17,,"9:30am, duration ~3 hours.",Virtual machine mob_ironport_vm shut down.,Freed space on datastore.,Internet access not filtered for outage duration.,Multi-Team (Indicate groups in Additional Information),,Datastore ran out of disk space. NetOps in process of obtaining additional storage for the MOB vCenter environment.,"NetOps, Network Infrastructure Order drives"
+05/02/17 11:29 AM,robertsl@mwrd.org,,Reviewed,LaShun Osborn,05/01/17,05/01/17,,Start: 11am. Duration: 1.5 hours.,Virtual machine SCCM01 shut down.,Freed space on datastore.,SCCM deployment/packaging @MOB affected for outage duration.,Multi-Team (Indicate groups in Additional Information),,Datastore ran out of disk space. NetOps in process of obtaining additional storage for the MOB vCenter environment.,"NetOps, Desktop Engineering Ordered drives"
+04/28/17 3:49 PM,warrene@mwrd.org,,Reviewed,Ethan Warren,04/27/17,04/27/17,,12:40 pm - 3:10 pm (2-1/2 hrs.),T1 circuit down. (FULTON COUNTY),Opened ticket (#230575331) with AT&T for repairs.,No network (VPN) or internet connectivity.,Network Infrastructure,,Unknown.  Repairs done in AT&T central office.,
+04/21/17 2:05 PM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,04/21/17,04/21/17,Follow-up with Dave (Power contact) - Sean - 6/20/17,8am to 9:15am,no power,Electricians turned power back on,All systems down at Vulcan,Network Infrastructure,,electrical maintenance,Sean?
+04/20/17 8:52 AM,dominaj@mwrd.org,,Reviewed,"Pat Sendera, Josh Domina",04/20/17,04/20/17,arrange VM environment health check with Acct Rep (Sean/ Ervin) - 5/17/17 ; 2nd follow-up by 6/23/17,"Total downtime unknown, first notices at 8:00AM 4/20.  Resolved by 8:50AM","All connectivity with apps.mwrd.org's IP was down (10.254.24.20).  No apps could be accessed, the IP could not be pinged, and we could not RDP into the machine using that IP.  We were able to RDP in using districtjobs.org's IP (10.254.24.21); which is hosted on the same VM","As per Rich Piotrowski, we bounced the NIC for the 10.254.24.20 IP.  This restored web connectivity and RDP but network connectivity from 10.254.24.20 to sql01a was still failing.  As per Bob Beckman we restarted the VM which resolved all remaining connectivity issues.","Unable to access CSO registration, CSOViewer, RainViewer, etc",GIS,,"Root cause unknown at this time.- Known Issue with VMware recommended to change intface type. To be scheduled and include all interfaces. 
+Time provide to Ervin - waiting on Ervin to set Date",see Change request form
+04/10/17 4:22 PM,chenge@mwrd.org,,Reviewed,Pat Sendera,04/09/17,04/10/17,,4/9/2017 at 2:20:26 a.m. GIS network was frozen and connect was lost,The GISPUB server lost connect at 2:20:26 a.m. on sunday and was restored on monday at 8:50 a.m.,The server was rebooted and network connect was restored,GISPUB external gis application was affected,GIS,,"Could not conclusively determine it was the SChannel that cause the network connection to drop, but the SChannel error 36888 events happen at that time.  According to Microsoft, the vulnerable SChannel connections; left unresolved, could allow system interruptions.  There are a few security patches that needs to be apply to bring the system up to date.  The last time this system is patch was 12/2/2016 at 3:31 p.m.",
+04/10/17 3:14 PM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,04/08/17,04/08/17,PLANNED MAINTENANCE,Outage started at 3:00 p.m. on Saturday and service was restored at 7:00 p.m,replaced Egan Labs failing Cisco 4500 with a Cisco 4507 from stock equipment. All board and the entire chasse was removed and replaced.  All new patch cabling was installed allowing for future patching and better air flow to equipment located in confined space.,"Old equipment was powered off and removed.
+New equipment was installed and powered in.
+Testing across LAN and WAN to confirm configuration was correct.
+All end-stations were than patched in.",Lab are had no network connectivity during this scheduled window.,Network Infrastructure,,Previous 4500 had a failure in the back plane.,
+04/11/17 10:10 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,04/07/17,04/11/17,Testing the cellular connection ; Will validate latency by 5/10/17 ; Ethan working with Cisco to further troubleshoot (5/30/17) ; Rich to update with CISCO Ticket# ; To be tied into ASED/TI connection in 2017,4/7 11:30 am till 4/10 5:59pm,T1 was down at Lemont,Escalated to AT&T,"No Internet, no 5 digit dialing, no MWRD network access",Network Infrastructure,,AT&T problems with wiring,"Testing to occur on 4/26
+Troubleshooting with cisco
+Still testing Profile Dowload"
+04/10/17 3:18 PM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,04/07/17,04/08/17,,Calumet PRI went down around 3:00 p.m. on Friday.  ATT service ticket was entered.  Service was restored on Saturday.  Restore time is unknown due to AT&Ts lack of communication on the ticket.  Notes only state: closed,All calls in and out via PSTN was down due to this issue.,"Ticket was entered with AT&T.
+Once it was determined service was restored, test calls were placed with plant personnel to confirm.",Users could not send or recieved calls via the sites PRI,Network Infrastructure,,flooding/damage to copper supplying service to the plant.,
+04/05/17 11:33 AM,siaj@mwrd.org,,Reviewed,Joel Sia (Readsoft system support); Halina Pochrzast (ERP team supervisor),04/04/17,04/04/17,"Follow:up Test rename of PC with Readsoft application (Field Support & Joel, Sia to test).  Change both PC names to naming standards, validate with Readsoft.  Label local switch for  ; Update Description for each in AD (Ervin C.) ; Add basic ping test to process before removing machine from AD. (4/18/17)","8:45 to 1:30 PM April, 4.",Scanning for Readsoft invoices was down due to 2 specific issues with LDAP blocking PCs named ITMOB-4F-042 (dev) and ITMOB-4F-050 (prd) from joining mwrd.local domain. This prevented the upload of invoice images to Readsoft invoice servers MWRDRDSD and MWRDRDSP.  The second issue was that both PCs were not connected to our network due to a problem with the network swtich.,"1) Joel Sia diagnosed the problem in Readsoft.
+2) Rich Wojkovich fixed the switch's LAN port network cable positions to the correct positions. 
+3) Ervin Cheng, removed the PCs from the network domain name and readded.",Could not get new invoice images processed in  Readsoft SAP for accounts payable.,ERP / SAP,,"1) Auditors who visited 4/3/2017 inadvertently reconnected the network cables on the switch incorrectly.
+2) A computer systems administrator approved the removal of those PCs from our domain.",see help desk ticket 54500 http://helpdesk/
+03/31/17 9:16 AM,dominaj@mwrd.org,,Reviewed,Pat Sendera,03/25/17,03/30/17,Internal follow-up on CSO verification steps.  (Sean K) -- 4/19/17 ; Will meet May 2017,Outage's initial occurrence is unknown; first incident notices on 3/25.  A solution for the outage was implemented on 3/30 and confirmed resolved on 3/31 for a duration of 6 days.  User impact was one CSO event (1 day).,CSO Notification Emails did not go out on 3/25.  This service is only used when a CSO event occurs.  The last CSO event prior to 3/25/17 was 3/1/17.  During this time something was changed on the office 365 end that caused the issue.  The issue was discovered to be an inability of SQLServer database mail,"The GIS team and Infrastructure team worked together on this issue.  We found the cause by analyzing the SQL Server database mail logs, analyzing logs in office365, and testing various emailing scenarios",Users signed up to receive CSO notifications did not receive them on 3/25,GIS,,"The csowebmaster@mwrd.org mailbox had a shared mailbox configuration.  While this allowed us to connect via SMTP to Office365 in the past, something changed in between 3/1 and 3/25 that prevented this from working.  We converted the mailbox to a full user mailbox (not shared).  We also implemented a heartbeat test that attempts to send a test email from the csowebmaster account daily.  IT can use this to ensure the account is able to send email.",
+04/04/17 9:54 AM,mikak@mwrd.org,,Reviewed,Kevin Mika,03/24/17,04/03/17,Not re mediated until 4/3,2:26 PM     10 Days,No communication from Kirie Gate to O'Brien Police Office,Connection from Switch to Phone exceeds 300' Fiber Transceivers are used for connection. Both sides of Fiber transceivers were rebooted by local district Employees. Upon Arrival Fiber Patch Cord at data cabinet clearly damaged and was replaced,Gate calls had to be answered by Kirie TPO's,Audio/Video,,Fiber strand in Patch cord was pulled from SC connector making it non functional. This is due to a mishandling of Patch Cord but we do not have any proof of who damaged cable,
+03/28/17 8:15 PM,warrene@mwrd.org,,Reviewed,Richard Wojkovich,03/24/17,03/27/17,"Network Team to put in work order (Tommy M/Ethan Warren - 4/18/17) ; Network team to open work order path request with AT & T ; Pending feedback from AT & T as of June 2, 2017",11:00am until 2:00pm 3/27/2017,Trouble with T1 circuit at Mainstream Pumping Station.,Ensured power at location.  Opened service ticket with AT&T (ZA156094) for repair to circuit.,Network access and phone system 5-digit dialing were out of service.,Network Infrastructure,,Unknown problem located at AT&T central office.,
+03/22/17 4:26 PM,shamsuddinh@mwrd.org,,Reviewed,"Hussein Shamsuddin, Abdur Rahman, Ethan Warren, Rich Wojkovich",03/21/17,03/22/17,Ethan / Hussein - SNMP Configured ; Active Passive triggering requires further troubleshooting,"User reported issue on March 21, 2017 - 5:26:29 am
+Switch reboot on March 22, 2017 - 1:36:00 pm.","Connection from the Primary and Secondary Citrix NetScaler Networking appliances to the SWRP_DMZ_3560 (10.254.42.*) switch was in a down state. The configured Virtual IP address 10.254.42.44 was unreachable, however, it was reachable from within the NetScaler devices. In addition, the internal network switch (SWRP_3560 10.48.3) network was up and healthy.","Changing the network cable from the NetScaler devices to the switch didn't resolve the issue.
+Changing the network port connection on the network switch SWRP_DMZ didn't resolve the issue.
+Rebooting the NetScaler devices one at a time while being secondary didn't resolve the issue.
+Rebooting the SWRP_DMZ_3560 (10.254.42.*) switch resolved the issue.",No External connections to the Citrix environment. Internal connections were not affected.,"Desktop Engineering (Citrix, SCCM)",,"The aging SWRP_DMZ_3560 (10.254.42.*) switch. According to John R., the age of this switch is over 12 years.","Perhaps Ethan/Rotor can provide additional information.
+DMZ & NetScalar Switches Replaced.
+Network troubleshooting new issue 5/9."
+03/20/17 1:51 PM,thompsonr@mwrd.org,,Reviewed,Ronald Thompson,03/20/17,03/20/17,Restart of LIMS affected data transfer to iPacs ; Note for future coordination,12:00 noon until 12:05pm; approximately 5 minutes,LIMS background service was locked,"1. Discuss issue with LIMS manager
+2. Schedule a server reboot (LIMSPRDAPP)
+3. Execute server reboot
+4. Verify that system is available
+5. Email users to notify them that system is available",LIMS Production System,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit (LIMS and IPACS Team)
+03/16/17 12:23 PM,warrene@mwrd.org,,Reviewed,Ethan Warren,03/15/17,03/15/17,Ethan will get updated quote including install charges ; consider DR PBX (EPN) that routes to SWRP 2) Ethan will send follow-up e-mail to trades (done) ; Richard to FWD Avaya Acct Rep Contact->Sean (4/18),2:55 pm until 4:30 pm (1-1/2 hours),Power outage at the Hanover Park Plant,Alternate power was provided by plant personnel.,Network and Phone services (5-digit dialing) were unavailable.,Network Infrastructure,,Component failure to UPS caused a fire in telecom room.  The fire department came on site to extinguish the fire which resulted in shutting down power to the area where equipment is located and using a dry compound to put out flames.,
+03/13/17 10:46 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,03/14/17,03/15/17,,Begin time will be 3:30 pm lasting approximately 3 hours,Outage to replace failing Cisco 4507 chassis at the CWRP.,Replace failing Cisco 4507 chassis.,Little to no impact to storeroom and trades areas.  Personnel will be gone for the day.,Network Infrastructure,,Age of equipment.  Equipment needs to be upgraded.,
+03/21/17 10:51 AM,mccaguer@mwrd.org,,Reviewed,Raymond McCague,03/14/17,03/14/17,Follow-up: Snapshots of systems will only be retained for 2 weeks maximum.  Teams should notify NetOps to remove previous snapshots. ; RICH P will send follow-up e-mail to all teams,At 3/14/2017 09:52:19 PM  VMPERFDB went down. At: 3/14/2017 09:55:58 PM it was available.,For about 3 minutes at night when no one uses the Dashboard it was not available. Solarwinds did not pick it up because it polls every 5 minutes.,The server re-booted on it's own.,The Dashboard was not available from: 3/14/2017 09:52:19 PM  to 3/14/2017 09:55:58 PM,Multi-Team (Indicate groups in Additional Information),,"Root cause could not be found by looking at the server.  A snapshot was created on February 8th, It has been building up. An error occurred when saving the snapshot. The resolution is to delete or revert the snapshot sooner.",
+03/10/17 9:07 AM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,03/09/17,03/10/17,,"200 pm March 9, 2017 to 800 am March 10, 2017",Users reported busy signal while attempting to make calls outside of the plant. Busy signal was also received when calls were placed to the plant from outside. - CALUMET PLANT,"Ticket was entered with AT&T for repair.
+ATT repaired issued on their network.",Users could not send/recieve calls using ATT PSTN.,Network Infrastructure,,Issues was on AT&T's network.,
+03/10/17 3:59 PM,siaj@mwrd.org,,Reviewed,Joel Sia,03/08/17,03/10/17,T. McEnery / Ervin Cheng- Update AD account description with function/purpose notes,3/8 3:55PM  to  3/10 11:45AM,"sap_services account password was changed causing scheduled task to fail, that had the password embedded into the task.","get it security to unlock account and reset password, updated all scheduled task with the new password, all known task are on PRECALPRD or PRECALDEV",Interface files failed to send from 3/8 at 3:55 PM to 3/10 11 AM. See attached docx,ERP / SAP,,A password change to SAP_SERVICES and no communication to who manages the interface files and that account.,new password was set and set to never expire.
+03/10/17 9:00 AM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,03/08/17,03/09/17,,"700 am Wednesday March 8, 2017 - 1200 pm Thursday March 9, 2017",When users logged into voicemail they received 'please wait' notification. After a few minutes a recording played stating voicemail was unavailable.,"Ticket was entered with Avaya.
+Avaya sourced a replacement server within in 2 hours of ticket.
+Tech was onsite once server arrived.
+Server was rebuilt and restore done from 3a.m. backup",Users were unable to retrieve voicemail messages using normal procedures during outage period.,Network Infrastructure,,Raid card failure in server.,Voicemail environment contains two additional servers installed on original date and were subjected to the same run time as old server.  We could see additional failures due to age of environment.  We are currently waiting on a quote from Avaya to virtualize the District voicemail environment.
+03/08/17 11:14 AM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,03/08/17,03/08/17,,1026 am 3/8/17 till 1040 am 3/8/17,All LASMA voice and data equipment lost power. Power was restored and systems are responding.,Power was restored and systems returned to normal.,LASMA users were without voice & data for the duration.,Network Infrastructure,,Power issue at facility.Weather related power outage (high winds),
+03/07/17 10:55 AM,piotrowskir@mwrd.org,,Reviewed,Suzan Bumby,03/04/17,03/07/17,,Saturday first notified on Monday Resolved Tuesday 10:45 am approximately 72 hours.,Skillport Training Site not accepting login,Suzan B. notified Infrastructure that Skillport had changed Data Centers. Required update of Firewall rules for LDAP authentication.,Online training was not available,Security,,"Data center move requiring changes to District Security - No reminder ,was sent first notification 1/26/17",
+03/08/17 9:24 AM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,03/01/17,03/03/17,,Outage occurred 8am on 3/1/17 and lasted till Friday 9pm 3/3/17,Calumet PRI went down.,ATT repaired bad equipment and eliminated their loop.,Entire CWRP plant could not send or recieve calls over AT&T's network.,Network Infrastructure,,Aging copper infrastructure from AT&T.,Computer room & main telephone room are locked and inaccessable after hours.  Spare keys are kept in control room lock box but no one has a key to the lock box.  This needs to be resolved.
+02/28/17 9:26 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,02/27/17,02/27/17,,Approximately 12:30 am lasting 10 minutes.,Emergency replacement of line card in Juniper router by AT&T cause ASE connectivity to drop at the Zayo colo.,Line card replaced by AT&T restored service.,Unknow if users were impacted because of the time of outage.,Network Infrastructure,,Failed line card in router.,AT COLO
+02/23/17 3:27 PM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,02/23/17,02/23/17,Contact Eileen / Mike Roundtree about communication of work (Sean),730 am till 900 am on 2/23/17,MOBA main telephone room chiller was shut down and phone room temp got up to 85 degrees.,AC united needed to be turned back on.,no user impact,Network Infrastructure,,GA scheduled removal of fire suppression system located in tape room on the 2nd floor of the MOBA building.  This room is next to the main telephone rooms and shares the same power feeds etc.  The ac unit needed to be shut down for the time period scheduled for work. Once the work was complete the AC unit was started back up. GA provided no notification to IT prior to this work.,GA should at all time notify IT of any personnel (vendors or  District) needing access to the MOBA 2nd floor telecommunication room.
+02/21/17 8:37 AM,piotrowskir@mwrd.org,,Reviewed,Richard Piotrowski,02/19/17,02/20/17,"2/28/17 - Ethan will provide Lab/Switch priority list by 3/7 ;Follow-up with John/E-Team on additional Net Infra funding in 2017.  Identify most critical areas (Lab switches, UPS, areas) for least downtime/ fastest resolution.",2/19/17 11:55am 50% of the Lab Building lost network access. 1 day 4 hours,Cisco 4507 partial failure resulting in 48 out of 96 ports to lose network connection. Diagnosed as a chassis failure. (10+ year old equipment). Note: because the chassis failed there was no notification to staff - chassis supervisor was still responsive to network monitoring software.,Tempory installation of 3560(10/100) 48 port spare switch fromSWRP.,"Monday, half of the Lab building at Egan lost access to the network including LIMS. (labs and offices)",Network Infrastructure,,Failure of outdated equipment no longer under maintenance due to age.,No plans for hardware refresh at any of the plants. (all have similar equipment at similar age)
+02/17/17 3:35 PM,piotrowskir@mwrd.org,,Reviewed,Richard Piotrowski,02/17/17,02/17/17,,1:17pm to 1:21pm,"ASE Outages
+
+Stickney to
+MOB 10.254.91.5             
+MOB 10.254.90.5
+RAPS 10.254.91.14
+
+MOB to
+Stickney 10.254.91.6
+Stickney 10.254.90.6  
+LASMA 10.254.90.12
+
+RAPS to 
+Stickney 10.254.91.6 
+
+Lasma to
+MOB 10.254.90.5",None taken. Checking with AT&T,"Loss of some services provided by SWRP to MOB, RAPS, LASMA and all acess to District Websites",Network Infrastructure,,"Checking with AT&T:
+Tickets with AT&T support
+ASE ticket JE049307
+ASE ticket   JE049309
+ASE Ticket number - JE049312",
+02/17/17 3:32 PM,piotrowskir@mwrd.org,,Reviewed,Richard Piotrowski,02/17/17,02/17/17,,2:01pm to 2:06pm,"ASE Outages
+
+Stickney to
+MOB 10.254.91.5             
+MOB 10.254.90.5
+RAPS 10.254.91.14
+
+MOB to
+Stickney 10.254.91.6
+Stickney 10.254.90.6  
+LASMA 10.254.90.12
+
+RAPS to 
+Stickney 10.254.91.6 
+
+Lasma to
+MOB 10.254.90.5",None taken. Checking with AT&T,"Loss of some services provided by SWRP to MOB, RAPS, LASMA and all acess to District Websites",Network Infrastructure,,"Checking with AT&T:
+Tickets with AT&T support
+ASE ticket JE049307
+ASE ticket   JE049309
+ASE Ticket number - JE049312",
+02/16/17 11:04 AM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,02/16/17,02/16/17,,9:50 am; approximately 7 min.,IPACS Production System users were experiencing a problem with slow-running and/or hanging Crystal Reports.,"1.  Notify EnfoTech.
+2.  Schedule IPACS Production Server restart.
+3.  Notify IPACS Production System users of the IPACS Production Server (IPACPRDAPP) restart.
+4.  Restart IPACPRDAPP Server
+5.  Verify that the IPACS Production System is back online.
+6.  Notify IPACS Production System users that the system is back online.",IPACS Production System,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit (LIMS and IPACS Team)
+02/15/17 10:33 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,02/15/17,02/15/17,"Power outages were SCHEDULED with MWRD (M & O), but not communicated to IT & other areas",Approximately 9:20 am until 9:35 am,Power was lost to the OE_203_2940 switch.,Unknown,Users in that area could not log into the network.,Network Infrastructure,,ComEd was on premise working on unrelated systems and inadvertently killed power to the switch.,
+02/15/17 9:42 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,02/15/17,02/15/17,"Power outages were SCHEDULED with MWRD (M & O), but not communicated to IT & other areas",Approximately 9:05 am until 9:20 am (15 minutes),Power was lost to the Kirie main gate camera phone system.,Unknown,TPO's could not operate the gate cameras from the TPO office,Network Infrastructure,,ComEd was on premise working on unrelated systems and inadvertently killed power to the camera system at the main gate.,
+02/14/17 2:41 PM,warrene@mwrd.org,,Reviewed,Ethan Warren,02/14/17,02/14/17,"Power outages were SCHEDULED with MWRD (M & O), but not communicated to IT & other areas",Approximately 9:05 am until 11:25 am. (2 hours 20 minutes),Power outage in the LASMA Scale and LASMA construction trailer.,Initially contacted Raphael Frost to find out if those areas had lost power. Did not receive any update.  Contacted Kurt Spaletto who in-turn contacted someone at LASMA as was told there was a power scheduled outage.,Users were not able to connect power up PC's and log into the District's Administrative data network.,Network Infrastructure,,"Found out through Kurt Spaletto that M&O planned a power outage for an ""arc flash study"".  I.T. was never notified of the outage.",
+02/15/17 3:42 PM,wojkovichr@mwrd.org,,Reviewed,Richard Wojkovich and Kevin Pendergast,02/11/17,02/15/17,,2/11  - 2/13 we were off.  2/14 was investigation of problem and scheduling of vehicle for response.  2/15 we KP and RW started at SWRP and went to CWRP to fix the problem,board 3 on CWRP_MEZZ_4507-01 failed with fiber ports to 2 outlying cisco switches: CWRP-Hoisters and CWRP HVY EQ WSE,MOVE FIBER TO WORKING BOARD,MINIMAL,Network Infrastructure,,BOARD FAILURE,NO CONTRACT TO REPAIR EQUIPMENT
+02/10/17 4:01 PM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson/Roger Smith,02/10/17,02/10/17,,3:09 pm; approximately 45 minutes.,IPACS Production System users were experiencing a problem with slow-running and/or hanging Crystal Reports.,"1.  Notify EnfoTech.
+2.  Schedule IPACS Production Server restart.
+3.  Notify IPACS Production System users of IPACS Production Server (IPACPRDAPP) restart.
+4.  Restart IPACPRDAPP Server
+5.  Verify that the IPACS Production System is back online.
+6.  Notify IPACS Production System users that the system is back online.",IPACS Production System Crystal Reports,Multi-Team (Indicate groups in Additional Information),,Will have to further investigate as to cause of the reports running slow and/or hanging.,Application Development Unit (LIMS and IPACS Team)
+02/08/17 9:48 AM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,02/08/17,02/08/17,,9:00 a.m. the outage started and lasted approx 30 min.,Internet access unavailable on Guest WiFi along with splash screen.,Temp suspension in service was placed on guest wifi cellular internet card due to billing issues with AT&T & possible confusion in IT inventory.  Once service was reinstated to cellular aircard internet access on guest wifi was restored as well.,Users could not get to Internet on guest wifi.,Network Infrastructure,,ATT automatically applied an international data package to the guest wifi aircard without approval from customer.  IT placed a temp block on service due to confusion.  Once it was confirmed IT inventory was correct and indeed this device was used for guest wifi service was reinstated.,
+02/01/17 1:01 PM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,02/01/17,02/01/17,,"@11:45 am, approximately 5 minutes","Run-time error generated when users attempted to run IPACS Reports in IPACS Production System.
+
+Run-time Error Message: ""The maximum report processing jobs limit configured by your system administrator has been reached.""","1.  EnfoTech Consultants were notified.
+2.  Scheduled restart of IPACPRDAPP Server.
+3.  Notified IPACS Production System users of the scheduled IPACPRDAPP Server restart via email.
+4.  Restart IPACPRDAPP Server.
+5.  Verified that IPACS Production System was back online.
+6.  Notified IPACS Production System users that the system was available and that they should report any problems encountered.",IPACS Reports could not run in IPACS Production System,Multi-Team (Indicate groups in Additional Information),,"Per EnfoTech, error may have occurred because of the “Cache” setting that EnfoTech changed in the iPACS config file on 01/26/2017; to address the issue where the report parameter page hangs (after a report is loaded and/or another report is loading), EnfoTech changed the “Cache” setting to allow the report to be opened at any time.",Application Development Unit (LIMS and IPACS Team)
+01/31/17 4:25 PM,wojkovichr@mwrd.org,,Reviewed,RICHARD WOJKOVICH,01/31/17,02/01/17,,The clock is still out. Scheduled to be fixed on Feb 1-- it will not communicate with WorkForce,"Power was turned off at LASMA Visitor Center for maintenance.  IT was not informed and the TimeClock was not protected. Since the power outage, the TimeClock will no longer communicate with WorkForce server.",Attempts to reboot the clock remotely by shutting off the PoE have been attempted without success.  IT employees are scheduled to troubleshoot the clock tomorrow in person at LASMA VC.,Employees will not be able to clock in/out  at LASMA Visitor Center,Network Operations (Server / SAN),,"Protection of the TimeClock before turning down the power might have prevented the outage.  To protect the TimeClock, unplug it from the network and unplug its battery.  When the network is re-established, plug the TimeClock back in.",TimeClock IP - 10.52.130.19; Switchport -Fa0/46; SwitchIP=10.52.3.6
+02/01/17 9:45 AM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson/Roger Smith,01/31/17,01/31/17,,Approximately 10:11 am.   IPACS server restarted at 2:25pm.,"Run-time error generated when users attempted to run IPACS Reports in IPACS Production System.
+
+Run-time Error Message:  ""The maximum report processing jobs limit configured by your system administrator has been reached.""","1. EnfoTech Consultants were notified.
+2. EnfoTech advised there may be multiple PrintJobLimit register keys/multiple versions on IPACPRDAPP Server.
+
+Verified that HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Business Objects\Suite 12.0\Report Application Server\InprocServer\PrintJobLimit is ""-1""
+
+Modified HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Business Objects\Suite 12.0\Report Application Server\Server\PrintJobLimit to ""-1""
+
+3. Restart IPACPRDAPP Server after updating the PrintJobLimit register key.
+4. Verify that IPACS System is back online.
+5. Notify IPACS System users that system is available.",IPACS Reports could not run in IPACS Production System,Multi-Team (Indicate groups in Additional Information),,"Per EnfoTech, error may have occurred because of the “Cache” setting that EnfoTech changed in the iPACS config file on 01/26/2017; to address the issue where the report parameter page hangs (after a report is loaded and/or another report is loading), EnfoTech changed the “Cache” setting to allow the report to be opened at any time.
+
+Run-time error message ""The maximum report processing jobs limit configured by your system administrator has been reached."" generated when the print job limit on the server hit 75. iPACS Report Objects stored in Sessions would be counted as a PrintJob, thus Main reports would count as a PrintJob, Subreports would each count as a PrintJob. The Print Job Limit in the registry was changed from 75 to ""-1"" (-1 = no limit) on IPACPRDAPP Server to fix the issue.",Application Development Unit (LIMS and IPACS Team)
+01/31/17 12:23 PM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,01/31/17,01/31/17,,9:50am to 10:50am,"Scheduled Power Outage, but IT was not informed",,All systems down,Network Infrastructure,,,
+01/30/17 4:52 PM,jacksonc@mwrd.org,,Reviewed,Roger Smith/Chentile Jackson,01/30/17,01/30/17,,Approximately 12:58 pm,"Run-time error generated when users attempted to run IPACS Reports in IPACS Production System. Run-time Error Message ""The maximum report processing jobs limit configured by your system administrator has been reached.""","1. EnfoTech Consultants were notified.
+2. EnfoTech advised there may be multiple PrintJobLimit register keys/multiple versions on IPACPRDAPP Server.
+
+ Verified that HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Business Objects\Suite 12.0\Report Application Server\InprocServer\PrintJobLimit  is ""-1""
+
+Modified HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Business Objects\Suite 12.0\Report Application Server\Server\PrintJobLimit  to ""-1""
+
+3. Restart IPACPRDAPP Server after updating the PrintJobLimit register key.
+4. Verify that IPACS System is back online.
+5. Notify IPACS System users that system is available.",IPACS Reports could not run in IPACS Production System,Multi-Team (Indicate groups in Additional Information),,"Per EnfoTech, error may have occurred because of the “Cache” setting that EnfoTech changed in the iPACS config file on 01/26/2017; to address the issue where the report parameter page hangs (after a report is loaded and/or another report is loading), EnfoTech changed the “Cache” setting to allow the report to be opened at any time.
+
+Run-time error message ""The maximum report processing jobs limit configured by your system administrator has been reached."" generated when the print job limit on the server hit 75. iPACS Report Objects stored in Sessions would be counted as a PrintJob, thus Main reports would count as a PrintJob, Subreports would each count as a PrintJob. The Print Job Limit in the registry was changed from 75 to ""-1"" (-1 = no limit) on IPACPRDAPP Server to fix the issue.",Application Development Unit (LIMS and IPACS Team)
+01/30/17 10:56 AM,beckmanr@mwrd.org,,Reviewed,Robert Beckman,01/29/17,,,intermittent connection problems starting on 1/29/17 at 2:50pm,"Began receiving uptimerobot alerts at 2:50pm on 1/29 that Districtjobs.org is down. One minute later, Districtjobs.org was working. This is the third time this problem has occured.  The second time was on 1/19/17. The first time was on 12/30/2016. Previously, the problem went away after rebooting the server (apps.mwrd.org IIS in DMZ).",Will review log files and schedule reboot of apps.mwrd.org after 10:00pm tonight.,Districtjobs.org may take a minute or more to load if the connection between the webserver and SIGMADB needs to be reestablished.,Web / Portal Team,,,
+01/27/17 4:40 PM,jacksonc@mwrd.org,,Reviewed,Roger Smith/Chentile Jackson,01/27/17,01/27/17,,3:03 pm; approximately 45 minutes.,"Run-time error generated when users attempted to run IPACS Reports in IPACS Production System.  Run-time Error Message ""The maximum report processing jobs limit configured by your system administrator has been reached.""","1.  EnfoTech Consultants were notified.
+2.  EnfoTech recommended to make the change in the register key for Print Job Limit: 
+For Crystal Report Version 10: HKEY_LOCAL_MACHINE\SOFTWARE\CRYSTAL DECISIONS\10.0\REPORT APPLICATION SERVER\SERVER\PrintJobLimit to ""-1""
+
+For Crystal Report Version 12:
+HKEY_LOCAL_MACHINE\SOFTWARE\Business Objects\Suite 12.0\report Application Server\InprocServer\PrintJobLimit to ""-1""
+3.  Restart IPACPRDAPP Server after the register key is updated.
+4.  Verify that IPACS System is back online.
+5.  Notify IPACS System users that system is available.",IPACS Production System users could not run IPACS Reports,Multi-Team (Indicate groups in Additional Information),,"Run-time error message ""The maximum report processing jobs limit configured by your system administrator has been reached."" generated when the print job limit on the server hit 75.  iPACS Report Objects stored in Sessions would be counted as a PrintJob, thus Main reports would count as a PrintJob, Subreports would each count as a PrintJob.  The Print Job Limit in the registry was changed from 75 to ""-1"" (-1 = no limit) on IPACPRDAPP Server to fix the issue.",Application Development Unit (LIMS and IPACS Team)
+01/27/17 12:20 PM,siaj@mwrd.org,,Reviewed,joel.sia@mwrd.org,01/26/17,01/26/17,,8 AM to 10 AM,"http://mwrdrdsp:8080/pdweb-app/pd/init.do
+Readsoft Web application was unstable then unreachable past 9:30.",Restarted Apache Tomcat service.,Unstable website (buttons did not work and pages did not show up) then complete loss of communication with the Web app.,ERP / SAP,,"Java memory leak. Investigation on permanent solution still underway.
+Vendor was contacted and help ticket was created, lexmark (readsoft) Case 02137638",
+01/23/17 10:15 AM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,01/23/17,01/23/17,BOB---;Will evaluate and distinguish betweenCrystal Reports and database,IPACS Production Server restart was from 10:00 am to 10:07 am.,"In response to slow-running IPACS Crystal Reports, particularly in the User Charge Module, scheduled restart of the IPACS Production Server (IPACPRDAPP).","1.  Scheduled restart of the IPACS Production Server (IPACPRDAPP).
+2.  Notified IPACS Production System users of the scheduled server restart via email.
+3.  Restarted IPACPRDAPP Server.
+4.  Logged into the IPACS Production System to verify that the system was back online.
+5.  Notified IPACS Production System users that the IPACS Production System was available via email.  Users instructed to report any issues.",IPACS Production System,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit (LIMS and IPACS Team)
+01/23/17 1:46 PM,siaj@mwrd.org,,Reviewed,joel.sia@mwrd.org,01/23/17,01/23/17,Next Step - Engage Readsoft to address ongoing issue ;,12:58,Web site not responding. No log in available. Tomcat was unresponsive and would not restart. looked to see if additional service was interrupting start up but could not find anything. assessed that the best thing to do was reboot windows.,restarted windows; however this did not start apache. manually restarted apache service proved that the new memory setting were unstable. reset to 256 and 1024 (was 512 and 2048). apache restart as expected.,"no user was able to access Readsoft web application, mwrdrdsp:8080/pdweb-app/pd/init.do",ERP / SAP,,"initial problem was memory heap space was full, restarting problem was caused by too much allocation at start. reverted to original size and worked as expected.",
+01/19/17 9:39 AM,beckmanr@mwrd.org,,Reviewed,Robert Beckman,01/19/17,,Bob will work NetworkTeam to monitor packets and I/O on the apps.mwrd.org server.  Revisit logs or set-up new probes ; Check Firewall logs,,"Began receiving uptimerobot alerts at 3:05am on 1/19 that Districtjobs.org is down. One minute later, Districtjobs.org was working. Received 7 notifications between 3:05 and 9:30am. This is the second time this problem has occured. The first time was on 12/30/2016. Problem went away after rebooting the server (apps.mwrd.org IIS in DMZ).",,Districtjobs.org may take a minute or more to load if the connection between the webserver and SIGMADB needs to be reestablished.,,,,
+01/11/17 1:07 PM,thompsonr@mwrd.org,,Reviewed,Ronald Thompson,01/11/17,01/11/17,,"The outage (server reboot) occurred at 1:00pm, and last until 1:07pm",IPACS Crystal Reports were reported by users to be slow/hanging.,"1. Notified users via email that server would be restarted.
+2. Restarted server
+3. Notified users that system was available, and to notify us if there are any issues.",IPACS Production System,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit
+01/10/17 1:51 PM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,01/10/17,01/10/17,,IPACS Production Server restart was from 1:30 pm to 1:37 pm,"In response to slow-running IPACS reports, scheduled restart of the IPACS Production Server.","1.  Scheduled restart of the IPACS Production Server (IPACPRDAPP).
+2.  Notified IPACS Production System users of the scheduled server restart via email.
+3.  Restarted IPACPRDAPP Server.
+4.  Logged into the IPACS Production System to verify that the system was back online.
+5.  Notified IPACS Production System users that the IPACS Production System was available via email.  Users instructed to report any issues.",IPACS Production System,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit (LIMS and IPACS Team)
+01/10/17 11:07 AM,siaj@mwrd.org,,Reviewed,joel.sia@mwrd.org,01/10/17,01/10/17,Issue re-occured on 1/23/17 (above),4:40 PM to 9:47 AM.,Anita Hundal called to inform me users were unable to get into readsoft web application server. Tested and there was no response..,"Restart apache tomcat service. Will research recommended heap space size and set accordingly. 
+
+512 XMS and 1024 XMX was what i noticed from websites describing this problem.
+will set to 512 and 2048 after hours.","no user was able to access Readsoft web application, mwrdrdsp:8080/pdweb-app/pd/init.do",ERP / SAP,,"Jan 09, 2017 4:40:06 PM org.apache.catalina.core.ApplicationContext log
+SEVERE: Exception while dispatching incoming RPC call
+java.lang.OutOfMemoryError: Java heap space",
+01/13/17 5:29 PM,dominaj@mwrd.org,,Reviewed,Josh Domina,01/09/17,01/13/17,Revisit: Explore CSO Owner to verify email from internal/external ; notify IT if no receipt of email (Both internal & external-Gmail).  It will sign-up for Gmail external testing account,4 days.  Outage started 1/9/16 at approximately 11AM and lasted,CSO notifications were not send out to the general public,Disable debug mode Modified code to auto-disable when logged as admin only,CSO notifications did not go out to the general public,GIS,,Human error.  CSO Notifications were in debug mode (sends emails internally only).  They were placed in debug mode on 1/9/16 I verified that CSO notification system still functioned after the GIS system outage that occurred 1/8 into 1/9.  I forgot to disable debug mode after testing.,
+01/09/17 10:13 AM,senderap@mwrd.org,,Reviewed,Patrick sendera,01/09/17,01/09/17,Rich will follow-up on SolarWinds Monitoring on C:\drive free space ; BOB/PAT - Revisit IIS log settings and C:\drive size  (auto-rollover after 7 days),Affected users of GIS on Monday morning (12a.m.)  1/9/2017 until 9:15 AM,Internal GIS services were down for a period.  IIS logfile directory filled up the C:\ drive.  Cleared the logs and restarted GIS services.,"Cleared log files for IIS lag directory and restarted services.
+RRB – 1/24/17 – IIS logging has been limited to errors only.",All internals users of GIS,GIS,,Investigating as to why IIS is logging every request and changing logging to errors only.,
+01/05/17 5:02 PM,siaj@mwrd.org,,Reviewed,joel.sia@mwrd.org,01/05/17,01/05/17,2003 Server ; points to SIGMA server (DMZ) ; Occured again on 1/19/17 (above),4:56 PM to 5:00 PM,Restarting server to try to see if the DNS issue are resolved.,"Per Bob Beckman,
+ Perform Windows 2012 server, standard restart",no access to districtjobs.org and District web applications while server restarted.,ERP / SAP,,DNS failures; maybe restart of server can resolve it.,
+01/11/17 12:39 PM,wrights1@mwrd.org,,Reviewed,Semaj Wright,01/04/17,01/04/17,,10:00am-10:20am,External user was unable to connect to video conference in ED conference room.,Discovered later that a # sign needs to be entered after the conference ID code which was not on the video conferencing documentation.,Law Dept,Audio/Video,,Documentation needs to be update,
+12/30/16 11:20 AM,thompsonr@mwrd.org,,Reviewed,Ronald Thompson,12/28/16,12/28/16,Open Call with iPac vendor to correct.  Last year considered Crystal Reports runtime update,The outage (i.e. server reboot) occurred at about 12:00pm and lasted for about 5 minutes.,IPACS Crystal Reports were reported by users to be slow and hanging.,"1. Scheduled restart of IPACS production application server via email.
+2. Restarted IPACS application server.
+3. Sent email to users verifying that server had been restarted and that system was available.",IPACS Crystal Reports were taking a long time to run.,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit
+12/22/16 12:50 PM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,12/22/16,12/22/16,Open Call with iPac vendor to correct.  Last year considered Crystal Reports runtime update,12:30 pm to 12:38 pm,"IPACS System Users reported that IPACS Production System was running slow, mostly in the reports.","1.  Scheduled restart of IPACS Production Server.
+2.  Notified IPACS Systems users via email of the scheduled restart of the IPACS Production Server.
+3.  Restart IPACPRDAPP Server.
+4.  Logged into IPACS Production System to verify that the system was on line.
+5.  Notified IPACS System users via email when the IPACS Production System became available and to report any issues.",The IPACS reports took a long time to run,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit
+12/21/16 11:36 AM,ecklunds@mwrd.org,,Reviewed,Scott Ecklund/Pat Kane,12/20/16,12/20/16,2003 Server.  Will revsit plans to migrate to Windows 2012/2016,12:00 PM-1:00 PM,"Even though vaxmigcr Legacy Proceurement DB) was up and running, it was only reachable through its IP and not its alias","Pat Kane didn't notice anything else peculiar about the system.  He  readded the machine to the mwrd.local domain, and the alias was reachable again.",Users can not reach the Crystal Reports Server site hosted on vaxmigcr. Procurement Dept. could not run their crystal reports against PURCON.,Network Operations (Server / SAN),,,
+12/20/16 2:33 PM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,12/20/16,12/20/16,,12:00 pm to 12:13 pm,"IPACS System Users reported that IPACS Production System was running slow, mainly the reports.","1. Scheduled restart of IPACS Production Server.
+2. Notified IPACS Systems users via email of the scheduled restart of the IPACS Production Server.
+3. Restart IPACPRDAPP Server.
+4. Notified IPACS System users via email when the IPACS Production System became available and to report any issues.",The IPACS Reports took a long time to run,Multi-Team (Indicate groups in Additional Information),,,Application Development Unit
+12/19/16 12:42 PM,siaj@mwrd.org,,Reviewed,joel.sia@mwrd.org,12/19/16,12/19/16,Joel has an open call with Readsoft to revisit issue (2nd occurrence) ; Network Infra team will use app monitoring in 2017,11:30 AM to 12:04 PM,http://mwrdrdsp:8080/pdweb-app/pd/logon.do was not responding.,"stop apache service, wait, as it may take a while, then start service",no user was able to use Readsoft Webapp,ERP / SAP,,"service was unresponsive, see supporting document.",
+12/20/16 9:15 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,12/15/16,12/15/16,As of 1220 - Auto reboots daily @ 6a.m.,Outage started at approximately 10:30 am and lasted 15 minutes (10:45 am),Access to the guest WiFi network was unavailable.,Wifi router restarted to re-establish connection.,Users could not log into the Guest WiFi network for internet access / browsing,Network Infrastructure,,Connectivity to the AT&T cellular network was dropped do to low signal strength.,
+12/09/16 10:34 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,12/09/16,12/09/16,,Outage was noticed at approximately 8:40 am and lasted approximately 20 minutes.,The guest WiFi router lost connectivity with the cellular network.,Router had to be rebooted to re-establish connectivity.,Users were not able to browse the internet via guest wifi connection.,Network Infrastructure,,Cellular signal strength degraded due to the location of router and antennae.,
+12/12/16 9:33 AM,kanep@mwrd.org,,Reviewed,Kevin Young,12/08/16,12/08/16,,Outage start time:  12/8/2016 3:20p.  Outage end time: 12/8/2016 @ 3:40p.  Outage duration:  20 minutes.,"Outage occurred On 12/8/2016 @ 3:20p Sharma Konkapaka reported that system MWRDECCTEST1 entered SAP production, which interfered with systems MWRDECCP0 and MWRDECCP1.  System MWRDECCTEST1 was created from a system-generated snapshot of system MWRDECCP0 taken on 12/7/2016 @ 12:00p.  The purpose of this snapshot was to deploy a clined replica of MWRDECCP0 (renamed as hostname MWRDECCTEST1, IP address 10.35.102.150) for the purpose of testing updates; prior to performing updates on system MWRDECCP0 (production system). The initial request for cloned MWRDECCP0 system creation was submitted by Kevin Young to Ervin Cheng via email on 12/6/2016 @ 9:32a.  Ervin discussed this request with me on 12/7/2016 and asked that I create a clone of this system from snapshot, create with new hostname and IP address, and present; enable communication on our Stickney VMware environment.   on 12/7/2016 @ 3:40p, I sent am email to Kevin Young, Ervin Cheng, Sharma Konkapaka, Arshad Khalid, and LaShun Roberts requesting some additional information:
+
+What hostname to use?  Is MWRDECCTEST1 okay? 
+
+Is VM only required for a temporary (test) implementation? 
+
+Also included the steps that will be taken to create/deploy cloned system""
+
+Ervin, as we discussed, I will be performing the following procedures to create a copy of this VM from snapshot:
+
+Identify snapshot of virtual volume wsw_erp_prod (datastore containing VM MWRDECCP0).  Is most current snapshot (12:00p today) okay to use?
+
+Once verified, export snapshot of volume wsw_erp_prod (wsw_erp_prod.1612071200003): to host set wsw-rvcluster as LUN number 14:
+
+Once snapshot is exported to the virtual environment, I will perform a rescan of all hosts on wsw-rvcenter, verify that the newly presented LUN 14 is visible, add this datastore to first host, verify it’s presented correctly, assign a new signature, then import/browse datastore for .vmdk needed to be deployed as test system (MWRDECCTEST1).  Next, I will take appropriate steps to rename, re-IP, and run sysprep to generate a new SID for this system. 
+
+Please let me know if a go to proceed.  Once confirmed, will begin above steps.  
+
+
+Kevin Young emailed me back 12/7/2016 @ 3:43 with responses:
+
+1.	MWRDECCTEST1 is fine
+2.	This VM is temporary and can be taken back on December 16th
+3.	12:00 pm snapshot from today is fine
+
+
+Was awaiting response from Ervin Cheng to inform if system MWRDECCTEST1 should be simply deployed/presented from system snapshot, or presented and storage vMotioned into a live test datastore.  Performing storage vMotion option will result in 320Gb (size of source VM) being replicated over the network.  Awaited confirmation from Ervin Cheng.
+
+12/8/2016 @ 1:30p - Ervin gave me verbal confirmation to proceed with deploying VM from simple snaoshot, and complete preparation steps as described above.  System MWRDECCTEST1 was deployed, as requested. 
+
+Sent email to Kevin Young, Sharma Konkapaka, Arshad Khalid, Ervin Cheng 12/8/2016 @ 2:51 informing the group that VM is deployed and ready for use:
+
+Hello Kevin-
+
+System MWRDECCTEST1 has been deployed from 12/7/2016 12:00p snapshot.  
+
+IP Address:  10.35.102.150
+
+Currently I can only RDP to this system via IP address.  I just performed a /registerdns command, so the system might need some time to register new hostname in DNS.
+
+As discussed, system just completed sysprep (Windows) and has been added to the MWRD domain.  
+
+Please access this system for testing.  Let me know if you have any questions, or access issues.
+
+I will contact you on 12/16 and see if this test system can be taken offline.  
+
+Thanks,
+
+Received email confirmation from Kevin Young:
+
+From: Young, Kevin 
+Sent: Thursday, December 8, 2016 3:11 PM
+To: Kane, Patrick <KaneP@mwrd.org>; Cheng, Ervin <ChengE@mwrd.org>
+Cc: Konkapaka, Sharma <KonkapakaS@mwrd.org>; Khalid, Arshad <KhalidA@mwrd.org>; Roberts, LaShun <RobertsL@mwrd.org>
+Subjec
+
+Thanks Pat!",System MWRDECCTEST1 was powered down.,Unknown,Network Operations (Server / SAN),,"SAP Systems are assigned a ""SID"" that relegates their functionality in the SAP application infrastructure.  Steps were taken by myself during MWRDECCTEST1 deployment to create new SID (Windows SysPrep) to separate this system from MWRDECCP0.  However, the Infrastructure Section was not made aware of the additional step to separate the duplicate ""SAP SID"" in order to prevent production conflicts, when this cloned system was deployed.
+
+For future deployments, I will ensure that the SAP group provides all necessary system detail; notify SAP group that system is ready, but refrain from powering on this system without having a member of the SAP team present for this activity to ensure proper system turn-up",
+12/07/16 3:04 PM,mikak@mwrd.org,,Reviewed,Robert Quezada,12/07/16,12/07/16,,9:23 AM    5.5 hours,Cisco 2940 MOBA_PoliceDesk_2940 went out of service,"Checked all connections, reseated loose patch cords, rebooted PCs, disconnected and reran swipe pad for IDs, and had to rerun and re solder handicap door switches","Police desk PC's, access point, and printer were out of service",Network Infrastructure,,Carpenters cam to install new counter and equipment was moved and connections removed without notification to IT. Scheudling with IT could have minimized outage,
+12/06/16 1:50 PM,mikak@mwrd.org,,Reviewed,Robert Quezada,12/06/16,12/06/16,,12:33 PM     40 minutes,Cisco 2940 MOBA_PoliceDesk_2940  went out of service,checked all connections reseated loose patch cords and rebooted PC,"Police desk PC's, access point, and printer were out of service",Network Infrastructure,,Painters came down to paint newly installed drywall and equipment was moved and connections loosened without notification to IT,
+12/05/16 1:13 PM,mikak@mwrd.org,,Reviewed,Ethan Warren,12/03/16,12/04/16,"Follow-up with Steve Carmody on work left on Saturday that caused an outage ; No Camera's, Badge System",12/3/2016 7:03 AM 28 hours,Solar Winds reported that the Cisco 2940 went out of service at 7:03 AM. Upon the device not coming back up Kevin Mika was dispatched to look into switch issue and resolve if possible.,"Upon arrival Kevin found that the 2 PC's, along with monitors, switch, access point, and printer had all been disconnected and drywall had been installed. All the equipment was reconnected and logged into the network to verify connectivity had been restored.",Station was unmanned. No impact to users.,Network Infrastructure,,The cause of the outage was no notification of work being completed at the desk requiring IT support. A notification that IT related equipment needs to be removed as it interferes with a work order being completed will allow proper resources to be scheduled.,
+12/05/16 2:21 PM,smithr1@mwrd.org,,Reviewed,Roger Smith,12/01/16,12/02/16,This is a SQL job that directly updates/affects ED DashBoard,5:40 pm,This Entry has been replaced by entry on 12/6/2016 4:03PM. DWH daily load job failed,fixed a link in the job that was pointed to the old server,DWH data was not updated ;This is a SQL job that directly updates/affects ED DashBoard,Multi-Team (Indicate groups in Additional Information),,A link in the job pointed to the old server.,
+12/06/16 9:29 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,12/01/16,12/01/16,Schedule daily reboots @ 5:00a.m. ; Start Thursday Dec. 8th,9am-11am,No internet access,reboot router,Guest WIFI users could not access the Internet,Network Infrastructure,,Install dedicated link,
+12/06/16 4:03 PM,smithr1@mwrd.org,,Reviewed,Roger Smith,11/30/16,12/01/16,,5:40 PM -  DataWareHouse (DWH) daily load job failed on \\VMPERFDB,"In the DWH job there is a step called: “Procurement Adjustment”  that failed because it references the Purcon database.  The step calls the stored procedure: UpdateProcurementCalculatedFields.   Since the Purcon database was moved, the DWH job could no longer could connect to the Purcon database.     
+
+The stored procedure: UpdateProcurementCalculatedFields updates the Procurement Calculated fields on the E.D. dashboard for Procurement","Updated the database link to the Purcon Database. This link is in the stored procedure ""UpdateProcurementCalculatedFields"". This stored procedure is one of the steps in the DWH Daily Load job.
+
+In the database link the following line:
+
+@datasrc=N'(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=vaxprd.mwrd.local)(PORT=1521)))(CONNECT_DATA=(SID=vax)(SERVICE_NAME=purcon)))'
+
+was replaced with: 
+
+@datasrc=N'(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oradbprd1a)(PORT=63407)))(CONNECT_DATA=(SERVER=DEDICATED)(SID=prd1ai)(SERVICE_NAME=purcon)))'",Data for the E.D. dashboard for Procurement was not updated.,Multi-Team (Indicate groups in Additional Information),,"1. The Purcon Database was moved to a new server.
+2. The database link (as described above) was pointing at the old server location for Purcon.
+3. This caused the link to be invalid
+4. Invalid link caused the stored procedure to fail
+5. Stored Procedure failure caused the DWH Daily Load job to fail.","\\VMPERFDB is the production database server for the E.D. dashboards. The dashboards were up and available before, during, and after the DWH job failure."
+12/06/16 9:28 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,11/28/16,11/28/16,,8am-9am,No internet access,Reboot router,Guest WIFI users could not access the Internet,Network Infrastructure,,Install a dedicated link and not rely on cell tower signal,
+11/30/16 10:06 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,11/28/16,11/28/16,,Approximately 10:45 am until 11:00 am,The guest WiFi router lost connectivity with the cellular network.  Router had to be rebooted to re-establish connectivity.,Router had to be rebooted to re-establish connectivity.,Users were not able to browse the internet via guest wifi connection.,Network Infrastructure,,Inclimate weather degraded the signal to the AT&T cellular network and caused the router to drop the connection.,
+11/23/16 12:11 PM,siaj@mwrd.org,,Reviewed,Joel Sia,11/22/16,11/22/16,REVISIT LONG TERM SOLUTION FOR MEMORY/HEAP Increase,10:05 to 10:15 AM,"Readsoft Process Director web application (http://mwrdrdsp:8080/pdweb-app/pd/init.do) was errorring with ""Backendservices (cmd-3) Error Java Heap space""",Restarted the Tomcat web service.,"No work could be done, no logging in or logging out of Process Director",ERP / SAP,,"catalina.2016-11-22.log shows:
+
+Nov 22, 2016 9:36:50 AM org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor run
+SEVERE: Unexpected death of background thread ContainerBackgroundProcessor[StandardEngine[Catalina]]
+java.lang.OutOfMemoryError: Java heap space",we need to ask Readsoft if adjusting heap size is a proper long term solution
+11/21/16 2:38 PM,smithr1@mwrd.org,,Reviewed,Roger Smith,11/19/16,11/20/16,,11/19 at around 1:30 PM until 11/20 10:00 AM,LIMS DB was down,restarted the LIMS DB,LIMS was down,Multi-Team (Indicate groups in Additional Information),,"Database was unable to write the control file to the DBFS server, so it shut down",
+11/21/16 1:39 PM,smithr1@mwrd.org,,Reviewed,Roger Smith,11/18/16,11/19/16,,"started after 8:00 PM Friday, was restored by 10:00 AM saturday",LIMS database shutdown,Re-booted the LIMS DB server,LIMS was out,Multi-Team (Indicate groups in Additional Information),,"DBFS server did a self re-boot after a package was installed. Becaues this connection was dropped, the DB was unable to write the control file, and the DB shutdown.",
+11/23/16 9:50 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,11/17/16,11/17/16,RICK DELONG Update for all sites/plants by 12/31/16,Outage started approximately 8:20 am and lasted 1 hour.,ComEd power was disconnected from certain parts of the OWRP as a planned outage by M&O.  No notification was send out to I.T. to plan for this outage which affected administrative business operations and communications.,Unknown other than restoring normal ComEd power to affected areas.,Connectivity for phone system and administrative data network was down at OWRP.  Remote gate controls for MWRD Police were out of service at Kirie and Egan.,Network Infrastructure,,"M&O planned power outage caused the disruption in services.  Going forward, the ITD is requesting prior notification of these types of power outages so we can make accommodations to ensure critical systems remain powered by auxiliary power at all treatment plants.",
+11/08/16 2:21 PM,mccaguer@mwrd.org,,Reviewed,Roger Smith,11/08/16,11/08/16,Review past patch/update schedule,Server reboot at 4:30 pm. It should not take more then 5 minutes.,The server vmperfdb has to be rebooted.  The application at: http://vmperfap/Dashboard/portalHome.jsp that uses the database is still working. The server: vmperfdb can not be rdp to. Ervin is not able to connect his console to the server.  The sql server jobs on the 7th between 5:40pm and  11:00pm did not run.  It seems that the SQL Server agent was not running at that time but did run after that point. Ervin indicated that the problems started at: 8:00am on 11/07/2016.,A re-boot is the current resolution. The event viewer should be able be viewed after the reboot.,Users will not be able to access the Dashboard at: http://vmperfap/Dashboard/portalHome.jsp,Network Infrastructure,,"Do not know at this time, not enough information","The nightly SQL Server jobs should have a date of 11/7/2016.   Job: DWH Daily Load Last run time: 11/6/2016 5:40:00 PM  Job: CW_datamart restore  Last run time: 11/6/2016 9:30:00 PM  Job: Database Log Backups  Last run time: 11/7/2016  7:15:00 AM Earliest time: 11/6/2016  11:00:00 PM    Job: Database Backups  Last run time: 11/7/2016  12:00:00 AM  Based  on my observation of the status of the jobs, it appears that the system did not even try to run the jobs on the 7th between 5:40pm and  11:00pm."
+10/27/16 9:36 AM,warrene@mwrd.org,,Reviewed,Ethan Warren,10/27/16,10/27/16,Tommy/Kevin will request a static IP from AT & T to monitor pings from Solarwinds.  Will be replaced with wired guest connection (Internet RFP) ; ETHAN WILL OWN,8:30 am - 9:10 am (40 minutes),Guest WiFi was down due to lost or degraded signal strength to cellular (AT&T) network.,Cellular router was restarted to establish new connection with cellular network,Users on guest WiFi was unable to access the internet,Network Infrastructure,,Poor signal strength possibly due to weather conditions (rain).  Possibly adding an external antenna that can extend outside of Telecom room or a dedicated wired internet connection are possible solutions.,
+10/18/16 12:51 PM,warrene@mwrd.org,,Reviewed,Kevin Pendergast,10/18/16,10/18/16,,8:50 am approximately 3 hours.,Router and switch at HASMA went offline.,Trades at HASMA restored power after testing.,Connectivity to Administrative Data Network was lost.,Network Infrastructure,,"Per email from Robert burns, Power at HASMA was shut down for an arc flash study.",
+10/11/16 8:49 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,10/10/16,10/10/16,,Guest WIFI was out for an hour,Guest WIFI could not get a signal from Cell tower,Rebooted the Cisco 819 Guest WIFI router,No Internet Access,Network Infrastructure,,No signal. Install dedicated line,
+10/07/16 10:32 AM,dominaj@mwrd.org,,Reviewed,Patrick Sendera,10/07/16,10/07/16,,approximately 3.25 hours from 6:45 AM to 10:00AM,Public incident reporting site was not displaying maps to users,Replaced incident reporting proxy with a newer version,Public incident reporting site was not displaying maps to users,GIS,,Outdated proxy file.  Proxy was replaced with new proxy.,
+10/07/16 4:40 PM,kevin.young@mwrd.org,,Reviewed,Kevin Young,10/07/16,10/07/16,,1:12 pm - 1:46 pm. 34 minutes,Printing Outage,Manually cleaned up the print spool logs. Noticed the automatic job hadn't run due to being pointed at the old server. Reestablished the batch job with the new server location.,Users could not print in SAP.,ERP / SAP,,,
+10/06/16 12:37 PM,kevin.young@mwrd.org,,Reviewed,Kevin Young,10/06/16,10/06/16,,9:45 am - 10:23 am,The District's internal website started showing signs of degradation at 8:45 am. The internal and externals websites became unavailable at 9:45.,The portal services were stopped and restarted. We are currently looking into whether the number of threads needs to be adjusted or if the Java memory needs to be increased.,User's could not access the website and any of it's functions.,ERP / SAP,,,
+10/06/16 11:46 AM,wojkovichr@mwrd.org,,Reviewed,Ethan Warren,10/06/16,10/06/16,,7:27 - 11:27 --- appears to be up and functioning according to ping tests and Workforce ttManager,bad keys on TimeClock keypad prevented user input of id numbers correctly without repeated attempts,replaced the TimeClock,employees could not use the TimeClock during the outage,Network Infrastructure,,TimeClock electronics went bad.  Use a better TimeClock?  use paper sign-in and sign-out.,
+10/11/16 8:51 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,09/27/16,10/27/16,,Guest WIFI was out for 3 hours,Guest WIFI could not get a signal from Cell tower,Rebooted the Cisco 819 Guest WIFI router,No Internet Access,Network Infrastructure,,No signal. Install dedicated line,
+09/29/16 8:30 AM,kevin.young@mwrd.org,,Reviewed,Kevin Young,09/26/16,09/26/16,,Outage started at 5:02 pm and ended at 6:09 pm.,The District's website was unavailable during the outage period,The portal server's services were restarted.,User's could not access the website and any of it's functions.,ERP / SAP,,Under investigation,
+10/11/16 8:52 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,09/23/16,09/23/16,,Guest WIFI was out for 3 hours,Guest WIFI could not get a signal from Cell tower,Rebooted the Cisco 819 Guest WIFI router,No Internet Access,Network Infrastructure,,No signal. Install dedicated line,
+09/15/16 12:39 PM,chenge@mwrd.org,,Reviewed,Ervin Cheng,09/14/16,09/14/16,,4:10 p.m. till 4:30 p.m.,"pepportal, pepportal1, pepportal2, depportal, and qepportal was unable to connect.  Because of DNS scavenging enable, the dns entry was deleted.",The record was created as static and all connect was restored.,All Internal users can not see mwrd website.,Network Operations (Server / SAN),,"The DNS scavenging was inform that once it was enable it shouldn't run until the 7th day. The information was inaccurate.  Since pepportal, pepportal1, pepportal2, depportal, and qepportal's entry was modified, the created on time stamp was incorrect.  The report of all entries that will be deleted did not pick those up, because it doesn't see those as old entries.",
+09/12/16 10:10 AM,dominaj@mwrd.org,,Reviewed,Josh Domina,09/09/16,09/09/16,,Outage was reported 9/9/2016.  It is unknown when the outage originated.  Maximum possible outage time extends back to the migration of apps.mwrd.org to virtualized hardware,The CSO Registration application would fail when attempting to register for cso alerts,"Corrected the connections string for the database, rebuilt application with missing page",Users were unable to register for CSO alerts,GIS,,Application was configured to point to a test database and was missing a page.,
+10/11/16 8:54 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,09/08/16,09/09/16,,1 day,Guest WIFI could not get a signal from Cell tower,Rebooted the Cisco 819 Guest WIFI router,No Internet Access,Network Infrastructure,,No signal. Install dedicated line,
+09/06/16 1:46 PM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,09/04/16,09/06/16,,Unknown. IT was not involved in communications for repair.,IP Services Interface went out on the ip network located in the pump & blower phone room.,Unknown. IT was not involved in any communication related to resolution. IT went to open a ticket after troubleshooting and found out a tech was working with M&O and already onsite.,All phones connected to this IP Network were out of service.,Network Infrastructure,,IPSI Board.,
+09/06/16 11:48 AM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,09/03/16,09/06/16,,Outage occurred Saturday 3pm.,The IP phone network located in the admin building of the Calumet plant had a major board fail.  This left majority of the plant with no voice services.,Contacted Avaya at 6am and requested tech dispatch asap. Tech was onsite and repaired issue within 3 hour window on 9/6/2016.,All voice services were down during this duration.,Network Infrastructure,,Failure was directly related to the IP Services Interface (IPSI) board is cabinet 1A slot 01.,Avaya Service Request #1-12148735591.
+09/02/16 9:24 AM,mingmongkolc@mwrd.org,,Reviewed,Peng,09/02/16,09/02/16,,Sept 2 6:31 AM -,"BPT database down. Oracle alert log states following error:
+
+WARNING: aiowait timed out 2 times
+
+This is due to aynchronous I/O problems at the O/S level. Per Ram: this is from bad disk.
+
+Information from Oracle metalink suggests there may be TEMPORARY fix. Below are some things to investigate:
+
+1) Need to investigate the aynchronous I/O problems at the O/S level by
+the O/S vendor(may be need to be apply O/S patches to fix known
+Asynchronous I/O problems.)
+2) Need to investigate the networking (request timeout/latency problem) etc.
+3) checking Asynchronous I/O is correctly configured at OS level as well
+as with storage.
+4) Allocate more memory to the Database SGA, PGA (Buffer Cache and Sort
+Areas to reduce I/O from/to datafiles and temporary tablespaces).
+
+Warning ""aiowait timed out x times"" in alert.log (Doc ID 222989.1)	To BottomTo Bottom	
+
+
+Checked for relevance on 10-Mar-2009
+
+PURPOSE
+-------
+
+This document explains the meaning of the alert.log message
+
+WARNING: aiowait timed out 1 times
+
+and suggests ways of addressing the reasons behind this message.
+ 
+
+SCOPE & APPLICATION
+-------------------
+
+The intended audience of this document is Database Administrators
+and Support Engineers.
+
+
+AIOWAIT WARNING
+---------------
+ 
+When the above message is produced in alert.log, the database may also appear to be hanging.
+
+The message indicates that Oracle has encountered problems while trying to perform asynchronous I/O.
+
+When the Oracle instance is configured to run with asynchronous I/O (disk_asynch_io = true), it will use the aiowait system call to obtain the completion status of such I/Os. 
+
+This is called with a timeout of 10 minutes which is a lot more time than should be needed for a disk I/O operation even on a very busy system.
+
+If this call times out it indicates a severe problem with asynchronous I/Os at the system level. For example, it can mean that an I/O was lost (Oracle had issued it and was waiting for it to be completed but the O/S has no record of it).
+
+The above message will be written to alert.log. What happens next depends on the exact version of Oracle.
+
+In versions previous to Oracle 8.1.7.2, DBWR may terminate theinstance with error ORA-27062.
+
+The following will appear in alert.log:
+WARNING: aiowait timed out 1 times 
+DBW2: terminating instance due to error 27062 
+Instance terminated by DBW2, pid = 9994 
+There will also be a message in DBWR's tracefile:
+WARNING: aiowait timed out 1 times 
+error 27062 detected in background process 
+
+In subsequent versions the instance will not be terminated but instead the aiowait call will be repeated up to 100 times, with the same 10 minute timeout each time and the same warning being reported in alert.log whenever it times out. The instance will only be terminated after 1000 minutes (ie, 100 retries with 10 minute timeout each).
+
+This is done in order to give time to investigate the aynchronous I/O problems at the O/S level by the O/S vendor.
+
+
+
+
+WHAT TO DO
+----------
+
+When the condition described above is happening, most often the only way out is to restart the database and try to prevent it from happening again until the problem is fixed.
+
+There are a number of actions that can be done to deal with this problem:
+
+
+#1) Restart the database without asynchronous I/O
+
+This is not an ideal solution and will only serve as a workaround until the underlying problem with asynchronous I/O is identified and fixed at the O/S level.
+
+To operate without asynchronous I/O set the init.ora parameter
+disk_asynch_io = false
+
+At the same time you should also set the following parameter
+dbwr_io_slaves
+to a value other than 0. This will allow Oracle to simulate asynchronous I/O through usage of multiple I/O slave processes where each such process performs I/O synchronously.
+
+**FYI: If you are on 8.1.7 and USING RMAN on multiple channels with
+       dbwr_io_slaves > 0 you could encounter Bug:2614191.",,BPT system used by ED for budgeting,,,,
+08/30/16 12:27 PM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/30/16,08/30/16,,External facing website down from 10:54 am - 10:56 am,The website was not accessible from the outside.,,Website was down for all external traffic,Web / Portal Team,,,
+08/30/16 8:49 AM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/30/16,08/30/16,,External facing mwrd.org was unavailable from 8:31 am to 8:33 am,"The District's website could not be accessed from the outside, only internally.",,External users could not access the website,Web / Portal Team,,,
+08/31/16 8:59 AM,roger.smith@mwrd.org,,Reviewed,Roger Smith,08/30/16,08/30/16,,10:15 PM August 30 - 11:15 PM August 30,"database for LIMS/IPACS went down, users called Roger Smith at 10:25 PM, Roger and Ray McCague began to investigate and resolve problem. Database was back up within 35-40 minutes, users were notified to log back in.",,LIMS and iPacs were down for almost one hour,,,,
+08/26/16 3:06 PM,konkapakas@mwrd.org,,Reviewed,Sharma Konkapaka,08/26/16,08/26/16,,,Almost 8 Minutes MWRD.ORG  portal host service are not available   to external users of MWRD network. Internal users are not having to Portal. Issue is only for external users.,,Portal not accessible  to external  users.,Web / Portal Team,,,
+10/11/16 8:55 AM,pendergastk@mwrd.org,,Reviewed,Kevin Pendergast,08/26/16,08/26/16,,3 hours,Guest WIFI could not get a signal from Cell tower,Rebooted the Cisco 819 Guest WIFI router,No Internet Access,Network Infrastructure,,No signal. Install dedicated line,
+08/24/16 8:01 AM,senderap@mwrd.org,,Reviewed,Patrick Sendera,08/23/16,08/24/16,,,GIS Services disconnected multiple times evening 8/23,Working with ESRI support and infrastructure group,All Public GIS Users,GIS,,Still determining,
+08/22/16 12:02 PM,senderap@mwrd.org,,Reviewed,Patrick Sendera,08/22/16,08/22/16,,,GIS Services non-responsive.,Restart GIS server software,Public facing GIS applications down,GIS,,"Working with ESRI premium support to troubleshoot.
+Case #01818053",
+08/22/16 11:36 AM,senderap@mwrd.org,,Reviewed,Patrick Sendera,08/20/16,08/22/16,,,GIS Services non-responsive.  Occurred 5 or 6 times over the weekend,Restart GIS server software,Public facing GIS applications down,GIS,,"Working with ESRI premium support to troubleshoot.
+Case #01818053",
+08/22/16 12:06 PM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/19/16,08/19/16,,,SAP was producing ABAP dumps related to MSSQLServer and Active Directory connection. Outage lasted from 11:00 am - 11:25 am.,,SAP was unusable during this time,ERP / SAP,,,
+08/19/16 4:31 PM,piotrowskir@mwrd.org,,Reviewed,Richard Piotrowski,08/19/16,08/19/16,,,Reboot of GISPUBINT at noon to upgrade server memory and install new version of VMware tools. (planned),N/A,Less than 5 minute outage of GIS maps,Network Operations (Server / SAN),,"Intermittent application issues during the week. Isolating the server on new hardware , adding additional memory (16GB to 24GB)  and updating to current VMware drivers.",Monitor the server
+08/18/16 2:00 PM,dominaj@mwrd.org,,Reviewed,Pat Sendera,08/18/16,08/18/16,,,http://GISPUBINT:6080 error 102 ERR_CONNECTION_REFUSED.  This caused the ArcGIS Services on GISPUB.mwrd.org to be unavailable,Restart ArcGIS windows service,Any application that consumes services form GISPUB.mwrd.org was unavailable; outage approximately 1:20 - 1:50 PM,GIS,,Unknown at this time; ticket open with Esri Premium Support,
+08/18/16 1:52 PM,dominaj@mwrd.org,,Reviewed,Pat Sendera,08/18/16,08/18/16,,,Web Adaptor on GISPUBINT unavailable,The issue was not reproducible upon investigation,This affects any applications consuming services on GISPUB.mwrd.org.  The duration was approximately a half hour 12:15PM - 12:53PM,GIS,,Unknown; we have a ticket open with Esri premium support; investigation ongoing.,
+08/18/16 10:25 AM,dominaj@mwrd.org,,Reviewed,Patrick Sendera,08/18/16,08/18/16,,,"The REST endpoint on GISPUB.mwrd.org was unavailable.  This affects all applications that consume services hosted on GISPUB including SSMP iOS, Floatable Log, CIR, incident reporting (public), SWIMA, Biosolids Inspections, IWD, CSO Viewer, Rain Gauge Viewer",Restart ArcGIS Server windows service; issue iisreset; reset web adaptor application pool,Several GIS Application were unavailable,GIS,,Uncertain at this time; following up with Esri Premium Support to determine the root cause,
+08/17/16 1:41 PM,dominaj@mwrd.org,,Reviewed,Pat Sendera,08/17/16,08/17/16,,,The ArcGIS WebAdaptor REST Endpoint was unavailable (accessing it threw a 500 error),Recycle the WebAdaptor's IIS Application Pool,"This affected all applications consuming GIS Services from GISPUB.mwrd.org (Floatable Log, SSMP, CIR, Incident Reporting (Public), CSOViewer, RainGaugeViewer, IWD, SWIMA, etc).  Outage was reported to IT at 8:00 AM and service was restored at 8:40 AM.",GIS,,This cause of the outage appeared to be a corruption of the WebAdaptor application pool's memory cache.,
+08/17/16 2:51 PM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/17/16,08/17/16,,,Disconnect between MSSQLServer and Active Directory,,Users could not process SAP transactions. Outage lasted 46 minutes,ERP / SAP,,,
+08/17/16 11:41 AM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/16/16,08/16/16,,,Disconnect between MSSQLServer and Active Directory,,Users could not process SAP transactions. Outage lasted 40 minutes,ERP / SAP,,,
+08/23/16 10:04 AM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,08/11/16,08/18/16,,,"ATT PRI went out of service. First reported 9am on Thursday August 11, 2016","*HD ticket received August 11 @ 9 am - communications via AT&T no longer working.
+*Email from User support stating phone switch was rebooted several times in an effort to fix comms issue. this took phone out plant wide multiple times.
+*Testing did not start until Friday August 12, 2016 due to higher priority issues. *Avaya phone system was tested to make sure everything was operational after multiple hard re-boots. 
+*Issue was isolated to ATT PRI and ticket ZA153071 was entered with ATT on Friday August 12, 2016.
+*Email was sent to ATT Service Manager Charles Clement for escalation since we were a day behind already and sever storms were approaching.
+*Friday August 12, 2016 @ 916 pm Charles informed me Ticket was escalated with manual handling & dispatch to site.
+*Saturday August 13, 2016 @ 2am ATT tech called from onsite to test. Tech said after testing he saw issues and would rebuild the line. Line tested good all weekend.
+*Monday August 15, 2016 I tested line @ 6am and it was out of service. Same day an email was sent to Charles for priority dispatch to same site under same ticket.
+*Monday August 15, 2016 Charles responded ATT report no problems on ATT network and they see traffic both ways and we passed invasive testing. Dispatch would be billable @ this time.  
+*Dispatch was held and Kevin Mika went to site to look at customer premise equipment (CPE). 
+*Kevin tested everything clean and line was up and operational. Ticket was held open for 24 hours.
+*Tuesday August 16, 5:54 am I test circuit and it is out of service. An email is sent to Charles requesting immediate testing. Charles is working with another customer and on vacation after Tuesday, ticket is passed to Jack BARTOSZEK. 
+*Circuit came back up on its own. Circuit to be monitored by MWRD & ATT for 24 hours.
+*Circuit continued to bounce up & down for a 24 hours period. 
+*Wednesday August 17, 2016 Kevin Mika sent an email to ATT team informing them circuit was bouncing. Also informed ATT, MWRD has replaced all wiring & equipment with assistance of AVAYA tech from the AT&T customer demarc. 
+*ATT replies circuit is up on their end.
+*Wednesday August 17, 2016 @ 123 pm I reply stating this has been an issue for a week we replaced all equipment and we still have issues. A tech is expected to be onsite to repair. 
+*ATT replies: we will see if we can get some one out.
+*@216 pm we are notified we are in the dispatch pool.
+*@305 I request confirmation our ticket has highest priority in the days dispatch pool since this is a week old ticket. No response from ATT.
+*tech onsite at 320 pm.
+*ATT finally started testing in the opposite direction and found a defective card mid circuit in the CO.",Users could not recieve outside calls or place outside calls,Network Infrastructure,,"ATT had a defective card in the CO.
+
+August 18, 2016 Email sent to ATT Team asking how to improve on this type of situation and we have no acknowledgement of email  as of August 23, 2016.",Needs to be handled between MWRD & ATT mgmt at this point.
+08/17/16 11:40 AM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/11/16,08/11/16,,,Disconnect between MSSQLServer and Active Directory,,Users could not process SAP transactions. Outage lasted 40 minutes,ERP / SAP,,,
+08/23/16 9:12 AM,muscarellot@mwrd.org,,Reviewed,Thomas Muscarello,08/09/16,08/15/16,,,Power to the IP Phone network on the east side of the Stickney plant was cut due to non-related work. Once power was restored equipment did not come back up.,"*Trades took power down to complete a non-IT work order. As a result power to the West Side pump station IP phone network was cut. 
+*Once power was restored and equipment was still down, an email sent on Wednesday August 10th @ 10:16 am to user support (Lopatka & Cernick) asking for assistance to see if equipment was unplugged. 
+*Thursday August 11th Kevin P was able to get onsite to confirm equipment was plugged in and the cabinet was dead. 
+*Friday I packed up spare equipment from downtown and went to swrp to meet with Kevin P. We replaced the carrier and the power supply.  The cabinet came up 90%.
+*The communications connecter on the media processor board remained bad. * A replacement connector was ordered and replaced on Monday August 15, 2016.",No phones to the east side of the stickney plant for over 6 days.,Network Infrastructure,,The issue was directly related to the power work done at the plant.  The entire carrier cabinet and power supply went bad.,
+08/09/16 3:04 PM,chenge@mwrd.org,,Reviewed,Ervin Cheng,08/09/16,08/09/16,,,"symantec endpoint protection was installed on the server.  It is required that the server restarted so the configurations can be applied to the server, It will be restarted at 10 p.m. to 10:02 p.m.",Need to restart server. Talked to robert beckman and the application team regarding the restart. They are okay with the restart.,"All web applications including district jobs, contract apps, CSO, Rain Barrel, Tours, and Search Vendor.",Network Operations (Server / SAN),,anti-virus installation,
+08/09/16 8:34 AM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/09/16,08/09/16,,,Internal district website went down. System was back up at 8:32 am,Reset DNS settings.,All website activities from within the District,ERP / SAP,,At 4 pm all DNS settings reverted back to original settings.,
+08/09/16 8:19 AM,kevin.young@mwrd.org,,Reviewed,Kevin Young,08/08/16,08/08/16,,,District Website was not accessible.,DNS settings reverted back to original settings.,District Website. System back up at 8:55 am,ERP / SAP,,New system migration and DNS changes didn't resolve across all servers.,
+08/05/16 1:49 PM,chenge@mwrd.org,,Reviewed,Ervin Cheng,08/05/16,08/05/16,,,IISMWRD was restarted due to corruption of default user profile on the server.,The default user folder was copied and pasted to the same folder. The old default folder was rename to old.  The copied default user folder was rename to default. This required a restart so the new profile will become the new active one.,"IISMWRD host District Phone List, GASB34, HDTicketReport, PoliceORS, Purcon, and Contract Announcement Administration",Network Operations (Server / SAN),,"A user might corrupted the folder by either deleting files, modify files or adding files to it. This cause the registry key to have a bak on the profile. When a user RDP into the system, the registry sees that profile and try to load it up and causes the issue that some users can't RDP, because the default profile is used when a new user who don't have a profile on the server will get.",
+08/03/16 12:38 PM,lopatkam@mwrd.org,,Reviewed,Mark Lopatka,08/03/16,08/03/16,,,Virtual server MFPDMGR became unresponsive and was not excepting logins.  Server/SAN team logged in and the server showed excessive CPU utilization.,"VM was shutdown and an additional CPU was added, bringing the total CPUs to two.  Server was restarted and all systems functioning.",This server manages all Canon Multifunction Devices and was not allowing any Canon devices to scan for one hour and 15 minutes.,Multi-Team (Indicate groups in Additional Information),,Preliminary investigation has not provided any information as to the cause.  The server will be regularly monitored to determine if the CPU utilization begins to rise.,
+08/17/16 11:39 AM,kevin.young@mwrd.org,,Reviewed,Kevin Young,07/20/16,07/20/16,,,Disconnect between MSSQLServer and Active Directory,,Users could not process SAP transactions. Outage lasted 11 minutes,ERP / SAP,,,
+07/18/16 9:17 AM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,07/17/16,07/17/16,,,"MOBA 2nd Floor telephone room started to overheat. MWRD were reminded they need to include this room on their rounds & check temp.  They noticed this room started to over heat around 5am and counted Mike Rountree, 111 Building Engineer. Mike reported to the building and reset the AC unit. Once reset it started to cool.",AC unit was reset and started to cool the room.,N/A,Network Infrastructure,,At this time a root cause is not known.,"Service call is set for Monday July 18, 2016. Police are now including the main telephone room in their rounds."
+07/18/16 9:13 AM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,07/16/16,07/16/16,,,"MOBA 2nd floor telephone room started to overheat. Rich Piotrowski received temp notifications from APC EMU and contract Mike Rountree, 111 Building Engineer. Mike reported downtown to take a look at AC unit.",AC unit was reset and started to cool room.,N/A,Network Infrastructure,,"At this time a root cause is no known.  Service call is set for Monday July 18, 2016.","Service call is set for Monday July 18, 2016. Police are now including the main telephone room in their rounds."
+07/15/16 9:43 AM,jacksonc@mwrd.org,,Reviewed,Chentiel Jackson,07/15/16,07/15/16,,,User reported unable to log into the iPACS Production System.,Oracle Database restarted.,iPACS Production System,Multi-Team (Indicate groups in Additional Information),,Oracle Database stopped.,LIMS/iPACS Application Development Team ; Follow-up on Better root cause analysis What time did this happen?  How was it discovered?
+07/15/16 9:40 AM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,07/15/16,07/15/16,,,"Users could not log into SampleManager LIMS Production System.  Oracle error message code 12514op0, ORA-12514.",Restarted Oracle Database.,LIMS Production System,Multi-Team (Indicate groups in Additional Information),,Oracle Database stopped.,LIMS/iPACS Application Development Team ; Follow-up on Better root cause analysis What time did this happen?  How was it discovered?
+07/15/16 7:48 AM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,07/15/16,07/15/16,,,AC unit for MOBA main telephone room on the 2nd floor compressor went out of service around 2am.  When i woke up at 5 i noticed the emails and contacted the building engineer. As soon as the building engineer arrived on site for the day he reset the unit.,Notified the building engineer and when he arrived for his shift he reset the ac unit.  Building Engineer has requested permission for a service call from Eileen this morning.,Operating temperature in main phone room started to rise.,Network Infrastructure,,When the AC unit cools the room to the temp set on the thermostat it will turn off as designed. When the room starts to heat back up the unit will not turn back on.,
+07/15/16 7:43 AM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,07/14/16,07/14/16,,,AC unit for MOBA main telephone room on the 2nd floor compressor went out of service.,Notified 100 Police to notify 111 Building Engineer.  Call Rick Delong to reset ac unit. Once AC unit was reset it started to cool.,Operating temperature in main phone room started to rise.,Network Infrastructure,,When the AC unit cools the room to the temp set on the thermostat it will turn off as designed.  When the room starts to heat back up the unit will not turn back on.,
+07/18/16 7:22 PM,warrene@mwrd.org,,Reviewed,Ethan Warren,07/14/16,07/14/16,,,Switch failure in OWRP service building.,Replacement switch was configured and installed by Richard Wojkovich and Kevin Mika.,"Administrative data network was unavailable to users in the Store Room, Police Gate, and Old Service Buildings.",Network Infrastructure,,"Faulty power supply caused unit to continually reboot.  Inherently, downstream connected switches in other locations lost connectivity to network.",Cisco 3560 ; 48port
+07/11/16 4:47 PM,siaj@mwrd.org,,Reviewed,Joel Sia,07/11/16,07/11/16,,,ccSVChost.exe was utilizing a large percentage of cpu usage preventing business objects from completing request for crystal reports. shut down crystal report services and let ccSVChost.exe complete its jobs.,"log onto prdbob, start central configuration manager, stop SIA, stop Apache Tomcat. Wait till ccSVChost.exe completes AV check (see in task manager ), restart tomcat, then SIA.",Could not get reports for budgeting (pbf),ERP / SAP,,ccSVChost.exe,ccsvchost is symantec antivirus
+07/08/16 9:30 AM,jacksonc@mwrd.org,,Reviewed,Chentile Jackson,07/08/16,07/08/16,,,Saved data not displaying in the User Charge Module in iPACS Production System.,Restarted iPACS Production Server (IPACPRDAPP),iPACS Production System,Multi-Team (Indicate groups in Additional Information),,,LIMS/IPACS Application Development Team
+07/08/16 9:01 AM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,07/05/16,07/06/16,,,Voice T1 between SWRP and LASMA went down.  As a result the phones at LASMA go down as well.,Schedule a re-rack to move phones from Dedicate T1 to ASE Network.,reduced call volume going out the two POTS lines.  Calls coming in the POTS lines are routed to admin than transferred.,Network Infrastructure,,ATT T1 lost service.,Follow-up on Tue 8/110 on plan to move to ASE circuit.  Tommy M owns
+07/07/16 4:06 PM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,07/04/16,07/05/16,,,"On July 4th 2016 AC unit went out and temp in main tele room went to 112 degrees at one point in the day. I received a call around 815pm on Monday from the MOB control room informing me all phones were out of service.  Kevin Mika also called stating Rich told him to come in to take care of situation. When Kevin arrived temp was 97 degrees and both call servers were powered off.  As a result of the high temp the MOB call servers shutdown in order to protect hardware. At this time voicemail was tested from cell phones and everything was functioning correctly.  Doors were opened, AC was restarted and once the temp was brought down to low 90s/high 80s the call servers were started back up.  Phone service was restored and the temp continued to drop. At this point we left.  On Tuesday it was discovered users could not check their voicemail via 5-digit ext 15858. A work around was established until a reboot was completed.  
+
+
+Voicemail was not accepting calls from 5-digit number.","Phone room doors were opened and fan started in effort to move air and reduce temp.
+Call servers were restarted once room was at a reasonable temp.
+AC was restarted in an effort to possibly fix issue over night.",All MOB phones had no dial tone.  District wide users could not access their voicemail via the 15858 extension number.,Network Infrastructure,,"Outage was a direct result of the temp increase. 
+
+Several steps need to be take in order to prevent this issue from reoccurring.
+1 - IT APC room monitor will need to be reconnected to the network for proper notification.  At some point this was disconnected and never reconnected. 
+2 - GA BAS will need to be expanded to include a temp sensor in the MOBA 2nd floor telephone room.  BAS system does not currently monitor the temp of this room.
+3 - GA will need to teach the police what to do in the event the cooling tower stops supplying cold water to telephone room.  BAS system will alarm if this happens. Police received this alarm and did nothing.",
+07/07/16 4:58 PM,muscarellot@mwrd.org,,Reviewed,Tom Muscarello,07/02/16,07/02/16,,,MOBA Phone Room AC went out.  As a result UPS battery started to overheat.,AC unit was restarted via Kevin Mika. Battery was removed and turned over to Delong for replacement.,UPS battery went bad reducing runtime on UPS. No noticable impact to users.,Network Infrastructure,,"Cooling tower went out as a result of hotel construction workers tripping breaker. Cold water was no longer supplied to phone room and this allowed heat to build.
+
+The cooling tower is monitored by the BAS and the building engineers receive notification while onsite.  During after hours police receive notification and are required to contact certain personnel.",GA needs to train after hours staff on how to handle alarms associated with new BAS system.
+07/07/16 10:41 AM,piotrowskir@mwrd.org,,Reviewed,Richard Piotrowski,07/02/16,07/02/16,,,UPS at MOBA 2nd floor communication room reported a battery tray was bad and causing excessive heat.,Remove failed battery tray,No impact to any systems. Reduced over UPS runtime.,Network Infrastructure,,Battery Failure,
+07/01/16 12:56 PM,mceneryt@mwrd.org,,Reviewed,McEnery,06/30/16,06/30/16,,,Exchange Online updates caused Mailflow to be delayed,See attached,Limited,Network Operations (Server / SAN),,Exchange Online Updates to EOP,
+06/15/16 9:03 AM,kellys2@mwrd.org,,Reviewed,Sean Kelly,06/06/16,06/08/16,,,Lights went out,Flip the Switch,4th floor,Multi-Team (Indicate groups in Additional Information),,Bad wiring,Network Ops and ERP groups
+02/08/17 9:14 AM,beckmanr@mwrd.org,,Reviewed,Robert Beckman,02/08/16,02/08/16,,Outage 8:57am - 9:07am  (10minutes),Intermittent network connectivity between apps.mwrd.org and SQL01A. Contract Announcement application and Rainviewer app not working,Short term solution is to reboot apps.mwrd.org. Rebooting takes approximately 1 -2 minutes. Josh and Ethan will continue to investigate.     Note: apps.mwrd.org is in the DMZ; SQL01A is a SQL Server database server which is inside the firewall.,Public users cannot access contracts and RFP's that are currently available for bid.,Multi-Team (Indicate groups in Additional Information),,Unknown at this time.,"AppDev, Network Ops"
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
